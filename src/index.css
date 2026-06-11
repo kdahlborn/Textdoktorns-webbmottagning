@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap');
+
+:root {
+    /* Colors */
+    --dark-blue: #002f94;
+    --primary-blue: #0f34cc;
+    --light-blue: #3e9ce9;
+    --red: #e03062;
+    --green: #36b556;
+    --purple: #6155f5;
+    --yellow: #ffcc00;
+    --bg-dark: #060a1b;
+    --bg-white: #fefefe;
+    --text-dark: #36393d;
+    --text-darker: #282a2d;
+    /* Fonts */
+    --manrope: 'Manrope', sans-serif;
+    --inter: 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
