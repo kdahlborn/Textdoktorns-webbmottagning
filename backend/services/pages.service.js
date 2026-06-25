@@ -3,11 +3,11 @@ import Page from '../models/page.model.js';
 // Get pages
 export const getPages = async () => {
     try {
-        const result = await Page.find();
+        const pages = await Page.find();
 
         return {
             success: true,
-            pages: result,
+            pages,
         };
     } catch (error) {
         return {
@@ -36,12 +36,10 @@ export const getPageByName = async (pageName) => {
     }
 };
 
-// Add new page
-export const addNewPage = async (page) => {
+// Create page
+export const createPage = async (page) => {
     try {
-        const newPage = await Page.create({
-            ...page,
-        });
+        const newPage = await Page.create(page);
 
         return {
             success: true,
@@ -56,15 +54,23 @@ export const addNewPage = async (page) => {
 };
 
 // Update page
-export const updatePage = async (page, update) => {
+export const updatePage = async (pageName, content) => {
     try {
-        const pageExist = await Page.findOne({ page });
-        if (!pageExist) throw new Error(`Could not find page: '${page.page}'`);
+        const page = await Page.findOne({ page: pageName });
+        if (!page) throw new Error(`Could not find page: '${pageName}'`);
 
-        const updatedPage = await Page.findOneAndUpdate(
-            { page },
-            { content: update },
-            { returnDocument: 'after' },
-        );
-    } catch (error) {}
+        page.content = content;
+
+        const updatedPage = await page.save();
+
+        return {
+            success: true,
+            page: updatedPage,
+        };
+    } catch (error) {
+        return {
+            success: false,
+            message: error.message,
+        };
+    }
 };

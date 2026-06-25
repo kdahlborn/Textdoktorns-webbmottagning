@@ -1,16 +1,19 @@
 import mongoose from 'mongoose';
 
-const pageSchema = new mongoose.Schema({
-    page: {
-        type: String,
-        required: true,
-        unique: true,
+const pageSchema = new mongoose.Schema(
+    {
+        page: {
+            type: String,
+            required: true,
+            unique: true,
+        },
+        content: {
+            type: mongoose.Schema.Types.Mixed,
+            required: true,
+        },
     },
-    content: {
-        type: mongoose.Schema.Types.Mixed,
-        required: true,
-    },
-});
+    { timestamps: true },
+);
 
 const Page = mongoose.model('Page', pageSchema);
 
