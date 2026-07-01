@@ -1,17 +1,24 @@
 import { createBrowserRouter, Navigate } from 'react-router';
-import MainLayout from '../Layouts/MainLayout';
-import HomePage from '../pages/HomePage/HomePage';
-import AboutPage from '../pages/AboutPage/AboutPage';
-import ContactPage from '../pages/ContactPage/ContactPage';
+import PublicLayout from '../Layouts/PublicLayout';
+import HomePage from '../pages/public/HomePage/HomePage';
+import AboutPage from '../pages/public/AboutPage/AboutPage';
+import ContactPage from '../pages/public/ContactPage/ContactPage';
+import AuthPage from '../pages/admin/AuthPage/AuthPage';
+import ProtectedRoute from './ProtectedRoute';
+import AdminLayout from '../Layouts/AdminLayout';
+import DashboardPage from '../pages/admin/DashboardPage/DashboardPage';
+import EditPagePage from '../pages/admin/EditPagePage/EditPagePage';
+import EditFaqPage from '../pages/admin/EditFaqPage/EditFaqPage';
 
 export const router = createBrowserRouter([
+    // Public
     {
         path: '/',
         element: <Navigate to="/sv" replace />,
     },
     {
         path: '/:lang',
-        element: <MainLayout />,
+        element: <PublicLayout />,
         children: [
             {
                 index: true,
@@ -24,6 +31,34 @@ export const router = createBrowserRouter([
             {
                 path: 'contact',
                 element: <ContactPage />,
+            },
+        ],
+    },
+
+    // Admin
+    {
+        path: '/admin/login',
+        element: <AuthPage />,
+    },
+    {
+        path: '/admin',
+        element: (
+            <ProtectedRoute>
+                <AdminLayout />
+            </ProtectedRoute>
+        ),
+        children: [
+            {
+                index: true,
+                element: <DashboardPage />,
+            },
+            {
+                path: 'pages/:pageName',
+                element: <EditPagePage />,
+            },
+            {
+                path: 'faqs',
+                element: <EditFaqPage />,
             },
         ],
     },

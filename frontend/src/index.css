@@ -9,8 +9,8 @@
     --green: #36b556;
     --purple: #6155f5;
     --yellow: #ffcc00;
+    --white: #fefefe;
     --bg-dark: #060a1b;
-    --bg-white: #fefefe;
     --text-dark: #36393d;
     --text-darker: #282a2d;
     /* Fonts */
@@ -22,4 +22,10 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body {
+    font-family: var(--inter);
+    color: var(--text-darker);
+    min-height: 100vh;
 }

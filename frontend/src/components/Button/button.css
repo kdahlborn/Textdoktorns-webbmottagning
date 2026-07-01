@@ -1,0 +1,18 @@
+.btn {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    font-family: var(--inter);
+    font-size: 1.25rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 1rem 2rem;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: var(--purple);
+}
