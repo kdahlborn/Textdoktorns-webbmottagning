@@ -5,7 +5,7 @@ import AboutPage from '../pages/public/AboutPage/AboutPage';
 import ContactPage from '../pages/public/ContactPage/ContactPage';
 import AuthPage from '../pages/admin/AuthPage/AuthPage';
 import ProtectedRoute from './ProtectedRoute';
-import AdminLayout from '../Layouts/AdminLayout';
+import AdminLayout from '../Layouts/AdminLayout/AdminLayout';
 import DashboardPage from '../pages/admin/DashboardPage/DashboardPage';
 import EditPagePage from '../pages/admin/EditPagePage/EditPagePage';
 import EditFaqPage from '../pages/admin/EditFaqPage/EditFaqPage';
@@ -53,8 +53,17 @@ export const router = createBrowserRouter([
                 element: <DashboardPage />,
             },
             {
-                path: 'pages/:pageName',
-                element: <EditPagePage />,
+                path: 'pages',
+                children: [
+                    {
+                        index: true,
+                        element: <Navigate to="home" replace />,
+                    },
+                    {
+                        path: ':pageName',
+                        element: <EditPagePage />,
+                    },
+                ],
             },
             {
                 path: 'faqs',

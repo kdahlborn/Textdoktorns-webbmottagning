@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import axios from 'axios';
+import { login } from '../services/auth.service';
 
 export const useAuthStore = create(
     persist(
@@ -9,10 +9,10 @@ export const useAuthStore = create(
             loading: false,
             error: null,
 
-            login: (adminData) => {
+            loginAdmin: (credentials) => {
                 set({ loading: true });
-                return axios
-                    .post('http://localhost:8080/api/auth/login', adminData)
+
+                return login(credentials)
                     .then((res) => {
                         set({
                             token: res.data.token,
@@ -23,11 +23,17 @@ export const useAuthStore = create(
                     })
                     .catch((err) => {
                         set({ error: err.response.data.message });
-                        console.log(err.response);
                     })
                     .finally(() => {
                         set({ loading: false });
                     });
+            },
+
+            logout: () => {
+                set({
+                    token: null,
+                    error: null,
+                });
             },
         }),
         {

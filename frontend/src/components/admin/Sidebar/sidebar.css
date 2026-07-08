@@ -1,0 +1,76 @@
+.sidebar {
+    position: sticky;
+    background-color: var(--bg-dark);
+    color: var(--white);
+    height: 100%;
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    gap: 3rem;
+    font-family: var(--manrope);
+
+    .sidebar__header {
+        .sidebar__img {
+            width: 200px;
+        }
+
+        .sidebar__title {
+            font-weight: 400;
+            font-family: var(--ibm);
+            text-align: end;
+        }
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+
+        .nav__link {
+            color: var(--white);
+            opacity: 0.6;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+        }
+
+        .nav__link:hover {
+            opacity: 1;
+        }
+
+        .nav__link.active {
+            opacity: 1;
+            background-color: var(--primary-blue);
+            border-radius: 0.25rem;
+        }
+
+        .nav__content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+
+            .nav__title {
+                opacity: 0.8;
+                font-weight: 500;
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+
+    .sidebar__footer {
+        margin-top: auto;
+        border-top: 1px solid rgba(255, 255, 255, 0.315);
+
+        .logout-btn {
+            background-color: transparent;
+            padding: 1.5rem 0;
+            opacity: 0.8;
+        }
+
+        .logout-btn:hover {
+            opacity: 1;
+        }
+    }
+}

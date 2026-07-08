@@ -1,0 +1,4 @@
+.dashboard {
+    background-color: var(--white);
+    display: flex;
+}

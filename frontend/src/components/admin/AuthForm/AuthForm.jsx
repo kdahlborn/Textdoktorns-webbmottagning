@@ -9,13 +9,13 @@ import axios from 'axios';
 const AuthForm = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const { error, login, loading } = useAuthStore();
+    const { error, loginAdmin, loading } = useAuthStore();
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        login({ username, password }).then((res) => {
+        loginAdmin({ username, password }).then((res) => {
             if (res?.success) navigate('/admin');
         });
     };

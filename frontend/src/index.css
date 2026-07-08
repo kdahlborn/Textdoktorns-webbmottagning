@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap');
 
 :root {
     /* Colors */
@@ -10,12 +10,14 @@
     --purple: #6155f5;
     --yellow: #ffcc00;
     --white: #fefefe;
+    --gray: #e0e0e0;
     --bg-dark: #060a1b;
     --text-dark: #36393d;
     --text-darker: #282a2d;
     /* Fonts */
     --manrope: 'Manrope', sans-serif;
     --inter: 'Inter', sans-serif;
+    --ibm: 'IBM Plex Serif', serif;
 }
 
 * {
@@ -27,5 +29,17 @@
 body {
     font-family: var(--inter);
     color: var(--text-darker);
+}
+
+/* .page {
     min-height: 100vh;
+} */
+
+a {
+    text-decoration: none;
+}
+
+.admin-page {
+    /* padding: 1rem; */
+    background-color: var(--white);
 }
