@@ -1,5 +1,29 @@
 .admin-layout {
-    min-height: 100vh;
+    height: 100vh;
     display: grid;
     grid-template-columns: 240px 1fr;
+
+    .admin-main {
+        /* padding: 1rem; */
+        background-color: var(--white);
+        min-height: 0;
+        overflow-y: auto;
+
+        .form {
+            padding: 1rem;
+
+            .form__label {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .form__footer {
+                background-color: var(--white);
+                position: sticky;
+                bottom: 0;
+                padding-block: 1rem;
+            }
+        }
+    }
 }

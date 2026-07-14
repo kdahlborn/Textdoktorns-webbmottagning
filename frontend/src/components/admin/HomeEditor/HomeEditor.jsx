@@ -6,6 +6,7 @@ import Button from '../../Button/Button';
 import LanguageSelector from '../LanguageSelector/LanguageSelector';
 import FormInput from '../FormInput/FormInput';
 import ListEditor from '../ListEditor/ListEditor';
+import FormTextArea from '../FormTextArea/FormTextArea';
 
 const HomeEditor = ({ page }) => {
     const methods = useForm();
@@ -32,7 +33,7 @@ const HomeEditor = ({ page }) => {
                 />
                 {/* HERO */}
                 <section className="form__page-section">
-                    <h2 className="form__title">Hero</h2>
+                    <h2 className="form__title">Hero-sektion</h2>
 
                     {page?.content.hero.titleLines[language].map((_, index) => {
                         return (
@@ -46,14 +47,14 @@ const HomeEditor = ({ page }) => {
                 </section>
                 {/* SERVICES */}
                 <section className="form__page-section">
-                    <h2 className="form__title">Tjänster</h2>
+                    <h2 className="form__title">Sektion för tjänster</h2>
 
                     <FormInput
                         key={`services-title-${language}`}
                         label="Rubrik"
                         path={`services.heading.${language}`}
                     />
-                    <FormInput
+                    <FormTextArea
                         key={`services-desc-${language}`}
                         label="Beskrivning"
                         path={`services.description.${language}`}
@@ -74,32 +75,81 @@ const HomeEditor = ({ page }) => {
                                     label="Rubrik"
                                     path={`services.cards.${index}.title.${language}`}
                                 />
-                                <FormInput
+                                <FormTextArea
                                     key={`services-card-${index}-desc-${language}`}
                                     label="Beskrivning"
                                     path={`services.cards.${index}.description.${language}`}
                                 />
 
-                                {/* {card.items[language].map((item, itemIndex) => {
-                                    return (
-                                        <FormInput
-                                            key={`services-card-${index}-item-${itemIndex}-${language}`}
-                                            path={`services.cards.${index}.items.${language}.${itemIndex}`}
-                                        />
-                                    );
-                                })} */}
                                 <ListEditor
-                                    // page={page}
-                                    // items={card.items}
                                     path={`services.cards.${index}.items`}
+                                    language={language}
+                                />
+
+                                <FormTextArea
+                                    key={`service-card-${index}-note-${language}`}
+                                    label="Notering"
+                                    path={`services.cards.${index}.note.${language}`}
+                                />
+                            </section>
+                        );
+                    })}
+                </section>
+                {/* TYPES OF TEXT */}
+                <section className="form__page-section">
+                    <h2 className="form__title">Sektion för texttyper</h2>
+
+                    <FormInput
+                        key={`textTypes-title-${language}`}
+                        label="Rubrik"
+                        path={`textTypes.heading.${language}`}
+                    />
+
+                    {page?.content.textTypes.categories.map((c, index) => {
+                        return (
+                            <section className="form__page-subsection">
+                                <h3 className="form__subtitle">
+                                    {`Kategori ${index + 1}`}
+                                </h3>
+
+                                <FormInput
+                                    key={`textTypes-category-title`}
+                                    label="Kategori"
+                                    path={`textTypes.categories.${index}.title.${language}`}
+                                />
+
+                                <ListEditor
+                                    path={`textTypes.categories.${index}.items`}
                                     language={language}
                                 />
                             </section>
                         );
                     })}
                 </section>
+                {/* TRANSLATION */}
+                <section className="form__page-section">
+                    <h2 className="form__title">Sektion om översättning</h2>
 
-                <Button text="Spara" type="submit" />
+                    <FormInput
+                        key={`translation-heading-${language}`}
+                        label="Rubrik"
+                        path={`translation.heading.${language}`}
+                    />
+                    <FormInput
+                        key={`translation-title-${language}`}
+                        label="Underrubrik"
+                        path={`translation.title.${language}`}
+                    />
+                    <FormTextArea
+                        key={`translation-text-${language}`}
+                        label="Text"
+                        path={`translation.text.${language}`}
+                    />
+                </section>
+
+                <footer className="form__footer">
+                    <Button text="Spara" type="submit" />
+                </footer>
             </form>
         </FormProvider>
     );

@@ -1,0 +1,5 @@
+.form__textarea {
+    font-family: inherit;
+    resize: none;
+    height: 3rem;
+}

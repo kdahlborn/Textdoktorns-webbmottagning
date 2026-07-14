@@ -1,5 +1,10 @@
 .lang-selector {
     display: flex;
+    list-style: none;
+    position: sticky;
+    top: 0;
+    background-color: var(--white);
+    z-index: 1;
 
     .lang-btn {
         text-transform: uppercase;

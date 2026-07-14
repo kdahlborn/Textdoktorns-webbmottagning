@@ -1,7 +1,7 @@
 import FormInput from '../FormInput/FormInput';
 import './listEditor.css';
 import Button from '../../Button/Button';
-import { Plus } from 'lucide-react';
+import { Plus, Trash2 } from 'lucide-react';
 import { useFieldArray, useFormContext } from 'react-hook-form';
 
 const ListEditor = ({ path, language }) => {
@@ -33,16 +33,17 @@ const ListEditor = ({ path, language }) => {
                             path={`${path}.${index}.${language}`}
                         />
                         <Button
-                            text="Ta bort"
+                            icon={<Trash2 size={16} />}
                             onClick={() => remove(index)}
                             className="remove-item-btn"
+                            type="submit"
                         />
                     </li>
                 );
             })}
             <Button
-                text="Lägg till ny punkt"
-                icon={<Plus />}
+                text="Ny punkt"
+                icon={<Plus size={16} />}
                 onClick={addNewItem}
                 className="add-item-btn"
             />

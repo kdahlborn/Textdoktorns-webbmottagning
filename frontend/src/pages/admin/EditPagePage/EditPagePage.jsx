@@ -26,7 +26,7 @@ const EditPagePage = () => {
     const Editor = editors[pageName];
 
     return (
-        <section className="edit-page-page admin-page">
+        <main className="edit-page-page admin-main">
             <header className="page-header">
                 <h1 className="page-title">
                     Redigera innehåll: {capitalizeFirstLetter(pageName)}
@@ -64,7 +64,7 @@ const EditPagePage = () => {
             </header>
 
             {Editor ? <Editor page={page} /> : null}
-        </section>
+        </main>
     );
 };
 

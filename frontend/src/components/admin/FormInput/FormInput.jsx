@@ -6,7 +6,11 @@ const FormInput = ({ label, path }) => {
     return (
         <label className="form__label">
             {label}
-            <input className="form__input" {...register(path)} />
+            <input
+                autoComplete="off"
+                className="form__input"
+                {...register(path)}
+            />
         </label>
     );
 };

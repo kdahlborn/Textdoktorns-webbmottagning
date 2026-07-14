@@ -38,8 +38,3 @@ body {
 a {
     text-decoration: none;
 }
-
-.admin-page {
-    /* padding: 1rem; */
-    background-color: var(--white);
-}
