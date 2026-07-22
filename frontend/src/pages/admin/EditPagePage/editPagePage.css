@@ -1,12 +1,12 @@
 .edit-page-page {
-    .page-header {
+    .main-header {
         padding: 1rem 1rem 0 1rem;
         border-bottom: 1px solid var(--gray);
         display: flex;
         flex-direction: column;
         gap: 2rem;
 
-        .page-title {
+        .main-title {
             color: var(--text-dark);
             font-family: var(--manrope);
         }
@@ -27,5 +27,12 @@
                 border-bottom: 2px solid var(--primary-blue);
             }
         }
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-bottom: 4rem;
     }
 }

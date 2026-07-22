@@ -6,7 +6,11 @@ const FormTextArea = ({ label, path }) => {
     return (
         <label className="form__label">
             {label}
-            <textarea className="form__textarea" {...register(path)}></textarea>
+            <textarea
+                className="form__textarea"
+                spellCheck="false"
+                {...register(path)}
+            ></textarea>
         </label>
     );
 };

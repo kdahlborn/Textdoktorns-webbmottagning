@@ -7,7 +7,10 @@ const LanguageSelector = ({ language, setLanguage }) => {
         <ul className="lang-selector">
             {languages.map((lang) => {
                 return (
-                    <li className="lang-selector__item">
+                    <li
+                        className="lang-selector__item"
+                        key={`lang-selector-${lang}`}
+                    >
                         <Button
                             key={lang}
                             text={lang}

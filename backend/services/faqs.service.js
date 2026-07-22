@@ -1,7 +1,7 @@
-import Faq from '../models/faq.model.js';
+import Faq from '../models/faqs.model.js';
 
-// Get FAQ
-export const getFaq = async () => {
+// Get FAQs
+export const getFaqs = async () => {
     try {
         const faqs = await Faq.find();
 

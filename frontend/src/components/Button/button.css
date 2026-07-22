@@ -10,9 +10,19 @@
     display: flex;
     gap: 0.5rem;
     justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease;
 }
+
+/* .save-btn--saved {
+    background-color: var(--green);
+    transform: scale(0.95);
+}
+.save-btn--saved:hover {
+    background-color: var(--green);
+} */
 
 .btn:hover {
     cursor: pointer;
-    background-color: var(--purple);
+    opacity: 0.9;
 }

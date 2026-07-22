@@ -1,0 +1,14 @@
+.edit-faq-page {
+    .main-header {
+        padding: 1rem;
+        border-bottom: 1px solid var(--gray);
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .main-title {
+            color: var(--text-dark);
+            font-family: var(--manrope);
+        }
+    }
+}

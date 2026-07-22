@@ -5,30 +5,31 @@ import { useParams } from 'react-router';
 import { NavLink } from 'react-router';
 import { CircleQuestionMark, House, Phone } from 'lucide-react';
 import { capitalizeFirstLetter } from '../../../utils/strings';
-import { useForm } from 'react-hook-form';
 import HomeEditor from '../../../components/admin/HomeEditor/HomeEditor';
+import AboutEditor from '../../../components/admin/AboutEditor/AboutEditor';
+import ContactEditor from '../../../components/admin/ContactEditor/ContactEditor';
 
 const EditPagePage = () => {
-    const { page, loading, error, fetchPage } = usePageStore();
+    const { page, error, fetchPage } = usePageStore();
     const { pageName } = useParams();
+    const isPageLoaded = page?.page === pageName;
 
     useEffect(() => {
         fetchPage(pageName);
     }, [pageName]);
-    // useEffect(() => {
-    //     console.log(page);
-    // }, [page]);
 
     const editors = {
         home: HomeEditor,
+        about: AboutEditor,
+        contact: ContactEditor,
     };
 
     const Editor = editors[pageName];
 
     return (
         <main className="edit-page-page admin-main">
-            <header className="page-header">
-                <h1 className="page-title">
+            <header className="main-header">
+                <h1 className="main-title">
                     Redigera innehåll: {capitalizeFirstLetter(pageName)}
                 </h1>
 
@@ -62,8 +63,11 @@ const EditPagePage = () => {
                     </NavLink>
                 </nav>
             </header>
-
-            {Editor ? <Editor page={page} /> : null}
+            {!isPageLoaded ? (
+                <p>Laddar...</p>
+            ) : Editor ? (
+                <Editor page={page} />
+            ) : null}
         </main>
     );
 };

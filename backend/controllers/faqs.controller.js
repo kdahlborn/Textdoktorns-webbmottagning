@@ -1,8 +1,8 @@
-import * as faqService from '../services/faq.service.js';
+import * as faqsService from '../services/faqs.service.js';
 
 // Get FAQ
-export const getFaq = async (req, res, next) => {
-    const result = await faqService.getFaq();
+export const getFaqs = async (req, res, next) => {
+    const result = await faqsService.getFaqs();
 
     if (result.success) {
         res.json({
@@ -28,7 +28,7 @@ export const createFaq = async (req, res, next) => {
         });
     }
 
-    const result = await faqService.createFaq({
+    const result = await faqsService.createFaq({
         faqId: crypto.randomUUID().substring(0, 5),
         ...faq,
     });
@@ -52,7 +52,7 @@ export const updateFaq = async (req, res, next) => {
     const { faqId } = req.params;
     const update = req.body;
 
-    const result = await faqService.updateFaq(faqId, update);
+    const result = await faqsService.updateFaq(faqId, update);
 
     if (result.success) {
         res.status(201).json({
@@ -72,7 +72,7 @@ export const updateFaq = async (req, res, next) => {
 export const removeFaq = async (req, res, next) => {
     const { faqId } = req.params;
 
-    const result = await faqService.removeFaq(faqId);
+    const result = await faqsService.removeFaq(faqId);
 
     if (result.success) {
         res.status(201).json({

@@ -5,12 +5,13 @@ import { getPage, getPages, updatePage } from '../services/pages.service';
 export const usePageStore = create((set) => ({
     pages: [],
     page: null,
-    loading: false,
+    loadingPage: false,
+    savingPage: false,
     error: null,
 
     fetchPages: () => {
-        set({ loading: true });
-        const token = useAuthStore.getState().token;
+        set({ loadingPage: true });
+        // const token = useAuthStore.getState().token;
 
         getPages()
             .then((res) => {
@@ -23,12 +24,15 @@ export const usePageStore = create((set) => ({
                 set({ error: true });
             })
             .finally(() => {
-                set({ loading: false });
+                set({ loadingPage: false });
             });
     },
 
     fetchPage: (pageName) => {
-        set({ loading: true });
+        set({
+            loadingPage: true,
+            page: null,
+        });
 
         getPage(pageName)
             .then((res) => {
@@ -41,12 +45,12 @@ export const usePageStore = create((set) => ({
                 set({ error: true });
             })
             .finally(() => {
-                set({ loading: false });
+                set({ loadingPage: false });
             });
     },
 
     updatePageContent: (pageName, content) => {
-        set({ loading: true });
+        set({ savingPage: true });
 
         return updatePage(pageName, content)
             .then((res) => {
@@ -60,13 +64,15 @@ export const usePageStore = create((set) => ({
                     error: null,
                 }));
 
-                return updatedPage;
+                return res.data;
             })
             .catch((err) => {
                 set({ error: err.response?.data?.message ?? 'Något gick fel' });
             })
             .finally(() => {
-                set({ loading: false });
+                setTimeout(() => {
+                    set({ savingPage: false });
+                }, 1500);
             });
     },
 }));

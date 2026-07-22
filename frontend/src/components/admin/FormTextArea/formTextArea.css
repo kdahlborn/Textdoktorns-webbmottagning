@@ -1,5 +1,15 @@
 .form__textarea {
     font-family: inherit;
+    font-weight: 400;
     resize: none;
-    height: 3rem;
+    width: 600px;
+    height: 100px;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid var(--gray);
+}
+
+.form__textarea:focus {
+    outline: none;
+    box-shadow: 0 0 4px 1px var(--light-blue);
 }

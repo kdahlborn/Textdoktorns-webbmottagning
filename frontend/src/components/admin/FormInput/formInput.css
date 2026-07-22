@@ -1,0 +1,13 @@
+.form__input {
+    font-family: inherit;
+    font-weight: 400;
+    width: 300px;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid var(--gray);
+}
+
+.form__input:focus {
+    outline: none;
+    box-shadow: 0 0 4px 1px var(--light-blue);
+}
