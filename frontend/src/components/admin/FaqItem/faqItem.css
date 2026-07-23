@@ -1,0 +1,15 @@
+.faqs-list__item {
+    list-style: none;
+    background-color: var(--white);
+    border-radius: 0.25rem;
+    border: 2px solid var(--gray);
+    padding: 0.5rem;
+    color: var(--dark-blue);
+    font-weight: 600;
+}
+
+.faqs-list__item:hover {
+    cursor: pointer;
+    border: 2px solid var(--light-blue);
+    background-color: var(--lighter-blue);
+}

@@ -5,6 +5,7 @@
     --dark-blue: #002f94;
     --primary-blue: #0f34cc;
     --light-blue: #3e9ce9;
+    --lighter-blue: #f0f8ff;
     --red: #e03062;
     --green: #36b556;
     --purple: #6155f5;
@@ -33,4 +34,13 @@ body {
 
 a {
     text-decoration: none;
+}
+
+/* UTILITY CLASSES */
+.d-none {
+    display: none;
+}
+
+.v-hidden {
+    visibility: hidden;
 }

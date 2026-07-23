@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { getFaqs } from '../services/faqs.service';
+import { createFaq, getFaqs } from '../services/faqs.service';
 
 export const useFaqStore = create((set) => ({
     faqs: [],
@@ -22,6 +22,24 @@ export const useFaqStore = create((set) => ({
             })
             .finally(() => {
                 set({ loadingFaqs: false });
+            });
+    },
+
+    addFaq: (data) => {
+        set({ loading: true });
+
+        createFaq(data)
+            .then((res) => {
+                set((state) => ({
+                    faqs: [...state.faqs, res.data.faq],
+                    error: false,
+                }));
+            })
+            .catch(() => {
+                set({ error: true });
+            })
+            .finally(() => {
+                set({ loading: false });
             });
     },
 }));
