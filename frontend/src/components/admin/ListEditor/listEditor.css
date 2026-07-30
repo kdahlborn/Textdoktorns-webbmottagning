@@ -1,0 +1,42 @@
+.form__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .form__list-title {
+        font-weight: 500;
+    }
+
+    .form__list-item {
+        display: flex;
+        align-items: center;
+
+        .remove-item-btn {
+            background-color: transparent;
+            color: var(--red);
+            opacity: 0.75;
+            padding: 0.25rem 0.5rem;
+        }
+
+        .remove-item-btn:hover {
+            opacity: 1;
+        }
+    }
+
+    .add-item-btn {
+        align-self: flex-start;
+        font-size: 0.75rem;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        padding: 0.25rem 1rem 0.25rem 0.5rem;
+        background-color: transparent;
+        color: var(--primary-blue);
+        border: 1px solid var(--primary-blue);
+        opacity: 0.75;
+    }
+
+    .add-item-btn:hover {
+        opacity: 1;
+    }
+}

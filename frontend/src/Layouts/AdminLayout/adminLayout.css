@@ -1,0 +1,20 @@
+.admin-layout {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+
+    .admin-main {
+        background-color: var(--white);
+        min-height: 0;
+        overflow-y: auto;
+
+        .admin-main__header {
+            border-bottom: 1px solid var(--gray);
+
+            .admin-main__title {
+                color: var(--text-dark);
+                font-family: var(--manrope);
+            }
+        }
+    }
+}

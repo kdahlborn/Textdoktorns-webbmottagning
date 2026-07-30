@@ -1,0 +1,51 @@
+.edit-faq-page {
+    display: flex;
+    flex-direction: column;
+
+    .edit-faq-page__header {
+        padding: 1rem;
+    }
+
+    .edit-faq-page__content {
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        flex: 1;
+
+        .loader {
+            grid-column: auto / span 2;
+        }
+
+        .list-wrapper,
+        .editor-wrapper {
+            background-color: white;
+            box-shadow: 0 0 4px 2px var(--gray);
+            border-radius: 0.25rem;
+        }
+
+        .list-wrapper {
+            padding: 1rem;
+
+            .list-wrapper__header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding-bottom: 2rem;
+
+                .edit-faq-page__title {
+                    font-family: var(--manrope);
+                    font-weight: 600;
+                    color: var(--dark-blue);
+                }
+
+                .add-faq-btn {
+                    font-size: 0.75rem;
+                    font-weight: 600;
+                    padding: 0.5rem 0.75rem;
+                    background-color: var(--dark-blue);
+                }
+            }
+        }
+    }
+}

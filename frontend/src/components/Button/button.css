@@ -1,0 +1,28 @@
+.btn {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    font-family: var(--inter);
+    font-size: 1.25rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 1rem 2rem;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+/* .save-btn--saved {
+    background-color: var(--green);
+    transform: scale(0.95);
+}
+.save-btn--saved:hover {
+    background-color: var(--green);
+} */
+
+.btn:hover {
+    cursor: pointer;
+    opacity: 0.9;
+}
