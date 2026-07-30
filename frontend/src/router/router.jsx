@@ -1,5 +1,5 @@
 import { createBrowserRouter, Navigate } from 'react-router';
-import PublicLayout from '../Layouts/PublicLayout';
+import PublicLayout from '../Layouts/PublicLayout/PublicLayout';
 import HomePage from '../pages/public/HomePage/HomePage';
 import AboutPage from '../pages/public/AboutPage/AboutPage';
 import ContactPage from '../pages/public/ContactPage/ContactPage';
@@ -17,7 +17,7 @@ export const router = createBrowserRouter([
         element: <Navigate to="/sv" replace />,
     },
     {
-        path: '/:lang',
+        path: '/:language',
         element: <PublicLayout />,
         children: [
             {

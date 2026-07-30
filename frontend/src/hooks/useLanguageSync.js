@@ -5,16 +5,16 @@ import i18next from '../i18n';
 const languages = ['sv', 'en', 'de', 'es', 'fr', 'ru'];
 
 export const useLanguageSync = () => {
-    const { lang } = useParams();
+    const { language } = useParams();
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (!lang) return;
+        if (!language) return;
 
-        if (languages.includes(lang)) {
-            i18next.changeLanguage(lang);
+        if (languages.includes(language)) {
+            i18next.changeLanguage(language);
         } else {
             navigate('/sv', { replace: true });
         }
-    }, [lang, navigate]);
+    }, [language, navigate]);
 };

@@ -11,7 +11,6 @@ export const usePageStore = create((set) => ({
 
     fetchPages: () => {
         set({ loadingPage: true });
-        // const token = useAuthStore.getState().token;
 
         getPages()
             .then((res) => {

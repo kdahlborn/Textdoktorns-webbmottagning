@@ -1,4 +1,16 @@
 .dashboard {
-    background-color: var(--white);
-    display: flex;
+    .dashboard__header {
+        padding: 1rem;
+
+        .dashboard__title {
+            color: var(--text-dark);
+        }
+    }
+
+    .dashboard__content {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem 1rem;
+    }
 }

@@ -3,9 +3,17 @@
     flex-direction: column;
     gap: 2rem;
     min-width: 300px;
+    position: relative;
 
     .logotype {
         width: 200px;
+    }
+
+    .error-msg {
+        color: var(--red);
+        font-weight: 500;
+        position: absolute;
+        top: 4.25rem;
     }
 
     .auth-form__label {

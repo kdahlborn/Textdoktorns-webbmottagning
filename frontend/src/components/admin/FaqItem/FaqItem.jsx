@@ -1,9 +1,12 @@
 import './faqItem.css';
 import { X } from 'lucide-react';
 
-const FaqItem = ({ faq, setEditFaq }) => {
+const FaqItem = ({ faq, editFaq, setEditFaq }) => {
     return (
-        <li className="faqs-list__item" onClick={() => setEditFaq(faq)}>
+        <li
+            className={`faqs-list__item ${editFaq === faq && 'faqs-list__item--active'}`}
+            onClick={() => setEditFaq(faq)}
+        >
             {faq.question.sv}
         </li>
     );

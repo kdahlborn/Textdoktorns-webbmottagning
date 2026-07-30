@@ -8,6 +8,7 @@ import { capitalizeFirstLetter } from '../../../utils/strings';
 import HomeEditor from '../../../components/admin/HomeEditor/HomeEditor';
 import AboutEditor from '../../../components/admin/AboutEditor/AboutEditor';
 import ContactEditor from '../../../components/admin/ContactEditor/ContactEditor';
+import ContentLoader from '../../../components/ContentLoader/ContentLoader';
 
 const EditPagePage = () => {
     const { page, error, fetchPage } = usePageStore();
@@ -28,8 +29,8 @@ const EditPagePage = () => {
 
     return (
         <main className="edit-page-page admin-main">
-            <header className="main-header">
-                <h1 className="main-title">
+            <header className="edit-page-page__header admin-main__header">
+                <h1 className="edit-page-page__title admin-main__title">
                     Redigera innehåll: {capitalizeFirstLetter(pageName)}
                 </h1>
 
@@ -64,7 +65,7 @@ const EditPagePage = () => {
                 </nav>
             </header>
             {!isPageLoaded ? (
-                <p>Laddar...</p>
+                <ContentLoader />
             ) : Editor ? (
                 <Editor page={page} />
             ) : null}

@@ -1,12 +1,15 @@
 import { useForm } from 'react-hook-form';
 import { useEffect, useState } from 'react';
+import { useFaqStore } from '../stores/useFaqStore';
 
 export const useFaqEditor = (faq) => {
     const methods = useForm();
-    const { register, handleSubmit, reset, formState } = methods;
+    const { reset, formState } = methods;
     const { isDirty } = formState;
     const [language, setLanguage] = useState('sv');
     const [saved, setSaved] = useState(false);
+    const { addFaq, updateFaq, removeFaq, savingFaq, loadingFaq } =
+        useFaqStore();
 
     useEffect(() => {
         if (faq) {
@@ -15,15 +18,34 @@ export const useFaqEditor = (faq) => {
     }, [faq]);
 
     const onSubmit = (data) => {
-        // updatePageContent(page.page, data).then((res) => {
-        //     console.log(res);
-        //     if (res.success) {
-        //         setSaved(true);
-        //         setTimeout(() => {
-        //             setSaved(false);
-        //         }, 3000);
-        //     }
-        // });
+        if (faq.faqId) {
+            // If FAQ exists
+            updateFaq(faq.faqId, data).then((res) => {
+                console.log(res);
+
+                if (res.success) {
+                    reset(data);
+                    setSaved(true);
+
+                    setTimeout(() => {
+                        setSaved(false);
+                    }, 3000);
+                }
+            });
+        } else {
+            addFaq(data).then((res) => {
+                console.log(res);
+
+                if (res.success) {
+                    reset(data);
+                    setSaved(true);
+
+                    setTimeout(() => {
+                        setSaved(false);
+                    }, 3000);
+                }
+            });
+        }
     };
 
     return {
@@ -31,6 +53,9 @@ export const useFaqEditor = (faq) => {
         isDirty,
         language,
         setLanguage,
+        removeFaq,
+        savingFaq,
+        loadingFaq,
         saved,
         onSubmit,
     };

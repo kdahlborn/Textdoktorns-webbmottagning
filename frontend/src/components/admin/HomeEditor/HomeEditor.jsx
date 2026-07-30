@@ -22,7 +22,10 @@ const HomeEditor = ({ page }) => {
 
     return (
         <FormProvider {...methods}>
-            <form className="form" onSubmit={methods.handleSubmit(onSubmit)}>
+            <form
+                className="form edit-page-page__form"
+                onSubmit={methods.handleSubmit(onSubmit)}
+            >
                 {/* FORM HEADER */}
                 <FormHeader
                     language={language}

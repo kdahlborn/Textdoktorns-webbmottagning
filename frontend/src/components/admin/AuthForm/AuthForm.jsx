@@ -4,7 +4,7 @@ import Logo from '../../../assets/images/logotypes/textdoktorn.svg';
 import { useState } from 'react';
 import { useAuthStore } from '../../../stores/useAuthStore';
 import { useNavigate } from 'react-router';
-import axios from 'axios';
+import { Loader } from '@mantine/core';
 
 const AuthForm = () => {
     const [username, setUsername] = useState('');
@@ -23,6 +23,7 @@ const AuthForm = () => {
     return (
         <form className="auth-form" onSubmit={handleSubmit}>
             <img src={Logo} alt="Textdoktorn logotype" className="logotype" />
+            {error && <p className="error-msg">{error}</p>}
             <label className="auth-form__label">
                 Användarnamn
                 <input
@@ -43,7 +44,11 @@ const AuthForm = () => {
                     className="auth-form__input"
                 />
             </label>
-            <Button text="Logga in" type="submit" />
+            <Button
+                icon={loading ? <Loader type="dots" /> : null}
+                text={loading ? '' : 'Logga in'}
+                type={loading ? 'button' : 'submit'}
+            />
         </form>
     );
 };

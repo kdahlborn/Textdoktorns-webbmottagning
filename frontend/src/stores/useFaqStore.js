@@ -1,20 +1,21 @@
 import { create } from 'zustand';
-import { createFaq, getFaqs } from '../services/faqs.service';
+import * as faqsService from '../services/faqs.service';
 
 export const useFaqStore = create((set) => ({
     faqs: [],
     loadingFaqs: false,
     savingFaq: false,
-    error: false,
+    error: null,
 
     fetchFaqs: () => {
         set({ loadingFaqs: true });
 
-        getFaqs()
+        faqsService
+            .getFaqs()
             .then((res) => {
                 set({
                     faqs: res.data.faqs,
-                    error: false,
+                    error: null,
                 });
             })
             .catch((err) => {
@@ -26,20 +27,66 @@ export const useFaqStore = create((set) => ({
     },
 
     addFaq: (data) => {
-        set({ loading: true });
+        set({ savingFaq: true });
 
-        createFaq(data)
+        return faqsService
+            .createFaq(data)
             .then((res) => {
                 set((state) => ({
                     faqs: [...state.faqs, res.data.faq],
-                    error: false,
+                    error: null,
                 }));
+
+                return res.data;
             })
             .catch(() => {
                 set({ error: true });
             })
             .finally(() => {
-                set({ loading: false });
+                setTimeout(() => {
+                    set({ savingFaq: false });
+                }, 1500);
+            });
+    },
+
+    updateFaq: (faqId, data) => {
+        set({ savingFaq: true });
+
+        return faqsService
+            .updateFaq(faqId, data)
+            .then((res) => {
+                const updatedFaq = res.data.faq;
+
+                set((state) => ({
+                    faqs: state.faqs.map((faq) =>
+                        faq.faqId === updatedFaq.faqId ? updatedFaq : faq,
+                    ),
+                    error: null,
+                }));
+
+                return res.data;
+            })
+            .catch((err) => {
+                set({ error: err.response?.data?.message ?? 'Något gick fel' });
+            })
+            .finally(() => {
+                setTimeout(() => {
+                    set({ savingFaq: false });
+                }, 1500);
+            });
+    },
+
+    removeFaq: (faqId) => {
+        return faqsService
+            .removeFaq(faqId)
+            .then((res) => {
+                set((state) => ({
+                    faqs: state.faqs.filter((faq) => faq.faqId !== faqId),
+                    error: null,
+                }));
+            })
+            .catch((err) => {
+                set({ error: err.response?.data?.message ?? 'Något gick fel' });
             });
     },
 }));

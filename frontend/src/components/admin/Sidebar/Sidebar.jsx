@@ -30,7 +30,7 @@ const Sidebar = () => {
                     to="/admin"
                     end
                     className={({ isActive }) =>
-                        isActive ? 'nav__link active' : 'nav__link'
+                        isActive ? 'nav__link nav__link--active' : 'nav__link'
                     }
                 >
                     <House />
@@ -41,7 +41,9 @@ const Sidebar = () => {
                     <NavLink
                         to="/admin/pages"
                         className={({ isActive }) =>
-                            isActive ? 'nav__link active' : 'nav__link'
+                            isActive
+                                ? 'nav__link nav__link--active'
+                                : 'nav__link'
                         }
                     >
                         <File />
@@ -50,7 +52,9 @@ const Sidebar = () => {
                     <NavLink
                         to="/admin/faqs"
                         className={({ isActive }) =>
-                            isActive ? 'nav__link active' : 'nav__link'
+                            isActive
+                                ? 'nav__link nav__link--active'
+                                : 'nav__link'
                         }
                     >
                         <CircleQuestionMark />

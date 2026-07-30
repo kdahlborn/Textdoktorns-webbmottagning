@@ -22,7 +22,7 @@ export const useAuthStore = create(
                         return res.data;
                     })
                     .catch((err) => {
-                        set({ error: err.response.data.message });
+                        set({ error: err.response?.data?.message });
                     })
                     .finally(() => {
                         set({ loading: false });

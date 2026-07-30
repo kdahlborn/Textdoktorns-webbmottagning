@@ -8,30 +8,32 @@ import FormInput from '../FormInput/FormInput';
 import FormTextArea from '../FormTextArea/FormTextArea';
 import Button from '../../Button/Button';
 import { useFaqStore } from '../../../stores/useFaqStore';
+import { Loader } from '@mantine/core';
+import { Check, Save } from 'lucide-react';
+import SaveButton from '../SaveButton/SaveButton';
 
-const FaqEditor = ({ faq }) => {
+const FaqEditor = ({ faq, setEditFaq }) => {
     useEffect(() => {
         console.log(faq);
     }, [faq]);
 
-    const faqExists = faq.faqId;
-
-    const { methods, language, setLanguage, isDirty, onSubmit, saved } =
-        useFaqEditor(faq);
-
-    const { addFaq } = useFaqStore();
+    const {
+        methods,
+        language,
+        setLanguage,
+        isDirty,
+        onSubmit,
+        saved,
+        removeFaq,
+        savingFaq,
+        loadingFaq,
+    } = useFaqEditor(faq);
 
     return (
         <FormProvider {...methods}>
             <form
-                className="form"
-                onSubmit={methods.handleSubmit((data) => {
-                    if (faqExists) {
-                        console.log('Faq exists');
-                    } else {
-                        addFaq(data);
-                    }
-                })}
+                className="form edit-faq-page__form"
+                onSubmit={methods.handleSubmit(onSubmit)}
             >
                 <LanguageSelector
                     language={language}
@@ -55,12 +57,21 @@ const FaqEditor = ({ faq }) => {
                     <Button
                         text="Ta bort"
                         className="form__btn form__btn--delete"
+                        onClick={() => {
+                            removeFaq(faq.faqId);
+                            setEditFaq(null);
+                        }}
                     />
                     <Button
                         text="Avbryt"
                         className="form__btn form__btn--cancel"
+                        onClick={() => setEditFaq(null)}
                     />
-                    <Button text="Spara" className="form__btn" type="submit" />
+                    <SaveButton
+                        loading={savingFaq}
+                        saved={saved}
+                        isDirty={isDirty}
+                    />
                 </footer>
             </form>
         </FormProvider>

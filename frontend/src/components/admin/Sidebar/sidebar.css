@@ -39,7 +39,7 @@
             opacity: 1;
         }
 
-        .nav__link.active {
+        .nav__link--active {
             opacity: 1;
             background-color: var(--primary-blue);
             border-radius: 0.25rem;
