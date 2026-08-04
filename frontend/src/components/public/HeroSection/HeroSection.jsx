@@ -1,6 +1,9 @@
-import './homeHero.css';
+import { useParams } from 'react-router';
+import './heroSection.css';
 
-const HomeHero = ({ content, language }) => {
+const HeroSection = ({ content }) => {
+    const { language } = useParams();
+
     return (
         <section className="home-hero">
             <div className="home-hero__content content-wrapper">
@@ -14,4 +17,4 @@ const HomeHero = ({ content, language }) => {
     );
 };
 
-export default HomeHero;
+export default HeroSection;

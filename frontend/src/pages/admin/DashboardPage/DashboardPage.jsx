@@ -7,13 +7,11 @@ import DashboardCard from '../../../components/admin/DashboardCard/DashboardCard
 import { Link } from 'react-router';
 
 const DashboardPage = () => {
-    const { pages, fetchPages, loadingPage } = usePageStore();
-    const { faqs, fetchFaqs, loadingFaqs } = useFaqStore();
+    const pages = usePageStore((state) => state.pages);
+    const loadingPages = usePageStore((state) => state.loadingPages);
 
-    useEffect(() => {
-        if (pages.length === 0) fetchPages();
-        fetchFaqs();
-    }, []);
+    const faqs = useFaqStore((state) => state.faqs);
+    const loadingFaqs = useFaqStore((state) => state.loadingFaqs);
 
     return (
         <main className="dashboard admin-main">
@@ -26,7 +24,7 @@ const DashboardPage = () => {
                     <DashboardCard
                         label="Sidor"
                         count={pages.length}
-                        loading={loadingPage}
+                        loading={loadingPages}
                     />
                 </Link>
                 <Link to="/admin/faqs">

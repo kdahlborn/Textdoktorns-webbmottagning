@@ -1,16 +1,15 @@
 import { create } from 'zustand';
 import { useAuthStore } from './useAuthStore';
-import { getPage, getPages, updatePage } from '../services/pages.service';
+import { getPages, updatePage } from '../services/pages.service';
 
 export const usePageStore = create((set) => ({
     pages: [],
-    page: null,
-    loadingPage: false,
+    loadingPages: false,
     savingPage: false,
     error: null,
 
     fetchPages: () => {
-        set({ loadingPage: true });
+        set({ loadingPages: true });
 
         getPages()
             .then((res) => {
@@ -20,31 +19,10 @@ export const usePageStore = create((set) => ({
                 });
             })
             .catch(() => {
-                set({ error: true });
+                set({ error: err.response?.data?.message ?? 'Något gick fel' });
             })
             .finally(() => {
-                set({ loadingPage: false });
-            });
-    },
-
-    fetchPage: (pageName) => {
-        set({
-            loadingPage: true,
-            page: null,
-        });
-
-        getPage(pageName)
-            .then((res) => {
-                set({
-                    page: res.data.page,
-                    error: null,
-                });
-            })
-            .catch(() => {
-                set({ error: true });
-            })
-            .finally(() => {
-                set({ loadingPage: false });
+                set({ loadingPages: false });
             });
     },
 
@@ -59,7 +37,6 @@ export const usePageStore = create((set) => ({
                     pages: state.pages.map((p) =>
                         p.page === updatedPage.page ? updatedPage : p,
                     ),
-                    page: updatedPage,
                     error: null,
                 }));
 

@@ -11,13 +11,12 @@ import ContactEditor from '../../../components/admin/ContactEditor/ContactEditor
 import ContentLoader from '../../../components/ContentLoader/ContentLoader';
 
 const EditPagePage = () => {
-    const { page, error, fetchPage } = usePageStore();
     const { pageName } = useParams();
-    const isPageLoaded = page?.page === pageName;
-
-    useEffect(() => {
-        fetchPage(pageName);
-    }, [pageName]);
+    const error = usePageStore((state) => state.error);
+    const loading = usePageStore((state) => state.loadingPages);
+    const page = usePageStore((state) =>
+        state.pages.find((p) => p.page === pageName),
+    );
 
     const editors = {
         home: HomeEditor,
@@ -26,6 +25,18 @@ const EditPagePage = () => {
     };
 
     const Editor = editors[pageName];
+
+    if (loading) {
+        return <ContentLoader />;
+    }
+
+    if (error) {
+        return <p>Något gick fel.</p>;
+    }
+
+    if (!page) {
+        return <p>Sidan hittades inte.</p>;
+    }
 
     return (
         <main className="edit-page-page admin-main">
@@ -64,11 +75,8 @@ const EditPagePage = () => {
                     </NavLink>
                 </nav>
             </header>
-            {!isPageLoaded ? (
-                <ContentLoader />
-            ) : Editor ? (
-                <Editor page={page} />
-            ) : null}
+
+            <Editor page={page} />
         </main>
     );
 };

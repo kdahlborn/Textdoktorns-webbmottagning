@@ -6,7 +6,9 @@ import { usePageStore } from '../../stores/usePageStore';
 import { useEffect } from 'react';
 
 const PublicLayout = () => {
-    const { pages, fetchPages } = usePageStore();
+    const pages = usePageStore((state) => state.pages);
+    const fetchPages = usePageStore((state) => state.fetchPages);
+
     useLanguageSync();
 
     useEffect(() => {
