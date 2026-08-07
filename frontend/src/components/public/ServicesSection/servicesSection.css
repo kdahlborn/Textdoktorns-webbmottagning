@@ -1,3 +1,15 @@
-.services {
-    padding: 60px 1rem;
+.services-section {
+    padding-block: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+
+    .service-cards {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        align-items: stretch;
+        margin-top: 2.5rem;
+    }
 }
