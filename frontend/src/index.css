@@ -25,9 +25,11 @@
     /* Box-shadow */
     --blue-shade: 0 4px 10px 0 #1048c240;
     --inset-red: inset 1px 2px 4px 0 rgba(224, 48, 98, 0.5);
+    --inset-blue: inset 1px 2px 4px 0 rgba(15, 52, 204, 0.5);
     --inset-light-blue: inset 1px 2px 4px 0 rgba(62, 156, 233, 0.5);
     --inset-purple: inset 1px 2px 4px 0 rgba(97, 85, 245, 0.5);
     --inset-yellow: inset 1px 2px 4px 0 rgba(255, 204, 0, 0.5);
+    --inset-green: inset 1px 2px 4px 0 rgba(54, 181, 86, 0.5);
 }
 
 * {

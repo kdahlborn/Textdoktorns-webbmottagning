@@ -7,6 +7,7 @@ import ContentLoader from '../../../components/ContentLoader/ContentLoader';
 import ServicesSection from '../../../components/public/ServicesSection/ServicesSection';
 import TextTypesSection from '../../../components/public/TextTypesSection/TextTypesSection';
 import MedsSection from '../../../components/public/MedsSection/MedsSection';
+import ClientsSection from '../../../components/public/ClientsSection/ClientsSection';
 
 const HomePage = () => {
     const { language } = useParams();
@@ -42,6 +43,8 @@ const HomePage = () => {
                 translation={content.translation}
                 prescriptions={content.prescriptions}
             />
+            {/* CLIENTS-SECTION */}
+            <ClientsSection content={content.clients} />
         </div>
     );
 };

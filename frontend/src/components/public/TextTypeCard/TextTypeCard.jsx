@@ -1,3 +1,4 @@
+import CircleIcon from '../CircleIcon/CircleIcon';
 import './textTypeCard.css';
 import {
     Newspaper,
@@ -9,30 +10,26 @@ import {
 const TextTypeCard = ({ title, items, id, language }) => {
     const icons = {
         communication: {
-            icon: <Newspaper size={40} color="var(--red)" />,
+            icon: <Newspaper size={40} />,
             color: 'red',
         },
         web: {
-            icon: <Globe size={40} color="var(--light-blue)" />,
+            icon: <Globe size={40} />,
             color: 'light-blue',
         },
         career: {
-            icon: <BriefcaseBusiness size={40} color="var(--purple)" />,
+            icon: <BriefcaseBusiness size={40} />,
             color: 'purple',
         },
         products: {
-            icon: <ClipboardList size={40} color="var(--yellow)" />,
+            icon: <ClipboardList size={40} />,
             color: 'yellow',
         },
     };
     // console.log(id);
     return (
         <article className="text-type-card">
-            <div
-                className={`text-type-card__icon text-type-card__icon--${icons[id].color}`}
-            >
-                {icons[id].icon}
-            </div>
+            <CircleIcon icon={icons[id].icon} color={icons[id].color} />
 
             <h4 className="text-type-card__title">{title}</h4>
 

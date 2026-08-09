@@ -1,0 +1,24 @@
+.clients-section {
+    padding-block: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+
+    .clients {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .clients-section__desc {
+        text-align: center;
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        letter-spacing: 1px;
+        color: var(--text-dark);
+        font-family: var(--inter);
+    }
+}
