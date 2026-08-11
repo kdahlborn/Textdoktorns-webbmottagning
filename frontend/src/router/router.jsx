@@ -9,6 +9,7 @@ import AdminLayout from '../Layouts/AdminLayout/AdminLayout';
 import DashboardPage from '../pages/admin/DashboardPage/DashboardPage';
 import EditPagePage from '../pages/admin/EditPagePage/EditPagePage';
 import EditFaqPage from '../pages/admin/EditFaqPage/EditFaqPage';
+import EditLanguageLinksPage from '../pages/admin/EditLanguageLinksPage/EditLanguageLinksPage';
 
 export const router = createBrowserRouter([
     // Public
@@ -68,6 +69,10 @@ export const router = createBrowserRouter([
             {
                 path: 'faqs',
                 element: <EditFaqPage />,
+            },
+            {
+                path: 'language-links',
+                element: <EditLanguageLinksPage />,
             },
         ],
     },

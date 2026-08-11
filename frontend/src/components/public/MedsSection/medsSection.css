@@ -3,8 +3,8 @@
         linear-gradient(
             to right,
             var(--white) 27%,
-            transparent 48%,
-            var(--white) 69%
+            transparent 50%,
+            var(--white) 75%
         ),
         linear-gradient(
             to bottom,
@@ -13,7 +13,7 @@
             transparent 90%,
             var(--white) 100%
         ),
-        url('../../../assets/images/textdoktorn-pills.png') -10% center /
+        url('../../../assets/images/textdoktorn-pills.png') -4rem center /
             contain no-repeat;
     padding-block: 2.5rem;
     display: flex;
@@ -62,7 +62,7 @@
                 color: var(--text-dark);
 
                 .circle-icon {
-                    width: 2rem;
+                    width: 2.5rem;
                     font-size: 2rem;
                     z-index: 1;
                 }
@@ -74,7 +74,7 @@
             position: absolute;
             height: 100%;
             top: 0;
-            left: 1rem;
+            left: 1.25rem;
             border-left: 1px solid var(--light-blue);
             z-index: 0;
             opacity: 0.5;

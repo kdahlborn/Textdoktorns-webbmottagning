@@ -7,12 +7,30 @@ import {
     FileQuestionMark,
     House,
     LogOut,
+    Globe,
 } from 'lucide-react';
 import { useAuthStore } from '../../../stores/useAuthStore';
 import Button from '../../Button/Button';
 
 const Sidebar = () => {
     const logout = useAuthStore((state) => state.logout);
+    const links = [
+        {
+            path: '/admin/pages',
+            label: 'Sidor',
+            icon: <File />,
+        },
+        {
+            path: '/admin/faqs',
+            label: 'FAQ',
+            icon: <FileQuestionMark />,
+        },
+        {
+            path: '/admin/language-links',
+            label: 'Språklänkar',
+            icon: <Globe />,
+        },
+    ];
 
     return (
         <aside className="sidebar">
@@ -38,28 +56,22 @@ const Sidebar = () => {
                 </NavLink>
                 <section className="nav__content">
                     <h3 className="nav__title">INNEHÅLL</h3>
-                    <NavLink
-                        to="/admin/pages"
-                        className={({ isActive }) =>
-                            isActive
-                                ? 'nav__link nav__link--active'
-                                : 'nav__link'
-                        }
-                    >
-                        <File />
-                        Sidor
-                    </NavLink>
-                    <NavLink
-                        to="/admin/faqs"
-                        className={({ isActive }) =>
-                            isActive
-                                ? 'nav__link nav__link--active'
-                                : 'nav__link'
-                        }
-                    >
-                        <CircleQuestionMark />
-                        FAQ
-                    </NavLink>
+                    {links.map((link) => {
+                        return (
+                            <NavLink
+                                key={link.label}
+                                to={link.path}
+                                className={({ isActive }) =>
+                                    isActive
+                                        ? 'nav__link nav__link--active'
+                                        : 'nav__link'
+                                }
+                            >
+                                {link.icon}
+                                {link.label}
+                            </NavLink>
+                        );
+                    })}
                 </section>
             </nav>
 

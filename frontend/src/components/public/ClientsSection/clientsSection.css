@@ -11,6 +11,18 @@
         justify-content: space-between;
         align-items: center;
         gap: 1rem;
+
+        /* .clients__link {
+            transition: transform 0.3 ease;
+        } */
+
+        .clients__img {
+            transition: transform 0.3s ease;
+        }
+
+        .clients__img:hover {
+            transform: scale(1.2);
+        }
     }
 
     .clients-section__desc {
@@ -20,5 +32,7 @@
         letter-spacing: 1px;
         color: var(--text-dark);
         font-family: var(--inter);
+        max-width: 840px;
+        align-self: center;
     }
 }

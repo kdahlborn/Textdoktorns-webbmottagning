@@ -5,6 +5,7 @@ import mongoose from 'mongoose';
 import authRouter from './routes/auth.route.js';
 import pagesRouter from './routes/pages.route.js';
 import faqsRouter from './routes/faqs.route.js';
+import languageLinksRouter from './routes/languageLinks.route.js';
 import { logger } from './middlewares/logger.middleware.js';
 import { errorHandler } from './middlewares/errorHandler.middleware.js';
 
@@ -24,6 +25,7 @@ app.use(logger);
 app.use('/api/auth', authRouter);
 app.use('/api/pages', pagesRouter);
 app.use('/api/faqs', faqsRouter);
+app.use('/api/language-links', languageLinksRouter);
 
 // Server
 database.on('error', (error) => console.log(error));
