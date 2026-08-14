@@ -8,6 +8,8 @@ import ServiceCardsEditor from '../ServiceCardsEditor/ServiceCardsEditor';
 import TextCategoriesEditor from '../TextCategoriesEditor/TextCategoriesEditor';
 import FormHeader from '../FormHeader/FormHeader';
 import { usePageEditor } from '../../../hooks/usePageEditor';
+import LanguageSelector from '../LanguageSelector/LanguageSelector';
+import SaveButton from '../SaveButton/SaveButton';
 
 const HomeEditor = ({ page }) => {
     const {
@@ -27,13 +29,18 @@ const HomeEditor = ({ page }) => {
                 onSubmit={methods.handleSubmit(onSubmit)}
             >
                 {/* FORM HEADER */}
-                <FormHeader
-                    language={language}
-                    setLanguage={setLanguage}
-                    isDirty={isDirty}
-                    savingPage={savingPage}
-                    saved={saved}
-                />
+                <FormHeader>
+                    <LanguageSelector
+                        language={language}
+                        setLanguage={setLanguage}
+                    />
+
+                    <SaveButton
+                        loading={savingPage}
+                        saved={saved}
+                        isDirty={isDirty}
+                    />
+                </FormHeader>
                 {/* HERO-SECTION */}
                 <FormSection title="Hero-sektion">
                     <ListEditor

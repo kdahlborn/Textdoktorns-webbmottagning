@@ -56,7 +56,10 @@
             "title": "Kontakt | Textdoktorn",
             "description": "Kontakta Textdoktorn för frågor, offert eller hjälp med språkgranskning, korrekturläsning, textbearbetning eller översättning. Du är välkommen att höra av dig."
         },
-
+        "info": {
+            "phone": "Telefon",
+            "address": "Adress"
+        },
         "form": {
             "name": "Namn",
             "email": "E-post",

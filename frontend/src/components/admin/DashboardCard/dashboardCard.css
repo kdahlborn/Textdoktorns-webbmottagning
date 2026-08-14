@@ -22,10 +22,17 @@
 
     .dashboard-card__icon-container--blue {
         background-color: var(--lighter-blue);
+        color: var(--primary-blue);
     }
 
     .dashboard-card__icon-container--green {
         background-color: var(--light-green);
+        color: var(--green);
+    }
+
+    .dashboard-card__icon-container--purple {
+        background-color: var(--light-purple);
+        color: var(--purple);
     }
 
     .dashboard-card__info {

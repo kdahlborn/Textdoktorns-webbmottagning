@@ -4,8 +4,6 @@ import * as pageController from '../controllers/pages.controller.js';
 
 const router = Router();
 
-router.use();
-
 // GET pages
 router.get('/', pageController.getPages);
 

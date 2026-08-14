@@ -56,7 +56,10 @@
             "title": "Contact | Textdoktorn",
             "description": "Contactez Textdoktorn pour toute question, demande de devis ou besoin d'aide en relecture, correction, révision ou traduction de textes. Je serai ravi de vous accompagner."
         },
-
+        "info": {
+            "phone": "Téléphone",
+            "address": "Adresse"
+        },
         "form": {
             "name": "Nom",
             "email": "E-mail",

@@ -1,0 +1,12 @@
+.text-types-section {
+    padding-block: 60px 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+
+    .text-type-cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+    }
+}

@@ -43,6 +43,7 @@ const ListEditor = ({
                                 onClick={() => remove(index)}
                                 className="remove-item-btn"
                                 type="submit"
+                                title="Ta bort"
                             />
                         )}
                     </li>

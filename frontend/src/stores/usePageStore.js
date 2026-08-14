@@ -18,7 +18,7 @@ export const usePageStore = create((set) => ({
                     error: null,
                 });
             })
-            .catch(() => {
+            .catch((err) => {
                 set({ error: err.response?.data?.message ?? 'Något gick fel' });
             })
             .finally(() => {

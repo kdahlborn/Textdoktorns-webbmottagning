@@ -1,0 +1,9 @@
+.contact-info {
+    grid-column: 2 / span 1;
+    align-items: flex-end;
+    align-self: flex-end;
+
+    .contact-info__item {
+        gap: 1rem;
+    }
+}

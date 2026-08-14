@@ -1,18 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap'); */
 
 :root {
     /* Colors */
     --dark-blue: #002f94;
     --primary-blue: #0f34cc;
     --light-blue: #3e9ce9;
-    --lighter-blue: #e0edf8;
+    /* --lighter-blue: #e0edf8; */
+    --lighter-blue: rgba(62, 156, 233, 0.2);
     --red: #e03062;
     --green: #36b556;
     --light-green: #c2efcd;
     --purple: #6155f5;
+    --light-purple: #cac6f4;
     --yellow: #ffcc00;
     --white: #fefefe;
     --gray: #e0e0e0;
+    --light-gray: #f2f2f8;
     --bg-dark: #060a1b;
     --text-dark: #36393d;
     --text-darker: #282a2d;
@@ -20,6 +23,19 @@
     --manrope: 'Manrope', sans-serif;
     --inter: 'Inter', sans-serif;
     --ibm: 'IBM Plex Serif', serif;
+    --playfair-display: 'Playfair Display', serif;
+    /* Box-shadow */
+    --blue-shade: 0 4px 10px 0 #1048c240;
+    --inset-red: inset 1px 2px 4px 0 rgba(224, 48, 98, 0.5);
+    --inset-blue: inset 1px 2px 4px 0 rgba(15, 52, 204, 0.5);
+    --inset-light-blue: inset 1px 2px 4px 0 rgba(62, 156, 233, 0.5);
+    --inset-purple: inset 1px 2px 4px 0 rgba(97, 85, 245, 0.5);
+    --inset-yellow: inset 1px 2px 4px 0 rgba(255, 204, 0, 0.5);
+    --inset-green: inset 1px 2px 4px 0 rgba(54, 181, 86, 0.5);
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 * {

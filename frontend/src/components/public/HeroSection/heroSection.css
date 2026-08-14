@@ -4,17 +4,20 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 12rem 0;
+    padding: 8rem 0;
 
     .home-hero__content {
         position: relative;
         z-index: 1;
+
         .home-hero__title {
             display: grid;
-            gap: 2.5rem;
+            gap: 4rem;
             color: var(--white);
-            font-family: var(--manrope);
-            font-weight: 500;
+            font-family: var(--playfair-display);
+            font-size: 3rem;
+            font-weight: 400;
+            letter-spacing: 2px;
         }
     }
 }
@@ -24,9 +27,9 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(
-        270deg,
-        rgb(59 70 191 / 65%) 0%,
-        rgb(4 10 70 / 90%) 45%
+        300deg,
+        rgba(59, 70, 191, 0.6) 0%,
+        rgb(4, 2, 84) 50%
     );
-    opacity: 0.7;
+    opacity: 0.8;
 }

@@ -1,3 +1,4 @@
+import './serviceCardEditor.css';
 import FormInput from '../FormInput/FormInput';
 import FormTextArea from '../FormTextArea/FormTextArea';
 import ListEditor from '../ListEditor/ListEditor';
@@ -5,10 +6,7 @@ import ListEditor from '../ListEditor/ListEditor';
 const ServiceCardsEditor = ({ cards, language }) => {
     return cards?.map((card, index) => {
         return (
-            <section
-                className="form__page-subsection"
-                key={`service-card-${index}`}
-            >
+            <section className="form__subsection" key={`service-card-${index}`}>
                 <h3 className="form__subtitle">{`Tjänst ${index + 1}`}</h3>
 
                 <FormInput

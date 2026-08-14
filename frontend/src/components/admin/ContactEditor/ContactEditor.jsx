@@ -4,6 +4,8 @@ import './contactEditor.css';
 import FormSection from '../FormSection/FormSection';
 import FormInput from '../FormInput/FormInput';
 import FormHeader from '../FormHeader/FormHeader';
+import SaveButton from '../SaveButton/SaveButton';
+import LanguageSelector from '../LanguageSelector/LanguageSelector';
 
 const ContactEditor = ({ page }) => {
     const {
@@ -23,13 +25,18 @@ const ContactEditor = ({ page }) => {
                 onSubmit={methods.handleSubmit(onSubmit)}
             >
                 {/* FORM HEADER */}
-                <FormHeader
-                    language={language}
-                    setLanguage={setLanguage}
-                    isDirty={isDirty}
-                    savingPage={savingPage}
-                    saved={saved}
-                />
+                <FormHeader>
+                    <LanguageSelector
+                        language={language}
+                        setLanguage={setLanguage}
+                    />
+
+                    <SaveButton
+                        loading={savingPage}
+                        saved={saved}
+                        isDirty={isDirty}
+                    />
+                </FormHeader>
                 {/* CONTACT INFO */}
                 <FormSection title="Kontaktinformation">
                     <FormInput

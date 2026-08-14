@@ -51,11 +51,12 @@ const EditFaqPage = () => {
                             <header className="list-wrapper__header">
                                 <h2 className="edit-faq-page__title">Frågor</h2>
                                 <Button
-                                    icon={<Plus size={16} strokeWidth={3} />}
-                                    text="Lägg till fråga"
                                     className="add-faq-btn"
                                     onClick={() => setEditFaq(newFaq)}
-                                />
+                                >
+                                    <Plus size={16} strokeWidth={3} />
+                                    Lägg till fråga
+                                </Button>
                             </header>
                             <FaqList
                                 faqs={faqs}

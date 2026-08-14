@@ -5,6 +5,10 @@ import { useParams } from 'react-router';
 import HeroSection from '../../../components/public/HeroSection/HeroSection';
 import ContentLoader from '../../../components/ContentLoader/ContentLoader';
 import ServicesSection from '../../../components/public/ServicesSection/ServicesSection';
+import TextTypesSection from '../../../components/public/TextTypesSection/TextTypesSection';
+import MedsSection from '../../../components/public/MedsSection/MedsSection';
+import ClientsSection from '../../../components/public/ClientsSection/ClientsSection';
+import FooterSection from '../../../components/public/FooterSection/FooterSection';
 
 const HomePage = () => {
     const { language } = useParams();
@@ -15,9 +19,9 @@ const HomePage = () => {
     const loading = usePageStore((state) => state.loadingPages);
     const content = page?.content;
 
-    useEffect(() => {
-        console.log(page);
-    }, [page]);
+    // useEffect(() => {
+    //     console.log(page);
+    // }, [page]);
 
     if (loading) {
         return <ContentLoader />;
@@ -33,6 +37,17 @@ const HomePage = () => {
             <HeroSection content={content.hero} />
             {/* SERVICES-SECTION */}
             <ServicesSection content={content.services} />
+            {/* TEXT-TYPES-SECTION */}
+            <TextTypesSection content={content.textTypes} />
+            {/* MEDS-SECTION */}
+            <MedsSection
+                translation={content.translation}
+                prescriptions={content.prescriptions}
+            />
+            {/* CLIENTS-SECTION */}
+            <ClientsSection content={content.clients} />
+            {/* FOOTER-SECTION */}
+            <FooterSection />
         </div>
     );
 };
