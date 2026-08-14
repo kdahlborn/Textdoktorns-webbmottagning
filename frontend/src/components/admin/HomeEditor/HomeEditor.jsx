@@ -29,13 +29,6 @@ const HomeEditor = ({ page }) => {
                 onSubmit={methods.handleSubmit(onSubmit)}
             >
                 {/* FORM HEADER */}
-                {/* <FormHeader
-                    language={language}
-                    setLanguage={setLanguage}
-                    isDirty={isDirty}
-                    savingPage={savingPage}
-                    saved={saved}
-                /> */}
                 <FormHeader>
                     <LanguageSelector
                         language={language}

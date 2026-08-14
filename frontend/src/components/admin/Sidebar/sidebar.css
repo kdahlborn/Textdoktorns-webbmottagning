@@ -61,15 +61,20 @@
 
     .sidebar__footer {
         margin-top: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
         border-top: 1px solid rgba(255, 255, 255, 0.315);
+        padding-top: 1rem;
 
-        .logout-btn {
+        .sidebar__btn {
             background-color: transparent;
-            padding: 1.5rem 0;
+            padding: 0.5rem 0;
             opacity: 0.8;
         }
 
-        .logout-btn:hover {
+        .sidebar__btn:hover {
             opacity: 1;
         }
     }

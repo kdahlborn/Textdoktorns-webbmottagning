@@ -1,0 +1,21 @@
+.language-links {
+    grid-row: auto / span 2;
+    justify-self: start;
+
+    .language-links__item {
+        position: relative;
+        padding-left: 1.5rem;
+    }
+
+    .language-links__item::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0.4em;
+        width: 1rem;
+        height: 1rem;
+        background-image: url('../../../assets/images/icons/list-icon.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+}

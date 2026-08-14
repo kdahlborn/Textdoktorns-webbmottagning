@@ -1,6 +1,6 @@
 import './sidebar.css';
 import Logo from '../../../assets/images/logotypes/logotype-white.svg';
-import { NavLink } from 'react-router';
+import { NavLink, Link } from 'react-router';
 import {
     CircleQuestionMark,
     File,
@@ -8,6 +8,7 @@ import {
     House,
     LogOut,
     Globe,
+    Monitor,
 } from 'lucide-react';
 import { useAuthStore } from '../../../stores/useAuthStore';
 import Button from '../../Button/Button';
@@ -76,10 +77,14 @@ const Sidebar = () => {
             </nav>
 
             <footer className="sidebar__footer">
+                <Link className="btn sidebar__btn" to="/">
+                    <Monitor />
+                    Till hemsidan
+                </Link>
                 <Button
                     text="Logga ut"
                     icon={<LogOut />}
-                    className="logout-btn"
+                    className="sidebar__btn"
                     onClick={logout}
                 />
             </footer>

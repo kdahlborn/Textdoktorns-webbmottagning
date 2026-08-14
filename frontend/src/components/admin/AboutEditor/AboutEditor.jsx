@@ -6,6 +6,8 @@ import FormSection from '../FormSection/FormSection';
 import FormInput from '../FormInput/FormInput';
 import FormTextArea from '../FormTextArea/FormTextArea';
 import CriteriaItemsEditor from '../CriteriaItemsEditor/CriteriaItemsEditor';
+import LanguageSelector from '../LanguageSelector/LanguageSelector';
+import SaveButton from '../SaveButton/SaveButton';
 
 const AboutEditor = ({ page }) => {
     const {
@@ -25,13 +27,18 @@ const AboutEditor = ({ page }) => {
                 onSubmit={methods.handleSubmit(onSubmit)}
             >
                 {/* FORM HEADER */}
-                <FormHeader
-                    language={language}
-                    setLanguage={setLanguage}
-                    isDirty={isDirty}
-                    savingPage={savingPage}
-                    saved={saved}
-                />
+                <FormHeader>
+                    <LanguageSelector
+                        language={language}
+                        setLanguage={setLanguage}
+                    />
+
+                    <SaveButton
+                        loading={savingPage}
+                        saved={saved}
+                        isDirty={isDirty}
+                    />
+                </FormHeader>
                 {/* HERO */}
                 <FormSection title="Hero-sektion">
                     <FormInput

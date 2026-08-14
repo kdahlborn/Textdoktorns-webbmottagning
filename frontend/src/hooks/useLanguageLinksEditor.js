@@ -3,8 +3,12 @@ import { useLanguageLinksStore } from '../stores/useLanguageLinksStore';
 import { useEffect, useState } from 'react';
 
 export const useLanguageLinksEditor = (languageLinks) => {
-    const methods = useForm();
-    const { reset, formState } = methods;
+    const methods = useForm({
+        defaultValues: {
+            languageLinks,
+        },
+    });
+    const { reset, formState, control } = methods;
     const { isDirty } = formState;
 
     const { saving, updateLanguageLinks } = useLanguageLinksStore();
@@ -31,6 +35,7 @@ export const useLanguageLinksEditor = (languageLinks) => {
 
     return {
         methods,
+        control,
         isDirty,
         saving,
         saved,

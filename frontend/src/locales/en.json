@@ -56,6 +56,10 @@
             "title": "Contact | Textdoktorn",
             "description": "Get in touch with Textdoktorn for questions, quotations, or assistance with proofreading, editing, text revision, or translation. I'd be happy to help."
         },
+        "info": {
+            "phone": "Phone",
+            "address": "Address"
+        },
 
         "form": {
             "name": "Name",

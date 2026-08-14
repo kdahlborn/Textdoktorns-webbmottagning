@@ -8,6 +8,7 @@ import ServicesSection from '../../../components/public/ServicesSection/Services
 import TextTypesSection from '../../../components/public/TextTypesSection/TextTypesSection';
 import MedsSection from '../../../components/public/MedsSection/MedsSection';
 import ClientsSection from '../../../components/public/ClientsSection/ClientsSection';
+import FooterSection from '../../../components/public/FooterSection/FooterSection';
 
 const HomePage = () => {
     const { language } = useParams();
@@ -45,6 +46,8 @@ const HomePage = () => {
             />
             {/* CLIENTS-SECTION */}
             <ClientsSection content={content.clients} />
+            {/* FOOTER-SECTION */}
+            <FooterSection />
         </div>
     );
 };

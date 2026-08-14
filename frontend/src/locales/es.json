@@ -56,7 +56,10 @@
             "title": "Contacto | Textdoktorn",
             "description": "Póngase en contacto con Textdoktorn para consultas, presupuestos o ayuda con la corrección, revisión, edición o traducción de textos. Estaré encantado de ayudarle."
         },
-
+        "info": {
+            "phone": "Teléfono",
+            "address": "Dirección"
+        },
         "form": {
             "name": "Nombre",
             "email": "Correo electrónico",

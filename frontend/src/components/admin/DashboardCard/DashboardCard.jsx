@@ -1,8 +1,8 @@
 import './dashboardCard.css';
-import { File, CircleQuestionMark } from 'lucide-react';
+
 import ContentLoader from '../../ContentLoader/ContentLoader';
 
-const DashboardCard = ({ label, count, loading }) => {
+const DashboardCard = ({ title, count, icon, color, desc, loading }) => {
     return (
         <article className="dashboard-card">
             {loading ? (
@@ -10,30 +10,15 @@ const DashboardCard = ({ label, count, loading }) => {
             ) : (
                 <>
                     <section
-                        className={`dashboard-card__icon-container ${
-                            label === 'Sidor'
-                                ? 'dashboard-card__icon-container--blue'
-                                : 'dashboard-card__icon-container--green'
-                        }`}
+                        className={`dashboard-card__icon-container dashboard-card__icon-container--${color}`}
                     >
-                        {label === 'Sidor' ? (
-                            <File size={40} color="var(--primary-blue)" />
-                        ) : (
-                            <CircleQuestionMark
-                                size={40}
-                                color="var(--green)"
-                            />
-                        )}
+                        {icon}
                     </section>
 
                     <section className="dashboard-card__info">
-                        <h2 className="dashboard-card__title">{label}</h2>
+                        <h2 className="dashboard-card__title">{title}</h2>
                         <p className="dashboard-card__count">{count}</p>
-                        <p className="dashboard-card__desc">
-                            {label === 'Sidor'
-                                ? 'Hanterar innehåll på webbplatsens sidor'
-                                : 'Hanterar vanliga frågor'}
-                        </p>
+                        <p className="dashboard-card__desc">{desc}</p>
                     </section>
                 </>
             )}

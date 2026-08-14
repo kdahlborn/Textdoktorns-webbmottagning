@@ -1,5 +1,5 @@
 import './header.css';
-import Logo from '../../../assets/images/logotypes/textdoktorn.svg';
+import logotype from '../../../assets/images/logotypes/textdoktorn.svg';
 import { Link, useParams } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import { Phone } from 'lucide-react';
@@ -17,9 +17,9 @@ const Header = () => {
             <div className="header__content content-wrapper">
                 <Link to={`/${language}`}>
                     <img
-                        src={Logo}
+                        src={logotype}
                         className="header__logotype"
-                        alt="Textdoktorn logotype"
+                        alt="textdoktorn logotype"
                     />
                 </Link>
                 <HeaderNav language={language} setIsOpen={setIsOpen} />

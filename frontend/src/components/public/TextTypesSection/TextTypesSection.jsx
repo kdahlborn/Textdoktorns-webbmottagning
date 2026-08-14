@@ -35,9 +35,9 @@ const TextTypesSection = ({ content }) => {
                 path={`/${language}/about`}
                 btnText={t('global.buttons.readMore')}
             >
-                <h5 className="section-cta__title">
+                <h4 className="section-cta__title">
                     {t('home.cta.textTypes.heading')}
-                </h5>
+                </h4>
             </SectionCta>
         </section>
     );

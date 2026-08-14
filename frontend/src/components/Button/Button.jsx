@@ -4,12 +4,18 @@ const Button = ({
     children,
     icon = null,
     text,
-    className,
+    className = '',
     onClick,
     type = 'button',
+    title,
 }) => {
     return (
-        <button className={`btn ${className}`} onClick={onClick} type={type}>
+        <button
+            className={`btn ${className}`}
+            onClick={onClick}
+            type={type}
+            title={title}
+        >
             {children}
             {icon}
             {text}

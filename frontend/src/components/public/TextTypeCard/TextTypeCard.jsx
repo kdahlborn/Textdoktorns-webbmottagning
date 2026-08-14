@@ -31,7 +31,7 @@ const TextTypeCard = ({ title, items, id, language }) => {
         <article className="text-type-card">
             <CircleIcon icon={icons[id].icon} color={icons[id].color} />
 
-            <h4 className="text-type-card__title">{title}</h4>
+            <h3 className="text-type-card__title">{title}</h3>
 
             <ul className="text-type-card__list">
                 {items.map((item, index) => {
