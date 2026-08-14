@@ -19,10 +19,6 @@ const HomePage = () => {
     const loading = usePageStore((state) => state.loadingPages);
     const content = page?.content;
 
-    // useEffect(() => {
-    //     console.log(page);
-    // }, [page]);
-
     if (loading) {
         return <ContentLoader />;
     }
