@@ -9,6 +9,8 @@
         font-size: 1.25rem;
         font-weight: 800;
         position: relative;
+        text-transform: uppercase;
+        letter-spacing: 1px;
     }
 
     .section-title::after {

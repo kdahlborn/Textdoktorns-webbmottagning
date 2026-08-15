@@ -1,0 +1,96 @@
+.about-hero {
+    position: relative;
+    background: linear-gradient(
+        to bottom,
+        rgba(254, 254, 254, 0.5) 0%,
+        rgba(62, 156, 233, 0.2) 100%
+    );
+    color: var(--text-dark);
+    padding-block: 5rem 0;
+    border-bottom: 1px solid rgba(15, 52, 204, 0.1);
+    overflow: hidden;
+
+    .about-hero__content {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.25rem;
+        position: relative;
+
+        .section-heading {
+            grid-column: auto / span 2;
+        }
+
+        .about {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            font-family: var(--inter);
+            max-width: 600px;
+            padding-bottom: 5rem;
+
+            .about__title {
+                font-size: 2.5rem;
+                font-weight: 450;
+                line-height: 3rem;
+
+                .highlighted {
+                    display: block;
+                    color: var(--primary-blue);
+                    font-weight: 500;
+                }
+            }
+
+            .about__intro {
+                font-size: 1.25rem;
+                font-weight: 500;
+                line-height: 30px;
+                letter-spacing: 1px;
+
+                .link-arrow {
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                }
+
+                .about__link {
+                    transition: all 0.3s ease;
+                    padding-left: 0.5rem;
+                    color: var(--primary-blue);
+                }
+
+                .about__link:hover {
+                    font-weight: 450;
+
+                    .link-arrow {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .line {
+                width: 5rem;
+                border-bottom: 1px solid var(--light-blue);
+            }
+
+            .about__desc {
+                font-size: 1.25rem;
+                font-weight: 450;
+                line-height: 30px;
+                letter-spacing: 1px;
+            }
+
+            .btn {
+                align-self: flex-start;
+                font-size: 1.25rem;
+                padding: 1rem 2rem;
+            }
+        }
+    }
+
+    .about-section__img {
+        position: absolute;
+        bottom: 0;
+        right: -4rem;
+        z-index: 0;
+    }
+}

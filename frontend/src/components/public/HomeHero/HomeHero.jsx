@@ -1,7 +1,7 @@
 import { useParams } from 'react-router';
-import './heroSection.css';
+import './homeHero.css';
 
-const HeroSection = ({ content }) => {
+const HomeHero = ({ content }) => {
     const { language } = useParams();
 
     return (
@@ -21,4 +21,4 @@ const HeroSection = ({ content }) => {
     );
 };
 
-export default HeroSection;
+export default HomeHero;
