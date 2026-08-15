@@ -1,0 +1,5 @@
+.contact-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-block: 100px;
+}

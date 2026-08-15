@@ -1,0 +1,48 @@
+.contact-form {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 2;
+    border-radius: 10px;
+    box-shadow: var(--blue-shade);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+
+    .contact-form__title {
+        color: var(--primary-blue);
+        font-family: var(--manrope);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 1.25rem;
+    }
+
+    .contact-form__content {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        width: 100%;
+
+        .contact-form__label {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            .star {
+                color: var(--primary-blue);
+                font-weight: 500;
+            }
+
+            .form__textarea {
+                width: 100%;
+                height: 200px;
+            }
+        }
+
+        .contact-form__btn {
+            height: 56px;
+            font-size: 1.25rem;
+            align-self: flex-end;
+        }
+    }
+}

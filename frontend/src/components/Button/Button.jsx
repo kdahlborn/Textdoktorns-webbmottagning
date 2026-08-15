@@ -8,6 +8,7 @@ const Button = ({
     onClick,
     type = 'button',
     title,
+    disabled = false,
 }) => {
     return (
         <button
@@ -15,6 +16,7 @@ const Button = ({
             onClick={onClick}
             type={type}
             title={title}
+            disabled={disabled}
         >
             {children}
             {icon}

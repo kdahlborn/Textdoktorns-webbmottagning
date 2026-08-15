@@ -1,5 +1,6 @@
 import ContentLoader from '../../../components/ContentLoader/ContentLoader';
 import ContactSection from '../../../components/public/ContactSection/ContactSection';
+import FooterSection from '../../../components/public/FooterSection/FooterSection';
 import { usePageStore } from '../../../stores/usePageStore';
 import './contactPage.css';
 
@@ -21,7 +22,10 @@ const ContactPage = () => {
 
     return (
         <div className="page page--contact">
-            <ContactSection content={content.contactInfo} />
+            {/* CONTACT-SECTION */}
+            <ContactSection content={content} />
+            {/* FOOTER-SECTION */}
+            <FooterSection />
         </div>
     );
 };
