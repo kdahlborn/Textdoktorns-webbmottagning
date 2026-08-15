@@ -34,8 +34,10 @@
         }
 
         .translation__desc {
-            line-height: 1.5rem;
+            line-height: 1.75rem;
+            font-size: 1.25rem;
             letter-spacing: 1px;
+            color: var(--dark-blue);
         }
     }
 

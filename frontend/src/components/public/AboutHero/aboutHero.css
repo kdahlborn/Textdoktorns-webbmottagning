@@ -1,4 +1,5 @@
-.about-section {
+.about-hero {
+    position: relative;
     background: linear-gradient(
         to bottom,
         rgba(254, 254, 254, 0.5) 0%,
@@ -7,11 +8,14 @@
     color: var(--text-dark);
     padding-block: 5rem 0;
     border-bottom: 1px solid rgba(15, 52, 204, 0.1);
+    overflow: hidden;
 
-    .about-section__content {
+    .about-hero__content {
+        position: relative;
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1.25rem;
+        position: relative;
 
         .section-heading {
             grid-column: auto / span 2;
@@ -39,7 +43,7 @@
 
             .about__intro {
                 font-size: 1.25rem;
-
+                font-weight: 500;
                 line-height: 30px;
                 letter-spacing: 1px;
 
@@ -65,11 +69,12 @@
 
             .line {
                 width: 5rem;
-                border-bottom: 1px solid var(--primary-blue);
+                border-bottom: 1px solid var(--light-blue);
             }
 
             .about__desc {
                 font-size: 1.25rem;
+                font-weight: 450;
                 line-height: 30px;
                 letter-spacing: 1px;
             }
@@ -83,6 +88,9 @@
     }
 
     .about-section__img {
-        place-self: flex-end;
+        position: absolute;
+        bottom: 0;
+        right: -4rem;
+        z-index: 0;
     }
 }

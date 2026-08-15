@@ -1,11 +1,11 @@
-import { useParams } from 'react-router';
 import './aboutPage.css';
 import { usePageStore } from '../../../stores/usePageStore';
-import AboutSection from '../../../components/public/AboutSection/AboutSection';
+import AboutSection from '../../../components/public/AboutHero/AboutHero';
 import ContentLoader from '../../../components/ContentLoader/ContentLoader';
+import CriteriaSection from '../../../components/public/CriteriaSection/CriteriaSection';
+import FooterSection from '../../../components/public/FooterSection/FooterSection';
 
 const AboutPage = () => {
-    const { language } = useParams();
     const page = usePageStore((state) =>
         state.pages.find((p) => p.page === 'about'),
     );
@@ -24,6 +24,10 @@ const AboutPage = () => {
     return (
         <div className="page page--about">
             <AboutSection content={content.hero} />
+
+            <CriteriaSection content={content.criteria} />
+            {/* FOOTER-SECTION */}
+            <FooterSection />
         </div>
     );
 };

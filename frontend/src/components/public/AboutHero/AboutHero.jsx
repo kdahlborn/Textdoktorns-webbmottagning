@@ -1,13 +1,12 @@
 import { Link, useParams } from 'react-router';
 import SectionHeading from '../SectionHeading/SectionHeading';
-import './aboutSection.css';
+import './aboutHero.css';
 import { splitNameFromStr } from '../../../utils/strings';
-import AboutArticle from '../AboutArticle/AboutArticle';
 import { useTranslation } from 'react-i18next';
 import { ArrowRight } from 'lucide-react';
 import portrait from '../../../assets/images/textdoktorn-removed-bg.png';
 
-const AboutSection = ({ content }) => {
+const AboutHero = ({ content }) => {
     const { language } = useParams();
     const { t } = useTranslation();
     const { before, name } = splitNameFromStr(content.title[language], [
@@ -16,8 +15,8 @@ const AboutSection = ({ content }) => {
     ]);
 
     return (
-        <section className="about-section">
-            <div className="about-section__content content-wrapper">
+        <section className="about-hero">
+            <div className="about-hero__content content-wrapper">
                 <SectionHeading title={content.sectionTitle[language]} />
 
                 <article className="about">
@@ -60,4 +59,4 @@ const AboutSection = ({ content }) => {
     );
 };
 
-export default AboutSection;
+export default AboutHero;
