@@ -46,9 +46,7 @@ export const usePageStore = create((set) => ({
                 set({ error: err.response?.data?.message ?? 'Något gick fel' });
             })
             .finally(() => {
-                setTimeout(() => {
-                    set({ savingPage: false });
-                }, 1500);
+                set({ savingPage: false });
             });
     },
 }));

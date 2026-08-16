@@ -1,0 +1,63 @@
+.faqs {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .faqs__item {
+        border-radius: 10px;
+        box-shadow: var(--blue-shade);
+        font-family: var(--inter);
+
+        .faqs__btn {
+            width: 100%;
+            justify-content: space-between;
+            background-color: transparent;
+            padding: 1.5rem 2rem;
+
+            .faqs__question {
+                color: var(--primary-blue);
+                font-size: 1.25rem;
+                font-weight: 600;
+            }
+        }
+
+        .faqs__content {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.3s ease;
+            padding: 0 2rem;
+        }
+
+        .faqs__content-inner {
+            overflow: hidden;
+            /* padding: 2rem 0; */
+
+            .faqs__answer {
+                color: var(--dark-blue);
+                margin: 2rem 0;
+            }
+        }
+    }
+
+    .faqs__item--open {
+        box-shadow: var(--primary-blue-shade);
+    }
+
+    .faqs__item--open .faqs__content {
+        grid-template-rows: 1fr;
+    }
+
+    .faqs__chevron {
+        transition: transform 0.3s ease;
+    }
+
+    .faqs__item--open .faqs__chevron {
+        transform: rotate(180deg);
+    }
+
+    .faqs__item:hover {
+        cursor: pointer;
+        box-shadow: var(--primary-blue-shade);
+    }
+}

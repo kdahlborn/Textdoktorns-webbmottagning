@@ -43,9 +43,7 @@ export const useFaqStore = create((set) => ({
                 set({ error: true });
             })
             .finally(() => {
-                setTimeout(() => {
-                    set({ savingFaq: false });
-                }, 1500);
+                set({ savingFaq: false });
             });
     },
 
@@ -70,9 +68,7 @@ export const useFaqStore = create((set) => ({
                 set({ error: err.response?.data?.message ?? 'Något gick fel' });
             })
             .finally(() => {
-                setTimeout(() => {
-                    set({ savingFaq: false });
-                }, 1500);
+                set({ savingFaq: false });
             });
     },
 

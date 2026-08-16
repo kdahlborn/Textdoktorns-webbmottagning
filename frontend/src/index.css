@@ -5,7 +5,6 @@
     --dark-blue: #002f94;
     --primary-blue: #0f34cc;
     --light-blue: #3e9ce9;
-    /* --lighter-blue: #e0edf8; */
     --lighter-blue: rgba(62, 156, 233, 0.2);
     --red: #e03062;
     --green: #36b556;
@@ -26,6 +25,7 @@
     --playfair-display: 'Playfair Display', serif;
     /* Box-shadow */
     --blue-shade: 0 4px 10px 0 #1048c240;
+    --primary-blue-shade: 0 0 10px 0 #0f35cc;
     --inset-red: inset 1px 2px 4px 0 rgba(224, 48, 98, 0.5);
     --inset-blue: inset 1px 2px 4px 0 rgba(15, 52, 204, 0.5);
     --inset-light-blue: inset 1px 2px 4px 0 rgba(62, 156, 233, 0.5);

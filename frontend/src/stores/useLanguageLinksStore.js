@@ -43,9 +43,7 @@ export const useLanguageLinksStore = create((set) => ({
                 set({ error: err.response?.data?.message ?? 'Något gick fel' });
             })
             .finally(() => {
-                setTimeout(() => {
-                    set({ saving: false });
-                }, 1500);
+                set({ saving: false });
             });
     },
 }));
