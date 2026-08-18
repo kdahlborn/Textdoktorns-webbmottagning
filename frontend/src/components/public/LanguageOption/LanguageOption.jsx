@@ -2,13 +2,16 @@ import { useLanguage } from '../../../hooks/useLanguage';
 import Button from '../../Button/Button';
 import './languageOption.css';
 
-const LanguageOption = ({ option }) => {
+const LanguageOption = ({ option, onCloseDrawer }) => {
     const { changeLanguage } = useLanguage();
     return (
         <li className="language-selector__item">
             <Button
                 className="language-selector__btn"
-                onClick={() => changeLanguage(option.code)}
+                onClick={() => {
+                    changeLanguage(option.code);
+                    onCloseDrawer();
+                }}
             >
                 <img
                     src={option.img}

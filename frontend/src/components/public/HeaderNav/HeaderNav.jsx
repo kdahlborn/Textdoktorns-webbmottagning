@@ -4,7 +4,8 @@ import { Phone, Info, Languages } from 'lucide-react';
 import './headerNav.css';
 import Button from '../../Button/Button';
 
-const HeaderNav = ({ language, setIsOpen }) => {
+const HeaderNav = ({ setDisplayLangSelector, onCloseDrawer = null }) => {
+    const { language } = useParams();
     const { t } = useTranslation();
     const links = [
         {
@@ -24,6 +25,7 @@ const HeaderNav = ({ language, setIsOpen }) => {
             {links.map((link) => {
                 return (
                     <NavLink
+                        onClick={onCloseDrawer}
                         key={`link-${link.label}`}
                         to={link.path}
                         className={({ isActive }) =>
@@ -38,11 +40,12 @@ const HeaderNav = ({ language, setIsOpen }) => {
                 );
             })}
             <Button
-                icon={<Languages size={20} />}
-                text={t(`header.languageSelector.current`)}
                 className="header__link"
-                onClick={() => setIsOpen((prev) => !prev)}
-            />
+                onClick={() => setDisplayLangSelector((prev) => !prev)}
+            >
+                {<Languages size={20} />}
+                {t(`header.languageSelector.current`)}
+            </Button>
         </nav>
     );
 };

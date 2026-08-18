@@ -14,6 +14,8 @@ const FooterSection = () => {
             <div className="footer__content content-wrapper">
                 <LanguageLinksList language={language} />
 
+                <FooterContact language={language} />
+
                 <Link
                     className="footer__home-link"
                     to={`/${language}`}
@@ -25,9 +27,6 @@ const FooterSection = () => {
                         className="footer__img"
                     />
                 </Link>
-
-                <FooterContact language={language} />
-
                 <p className="footer__copyright">{t('footer.copyright')}</p>
             </div>
         </footer>

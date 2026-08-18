@@ -21,7 +21,7 @@ const HomePage = () => {
     const content = page?.content;
 
     if (loading) {
-        return <ContentLoader />;
+        return <ContentLoader className="page-loader" />;
     }
 
     if (!page) {

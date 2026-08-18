@@ -8,8 +8,37 @@
         width: 100%;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
+        gap: 6rem 1rem;
         align-items: stretch;
         margin-top: 2.5rem;
+    }
+}
+
+/* MEDIA QUERIES */
+
+/* 1000px */
+@media (max-width: 1000px) {
+    .services-section {
+        .service-cards {
+            grid-template-columns: 1fr 1fr;
+            row-gap: 6rem;
+        }
+    }
+}
+
+/* 800px */
+/* @media (max-width: 800px) {
+    .services-section {
+        .service-cards {
+            grid-template-columns: 1fr;
+        }
+    }
+} */
+/* 640px */
+@media (max-width: 640px) {
+    .services-section {
+        .service-cards {
+            grid-template-columns: 1fr;
+        }
     }
 }

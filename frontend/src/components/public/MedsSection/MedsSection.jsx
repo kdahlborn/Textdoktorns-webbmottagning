@@ -9,6 +9,7 @@ import {
     MessageSquarePlus,
 } from 'lucide-react';
 import CircleIcon from '../CircleIcon/CircleIcon';
+import pillsImg from '../../../assets/images/pills.png';
 
 const MedsSection = ({ translation, prescriptions }) => {
     const { language } = useParams();
@@ -37,6 +38,12 @@ const MedsSection = ({ translation, prescriptions }) => {
 
     return (
         <section className="meds-section content-wrapper">
+            <img
+                src={pillsImg}
+                alt=""
+                aria-hidden="true"
+                className="meds-section__img"
+            />
             <article className="translation">
                 <SectionHeading title={translation.heading[language]} />
                 <h3 className="translation__title">

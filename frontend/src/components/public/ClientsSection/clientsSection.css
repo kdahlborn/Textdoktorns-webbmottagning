@@ -36,3 +36,20 @@
         align-self: center;
     }
 }
+
+/* MEDIA QUERIES */
+/* 600px */
+@media (max-width: 600px) {
+    .clients-section {
+        .clients {
+            .clients__img {
+                width: 80px;
+            }
+        }
+
+        .clients-section__desc {
+            font-size: 1rem;
+            max-width: 100%;
+        }
+    }
+}
