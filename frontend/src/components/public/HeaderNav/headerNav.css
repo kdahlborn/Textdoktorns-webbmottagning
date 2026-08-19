@@ -19,3 +19,34 @@
         color: var(--light-blue);
     }
 }
+
+/* MEDIA QUERIES */
+/* 800px */
+@media (max-width: 800px) {
+    .header__nav {
+        .header__link {
+            padding: 0.5rem 0.5rem 0 0.5rem;
+            flex-direction: column;
+            font-weight: 400;
+        }
+    }
+}
+
+/* 550px */
+@media (max-width: 640px) {
+    /* .header__nav {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .header__link {
+            border-bottom: 1px solid var(--lighter-blue);
+            border-radius: 0;
+            width: 100%;
+            flex-direction: row;
+            justify-content: flex-start;
+            font-size: 1.25rem;
+            padding: 1rem;
+        }
+    } */
+}

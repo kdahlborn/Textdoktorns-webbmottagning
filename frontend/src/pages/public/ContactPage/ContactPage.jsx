@@ -14,15 +14,15 @@ const ContactPage = () => {
     const error = usePageStore((state) => state.error);
     const loading = usePageStore((state) => state.loadingPages);
     const content = page?.content;
-    const fetchFaqs = useFaqStore(state => state.fetchFaqs)
-    const faqs = useFaqStore(state => state.faqs)
+    const fetchFaqs = useFaqStore((state) => state.fetchFaqs);
+    const faqs = useFaqStore((state) => state.faqs);
 
     useEffect(() => {
-        if (faqs.length === 0) fetchFaqs()
-    }, [faqs.length, fetchFaqs])
+        if (faqs.length === 0) fetchFaqs();
+    }, [faqs.length, fetchFaqs]);
 
     if (loading) {
-        return <ContentLoader />;
+        return <ContentLoader className="page-loader" />;
     }
 
     if (!page) {

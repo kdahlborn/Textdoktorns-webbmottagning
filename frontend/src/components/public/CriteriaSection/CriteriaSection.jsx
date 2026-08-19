@@ -51,12 +51,14 @@ const CriteriaSection = ({ content }) => {
                                     icon={icon.icon}
                                     color={icon.color}
                                 />
-                                <h3 className="criteria__subtitle">
-                                    {item.title[language]}
-                                </h3>
-                                <p className="criteria__desc">
-                                    {item.description[language]}
-                                </p>
+                                <article className="criteria__article">
+                                    <h3 className="criteria__subtitle">
+                                        {item.title[language]}
+                                    </h3>
+                                    <p className="criteria__desc">
+                                        {item.description[language]}
+                                    </p>
+                                </article>
                             </li>
                         );
                     })}

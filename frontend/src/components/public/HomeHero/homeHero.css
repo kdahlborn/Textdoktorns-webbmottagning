@@ -33,3 +33,31 @@
     );
     opacity: 0.8;
 }
+
+/* MEDIA QUERIES */
+/* 800px */
+@media (max-width: 800px) {
+    .home-hero {
+        padding: 4rem 0;
+        .home-hero__content {
+            .home-hero__title {
+                font-size: 2rem;
+                gap: 2rem;
+            }
+        }
+    }
+}
+
+/* 640px */
+@media (max-width: 640px) {
+    .home-hero {
+        padding: 2rem 0;
+        .home-hero__content {
+            .home-hero__title {
+                font-size: 1rem;
+                font-weight: 500;
+                gap: 1.25rem;
+            }
+        }
+    }
+}

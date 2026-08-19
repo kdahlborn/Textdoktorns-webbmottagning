@@ -6,11 +6,16 @@ import { Phone } from 'lucide-react';
 import HeaderNav from '../HeaderNav/HeaderNav';
 import LanguageSelector from '../LanguageSelector/LanguageSelector';
 import { useState } from 'react';
+import MenuButton from '../MenuButton/MenuButton';
+import Button from '../../Button/Button';
+import { useDisclosure } from '@mantine/hooks';
+import MenuDrawer from '../MenuDrawer/MenuDrawer';
 
 const Header = () => {
     const { t } = useTranslation();
     const { language } = useParams();
-    const [isOpen, setIsOpen] = useState(false);
+    const [displayLangSelector, setDisplayLangSelector] = useState(false);
+    const [opened, { toggle, close }] = useDisclosure(false);
 
     return (
         <header className="header">
@@ -22,11 +27,25 @@ const Header = () => {
                         alt="textdoktorn logotype"
                     />
                 </Link>
-                <HeaderNav language={language} setIsOpen={setIsOpen} />
-                {isOpen && (
+
+                <Button
+                    className={`header__menu-btn ${opened ? 'header__menu-btn--active' : ''}`}
+                    onClick={toggle}
+                    aria-label="Toggle menu"
+                >
+                    <span></span>
+                </Button>
+
+                <MenuDrawer opened={opened} onClose={close} />
+
+                <div className="header__desktop-nav">
+                    <HeaderNav
+                        setDisplayLangSelector={setDisplayLangSelector}
+                    />
+                </div>
+                {displayLangSelector && (
                     <LanguageSelector
-                        language={language}
-                        setIsOpen={setIsOpen}
+                        setDisplayLangSelector={setDisplayLangSelector}
                     />
                 )}
             </div>

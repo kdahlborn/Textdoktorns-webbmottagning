@@ -10,3 +10,22 @@
         gap: 1.5rem;
     }
 }
+
+/* MEDIA QUERIES */
+/* 1000px */
+@media (max-width: 1000px) {
+    .text-types-section {
+        .text-type-cards {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+
+/* 640px */
+@media (max-width: 640px) {
+    .text-types-section {
+        .text-type-cards {
+            grid-template-columns: 1fr;
+        }
+    }
+}

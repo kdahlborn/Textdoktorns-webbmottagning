@@ -89,3 +89,21 @@
         font-weight: 500;
     }
 }
+
+/* MEDIA QUERIES */
+/* 1000px */
+@media (max-width: 1000px) {
+    .service-card:last-of-type {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: calc(50% - 0.5rem);
+    }
+}
+
+/* 640px */
+@media (max-width: 640px) {
+    .service-card:last-of-type {
+        grid-column: auto / span 1;
+        width: 100%;
+    }
+}

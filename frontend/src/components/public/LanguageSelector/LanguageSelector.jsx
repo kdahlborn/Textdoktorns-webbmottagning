@@ -8,9 +8,10 @@ import ruFlag from '../../../assets/images/flags/flag-rus.png';
 import LanguageOption from '../LanguageOption/LanguageOption';
 import Button from '../../Button/Button';
 import { X } from 'lucide-react';
+import { useParams } from 'react-router';
 
-const LanguageSelector = ({ language, setIsOpen }) => {
-    // const { language } = useParams();
+const LanguageSelector = ({ setDisplayLangSelector, onCloseDrawer = null }) => {
+    const { language } = useParams();
     const languageOptions = [
         {
             code: 'sv',
@@ -46,7 +47,10 @@ const LanguageSelector = ({ language, setIsOpen }) => {
 
     return (
         <div className="language-selector">
-            <Button className="close-btn" onClick={() => setIsOpen(false)}>
+            <Button
+                className="close-btn"
+                onClick={() => setDisplayLangSelector(false)}
+            >
                 <X size={16} />
             </Button>
             <ul className="language-selector__list">
@@ -56,6 +60,7 @@ const LanguageSelector = ({ language, setIsOpen }) => {
                             <LanguageOption
                                 key={`option-${option.code}`}
                                 option={option}
+                                onCloseDrawer={onCloseDrawer}
                             />
                         );
                     }
