@@ -1,0 +1,11 @@
+.mobile-header {
+    background-color: var(--bg-dark);
+    height: 80px;
+    display: flex;
+
+    .btn {
+        background-color: transparent;
+        color: var(--white);
+        padding: 1rem;
+    }
+}

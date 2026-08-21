@@ -1,13 +1,20 @@
 import { useTranslation } from 'react-i18next';
 import { NavLink, useParams } from 'react-router';
-import { Phone, Info, Languages } from 'lucide-react';
+import { Phone, Info, House } from 'lucide-react';
 import './headerNav.css';
 import Button from '../../Button/Button';
+import { capitalizeFirstLetter } from '../../../utils/strings';
+import { Accordion } from '@mantine/core';
 
-const HeaderNav = ({ setDisplayLangSelector, onCloseDrawer = null }) => {
+const HeaderNav = ({ onCloseDrawer = null }) => {
     const { language } = useParams();
     const { t } = useTranslation();
     const links = [
+        {
+            path: `/${language}`,
+            label: 'home',
+            icon: <House size={20} />,
+        },
         {
             path: `/${language}/contact`,
             label: 'contact',
@@ -39,13 +46,38 @@ const HeaderNav = ({ setDisplayLangSelector, onCloseDrawer = null }) => {
                     </NavLink>
                 );
             })}
-            <Button
-                className="header__link"
-                onClick={() => setDisplayLangSelector((prev) => !prev)}
+
+            {/* <Accordion
+                styles={{
+                    chevron: { display: 'none' },
+                    label: { padding: '0' },
+                }}
+                variant="unstyled"
+                className="header__language"
             >
-                {<Languages size={20} />}
-                {t(`header.languageSelector.current`)}
-            </Button>
+                <Accordion.Item value="language">
+                    <Accordion.Control
+                        style={{
+                            padding: '0',
+                            width: '100%',
+                        }}
+                    >
+                        <span className="language-control">
+                            <Languages size={20} />
+                            {capitalizeFirstLetter(language)}
+
+                            <ChevronDown
+                                className="language-control__chevron"
+                                size={20}
+                            />
+                        </span>
+                    </Accordion.Control>
+
+                    <Accordion.Panel>
+                        <LanguageSelector onCloseDrawer={onCloseDrawer} />
+                    </Accordion.Panel>
+                </Accordion.Item>
+            </Accordion> */}
         </nav>
     );
 };

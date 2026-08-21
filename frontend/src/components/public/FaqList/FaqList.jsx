@@ -2,46 +2,45 @@ import { useState } from 'react';
 import './faqList.css';
 import Button from '../../Button/Button';
 import { ChevronDown } from 'lucide-react';
+import { Accordion } from '@mantine/core';
 
 const FaqList = ({ faqs, language }) => {
     const [openIndex, setOpenIdnex] = useState(false);
     const toggleAccordion = (index) => {
         setOpenIdnex(openIndex === index ? null : index);
     };
+    console.log('FAQS:', faqs);
+
+    const faqItems = faqs.map((faq) => (
+        <Accordion.Item
+            key={faq.faqId}
+            value={faq.question[language]}
+            className="faq__item"
+        >
+            <Accordion.Control className="faq__control">
+                <span className="faq__content">{faq.question[language]}</span>
+            </Accordion.Control>
+            <Accordion.Panel className="faq__panel">
+                {faq.answer[language]}
+            </Accordion.Panel>
+        </Accordion.Item>
+    ));
 
     return (
-        <ul className="faqs">
-            {faqs.map((faq, index) => {
-                return (
-                    <li
-                        key={faq.faqId}
-                        className={`faqs__item ${openIndex === index ? 'faqs__item--open' : ''}`}
-                    >
-                        <Button
-                            className="faqs__btn"
-                            onClick={() => toggleAccordion(index)}
-                        >
-                            <span className="faqs__question">
-                                {faq.question[language]}
-                            </span>
-                            <span className="faqs__chevron">
-                                <ChevronDown
-                                    size={30}
-                                    color="var(--light-blue)"
-                                />
-                            </span>
-                        </Button>
-                        <article className="faqs__content">
-                            <div className="faqs__content-inner">
-                                <p className="faqs__answer">
-                                    {faq.answer[language]}
-                                </p>
-                            </div>
-                        </article>
-                    </li>
-                );
-            })}
-        </ul>
+        <>
+            FAQ LIST
+            <Accordion
+                variant="separated"
+                radius="10px"
+                chevronIconSize={24}
+                order={3}
+                defaultValue="FAQ"
+                className="faq"
+                classNames={{ chevron: 'faq__chevron' }}
+            >
+                {faqItems}
+            </Accordion>
+        </>
     );
 };
 

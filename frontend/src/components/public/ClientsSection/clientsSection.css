@@ -41,6 +41,7 @@
 /* 600px */
 @media (max-width: 600px) {
     .clients-section {
+        padding-block: 5rem;
         .clients {
             .clients__img {
                 width: 80px;

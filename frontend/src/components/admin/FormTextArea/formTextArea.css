@@ -1,13 +1,27 @@
-.form__textarea {
-    font-family: inherit;
-    font-weight: 400;
-    resize: none;
-    padding: 0.5rem;
-    border-radius: 0.25rem;
-    border: 1px solid var(--gray);
+.form-label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-weight: 500;
+    color: var(--text-dark);
+
+    .form-textarea {
+        font-family: inherit;
+        font-weight: 400;
+        resize: none;
+        padding: 0.5rem;
+        border-radius: 0.25rem;
+        border: 1px solid var(--gray);
+        height: 140px;
+    }
+
+    .form-textarea:focus {
+        outline: none;
+        box-shadow: 0 0 4px 1px var(--light-blue);
+    }
 }
 
-.form__textarea:focus {
-    outline: none;
-    box-shadow: 0 0 4px 1px var(--light-blue);
+/* MEDIA QUERIES */
+/* 800px */
+@media (max-width: 800px) {
 }

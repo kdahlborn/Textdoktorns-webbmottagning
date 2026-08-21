@@ -4,6 +4,7 @@
     justify-content: space-between;
     font-family: var(--inter);
     position: relative;
+    overflow-x: hidden;
 
     .meds-section__img {
         position: absolute;
@@ -36,6 +37,7 @@
         .translation__desc {
             line-height: 1.75rem;
             font-size: 1.25rem;
+            font-weight: 500;
             letter-spacing: 1px;
             color: var(--dark-blue);
         }
@@ -58,13 +60,12 @@
                 display: flex;
                 gap: 1rem;
                 align-items: center;
-                font-size: 1.25rem;
-                font-weight: 450;
+                font-size: 1.5rem;
+                font-weight: 500;
                 color: var(--text-dark);
 
                 .circle-icon {
-                    width: 2.5rem;
-                    font-size: 2rem;
+                    width: 3rem;
                     z-index: 1;
                 }
             }
@@ -75,7 +76,7 @@
             position: absolute;
             height: 100%;
             top: 0;
-            left: 1.25rem;
+            left: calc(1.5rem - 0.5px);
             border-left: 1px solid var(--light-blue);
             z-index: 0;
             opacity: 0.5;
@@ -118,10 +119,10 @@
         }
 
         .translation {
-            max-width: 300px;
+            /* max-width: 300px; */
 
             .translation__desc {
-                font-size: 1rem;
+                /* font-size: 1rem; */
             }
         }
 
@@ -130,7 +131,8 @@
 
             .meds__list {
                 .meds__item {
-                    font-size: 1rem;
+                    /* font-size: 1rem; */
+                    font-size: 1.25rem;
                 }
             }
         }

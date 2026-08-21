@@ -13,7 +13,7 @@ import {
 import { useAuthStore } from '../../../stores/useAuthStore';
 import Button from '../../Button/Button';
 
-const Sidebar = () => {
+const Sidebar = ({ onCloseDrawer = null }) => {
     const logout = useAuthStore((state) => state.logout);
     const links = [
         {
@@ -46,6 +46,7 @@ const Sidebar = () => {
 
             <nav className="nav" aria-label="Admin navigation">
                 <NavLink
+                    onClick={onCloseDrawer}
                     to="/admin"
                     end
                     className={({ isActive }) =>
@@ -60,6 +61,7 @@ const Sidebar = () => {
                     {links.map((link) => {
                         return (
                             <NavLink
+                                onClick={onCloseDrawer}
                                 key={link.label}
                                 to={link.path}
                                 className={({ isActive }) =>
@@ -77,7 +79,11 @@ const Sidebar = () => {
             </nav>
 
             <footer className="sidebar__footer">
-                <Link className="btn sidebar__btn" to="/">
+                <Link
+                    onClick={onCloseDrawer}
+                    className="btn sidebar__btn"
+                    to="/"
+                >
                     <Monitor />
                     Till hemsidan
                 </Link>

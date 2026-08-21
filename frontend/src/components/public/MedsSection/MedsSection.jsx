@@ -15,23 +15,23 @@ const MedsSection = ({ translation, prescriptions }) => {
     const { language } = useParams();
     const icons = {
         templates: {
-            icon: <FileText size={20} />,
+            icon: <FileText size={24} />,
             color: 'green',
         },
         analyses: {
-            icon: <Search size={20} />,
+            icon: <Search size={24} />,
             color: 'yellow',
         },
         courses: {
-            icon: <GraduationCap size={20} />,
+            icon: <GraduationCap size={24} />,
             color: 'purple',
         },
         writing: {
-            icon: <PencilLine size={20} />,
+            icon: <PencilLine size={24} />,
             color: 'blue',
         },
         languageAdvice: {
-            icon: <MessageSquarePlus size={20} />,
+            icon: <MessageSquarePlus size={24} />,
             color: 'light-blue',
         },
     };

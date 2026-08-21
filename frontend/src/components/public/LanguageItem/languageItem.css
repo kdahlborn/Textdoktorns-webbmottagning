@@ -1,8 +1,8 @@
-.language-selector__item {
+.language-controller__item {
     list-style: none;
     border-bottom: 1px solid #0f35cc22;
 
-    .language-selector__btn {
+    .language-controller__btn {
         background-color: transparent;
         padding: 0.75rem 0;
         color: var(--primary-blue);
@@ -16,11 +16,11 @@
         }
     }
 
-    .language-selector__btn:hover {
+    .language-controller__btn:hover {
         color: var(--light-blue);
     }
 }
 
-.language-selector__item:last-of-type {
+.language-controller__item:last-of-type {
     border-bottom: none;
 }

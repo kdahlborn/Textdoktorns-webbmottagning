@@ -1,28 +1,28 @@
 import { useLanguage } from '../../../hooks/useLanguage';
 import Button from '../../Button/Button';
-import './languageOption.css';
+import './languageItem.css';
 
-const LanguageOption = ({ option, onCloseDrawer }) => {
+const LanguageItem = ({ item, onCloseDrawer }) => {
     const { changeLanguage } = useLanguage();
     return (
-        <li className="language-selector__item">
+        <li className="language-controller__item">
             <Button
-                className="language-selector__btn"
+                className="language-controller__btn"
                 onClick={() => {
-                    changeLanguage(option.code);
+                    changeLanguage(item.code);
                     onCloseDrawer();
                 }}
             >
                 <img
-                    src={option.img}
+                    src={item.img}
                     alt=""
                     aria-hidden="true"
                     className="flag-img"
                 />
-                <span className="language-selector__label">{option.label}</span>
+                <span className="language-controller__label">{item.label}</span>
             </Button>
         </li>
     );
 };
 
-export default LanguageOption;
+export default LanguageItem;

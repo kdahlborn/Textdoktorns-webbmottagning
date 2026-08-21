@@ -4,10 +4,10 @@ import { useFormContext } from 'react-hook-form';
 const FormTextArea = ({ label, path }) => {
     const { register } = useFormContext();
     return (
-        <label className="form__label">
+        <label className="form-label">
             {label}
             <textarea
-                className="form__textarea"
+                className="form-textarea"
                 spellCheck="false"
                 {...register(path)}
             ></textarea>

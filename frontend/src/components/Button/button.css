@@ -12,7 +12,7 @@
     gap: 0.5rem;
     justify-content: center;
     align-items: center;
-    transition: transform 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 /* .save-btn--saved {

@@ -9,6 +9,7 @@
 
     "header": {
         "nav": {
+            "home": "Главная",
             "about": "О Textdoktorn",
             "contact": "Контакты"
         },
