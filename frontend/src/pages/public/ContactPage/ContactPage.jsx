@@ -23,6 +23,7 @@ const ContactPage = () => {
     const loadingFaqs = useFaqStore((state) => state.loadingFaqs);
     const faqError = useFaqStore((state) => state.error);
     const faqsFetched = useFaqStore((state) => state.faqsFetched);
+    console.log('FAQs', faqs);
 
     // useEffect(() => {
     //     if (!faqsFetched) {
