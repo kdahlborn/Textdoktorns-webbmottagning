@@ -1,11 +1,15 @@
 import './contactForm.css';
 import { sendContactMessage } from '../../../services/contact.service';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import Button from '../../Button/Button';
+import Button from '../../global/Button/Button';
 import { Loader } from '@mantine/core';
-import { useForm } from 'react-hook-form';
-import { Send } from 'lucide-react';
+import { FormProvider, useForm } from 'react-hook-form';
+import { Check, Send } from 'lucide-react';
+import FormInput from '../../global/FormInput/FormInput';
+import FormTextArea from '../../global/FormTextArea/FormTextArea';
+import toast from 'react-hot-toast';
+import { motion } from 'motion/react';
 
 const ContactForm = ({ language, content }) => {
     const { t } = useTranslation();
@@ -16,18 +20,15 @@ const ContactForm = ({ language, content }) => {
         error: null,
     });
 
-    const {
-        register,
-        handleSubmit,
-        reset,
-        formState: { errors },
-    } = useForm({
+    const methods = useForm({
         defaultValues: {
             name: '',
             email: '',
             message: '',
         },
     });
+
+    const { formState, handleSubmit } = methods;
 
     const onSubmit = (data) => {
         setStatus({ loading: true, success: null, error: null });
@@ -38,8 +39,9 @@ const ContactForm = ({ language, content }) => {
                     success: res.data.message || 'Message sent!',
                     error: null,
                 });
+                // toast.success(res.data.message || 'Message sent!');
 
-                reset();
+                methods.reset();
             })
             .catch((err) => {
                 setStatus({
@@ -47,96 +49,102 @@ const ContactForm = ({ language, content }) => {
                     error:
                         err.response?.data?.message || 'Could not send message',
                 });
+                // toast.error(
+                //     err.response?.data?.message || 'Could not send message',
+                // );
             })
             .finally(() => {
-                setStatus({ loading: false });
+                setStatus((prev) => ({
+                    ...prev,
+                    loading: false,
+                }));
             });
     };
 
+    // Tar bort form message efter 5 sek
+    useEffect(() => {
+        if (!status.success && !status.error) return;
+
+        const timer = setTimeout(() => {
+            setStatus((prev) => ({
+                ...prev,
+                success: null,
+                error: null,
+            }));
+        }, 5000);
+
+        return () => clearTimeout(timer);
+    }, [status.success, status.error]);
+
     return (
-        <form className="contact-form" onSubmit={handleSubmit(onSubmit)}>
-            <h4 className="contact-form__title">{content.heading[language]}</h4>
+        <FormProvider {...methods}>
+            <form className="contact-form" onSubmit={handleSubmit(onSubmit)}>
+                <h4 className="contact-form__title">
+                    {content.heading[language]}
+                </h4>
 
-            <section className="contact-form__content">
-                <label className="contact-form__label">
-                    <p className="contact-form__label-text">
-                        {t('contact.form.name')} <span className="star">*</span>
-                    </p>
-
-                    <input
-                        type="text"
-                        className="contact-form__input form__input"
-                        {...register('name', { required: true })}
+                <section className="contact-form__content">
+                    <div className="form-status">
+                        {(status.success || status.error) && (
+                            <motion.p
+                                className={`form-message ${
+                                    status.success
+                                        ? 'form-message--success'
+                                        : 'form-message--error'
+                                }`}
+                                initial={{ opacity: 0, scale: 0.8, y: -10 }}
+                                animate={{ opacity: 1, scale: 1, y: 0 }}
+                                transition={{
+                                    type: 'spring',
+                                    stiffness: 400,
+                                    damping: 20,
+                                }}
+                            >
+                                {status.success ? (
+                                    <>
+                                        <Check size={20} strokeWidth={3} />
+                                        <span>{status.success}</span>
+                                    </>
+                                ) : (
+                                    <span>{status.error}</span>
+                                )}
+                            </motion.p>
+                        )}
+                    </div>
+                    <FormInput
+                        label={t('contact.form.name')}
+                        path="name"
+                        required
                     />
-                    {errors.name && (
-                        <span className="contact-form__field-error">
-                            Name is required
-                        </span>
-                    )}
-                </label>
-                <label className="contact-form__label">
-                    <p className="contact-form__label-text">
-                        {t('contact.form.email')}{' '}
-                        <span className="star">*</span>
-                    </p>
-
-                    <input
-                        type="text"
-                        className="contact-form__input form__input"
-                        {...register('email', {
-                            required: true,
-                            pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                        })}
+                    <FormInput
+                        label={t('contact.form.email')}
+                        path="email"
+                        type="email"
+                        required
                     />
-                    {errors.email && (
-                        <span className="contact-form__field-error">
-                            Enter a valid e-mail address
-                        </span>
-                    )}
-                </label>
-                <label className="contact-form__label">
-                    <p className="contact-form__label-text">
-                        {t('contact.form.message')}{' '}
-                        <span className="star">*</span>
-                    </p>
 
-                    <textarea
-                        className="contact-form__textarea form__textarea"
-                        {...register('message', { required: true })}
+                    <FormTextArea
+                        label={t('contact.form.message')}
+                        path="message"
+                        required
                     />
-                    {errors.message && (
-                        <span className="contact-form__field-error">
-                            Message is required
-                        </span>
-                    )}
-                </label>
 
-                <Button
-                    className="contact-form__btn"
-                    type="submit"
-                    disabled={status.loading}
-                >
-                    {status.loading ? (
-                        <Loader type="dots" />
-                    ) : (
-                        <>
-                            {t('contact.form.submit')} <Send />
-                        </>
-                    )}
-                </Button>
-
-                {status.success && (
-                    <p className="contact-form__message contact-form__message--green">
-                        {status.success}
-                    </p>
-                )}
-                {status.error && (
-                    <p className="contact-form__message contact-form__message--red">
-                        {status.error}
-                    </p>
-                )}
-            </section>
-        </form>
+                    <Button
+                        className="contact-form__btn"
+                        type="submit"
+                        disabled={status.loading}
+                    >
+                        {status.loading ? (
+                            <Loader type="dots" />
+                        ) : (
+                            <>
+                                {t('contact.form.submit')} <Send />
+                            </>
+                        )}
+                    </Button>
+                </section>
+            </form>
+        </FormProvider>
     );
 };
 

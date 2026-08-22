@@ -36,5 +36,21 @@
         flex-direction: column;
         gap: 2rem;
         margin-bottom: 4rem;
+
+        .form-label {
+            width: 75%;
+        }
+    }
+}
+
+/* MEDIA QUERIES */
+/* 1000px */
+@media (max-width: 1000px) {
+    .edit-page-page {
+        .edit-page-page__form {
+            .form-label {
+                width: 100%;
+            }
+        }
     }
 }

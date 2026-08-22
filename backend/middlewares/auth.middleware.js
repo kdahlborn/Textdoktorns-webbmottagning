@@ -23,3 +23,16 @@ export const authorizeAdmin = (req, res, next) => {
 
     next();
 };
+
+export const authenticateRegistrationKey = (req, res, next) => {
+    const key = req.headers['x-admin-key'];
+
+    if (!key || key !== process.env.ADMIN_REGISTRATION_KEY) {
+        return next({
+            status: 403,
+            message: 'Invalid registration key',
+        });
+    }
+
+    next();
+};

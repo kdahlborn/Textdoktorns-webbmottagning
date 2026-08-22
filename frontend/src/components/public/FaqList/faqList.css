@@ -1,92 +1,54 @@
-.faqs {
-    list-style: none;
+.faq {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
 
-    .faqs__item {
-        border-radius: 10px;
+    .faq__item {
+        background-color: var(--white);
         box-shadow: var(--blue-shade);
         font-family: var(--inter);
+        padding: 0.5rem 0;
 
-        .faqs__btn {
-            width: 100%;
-            justify-content: space-between;
-            background-color: transparent;
-            padding: 1.5rem 2rem;
-
-            .faqs__question {
-                color: var(--primary-blue);
-                font-size: 1.25rem;
+        .faq__control {
+            .faq__content {
+                display: flex;
                 font-weight: 600;
+                color: var(--primary-blue);
             }
         }
 
-        .faqs__content {
-            display: grid;
-            grid-template-rows: 0fr;
-            transition: grid-template-rows 0.3s ease;
-            padding: 0 2rem;
-        }
-
-        .faqs__content-inner {
-            overflow: hidden;
-            /* padding: 2rem 0; */
-
-            .faqs__answer {
-                color: var(--dark-blue);
-                margin: 2rem 0;
-            }
+        .faq__panel {
+            color: var(--dark-blue);
         }
     }
 
-    .faqs__item--open {
-        /* box-shadow: var(--primary-blue-shade); */
-        outline: 2px solid var(--light-blue);
+    .faq__item[data-active],
+    .faq__item:hover {
+        box-shadow: 0 0 4px 0 var(--primary-blue);
     }
 
-    .faqs__item--open .faqs__content {
-        grid-template-rows: 1fr;
-    }
-
-    .faqs__chevron {
-        transition: transform 0.3s ease;
-    }
-
-    .faqs__item--open .faqs__chevron {
-        transform: rotate(180deg);
-    }
-
-    .faqs__item:hover {
-        cursor: pointer;
-        /* box-shadow: var(--primary-blue-shade); */
-        outline: 2px solid var(--light-blue);
+    .faq__chevron {
+        color: var(--light-blue);
     }
 }
 
 /* MEDIA QUERIES */
-/* 600px */
+
 @media (max-width: 600px) {
-    .faqs {
-        .faqs__item {
-            .faqs__btn {
-                padding: 1.25rem 1rem;
-                gap: 0;
+    .faq {
+        .faq__item {
+            .faq__control {
                 align-items: center;
 
-                .faqs__question {
+                .faq__content {
                     font-size: 1rem;
                     text-align: start;
                 }
 
-                .faqs__chevron {
+                .faq__chevron {
                     display: flex;
                     align-items: center;
                 }
-            }
-
-            .faqs__content {
-                padding: 0 1rem;
             }
         }
     }

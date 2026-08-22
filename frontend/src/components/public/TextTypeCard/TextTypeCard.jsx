@@ -26,7 +26,7 @@ const TextTypeCard = ({ title, items, id, language }) => {
             color: 'yellow',
         },
     };
-    // console.log(id);
+
     return (
         <article className="text-type-card">
             <CircleIcon icon={icons[id].icon} color={icons[id].color} />

@@ -6,8 +6,9 @@
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 0.5rem;
     align-items: center;
+    position: relative;
 
     .contact-form__title {
         color: var(--primary-blue);
@@ -24,29 +25,36 @@
         gap: 1.25rem;
         width: 100%;
 
-        .contact-form__label {
-            display: flex;
-            flex-direction: column;
+        .form-status {
+            height: 25px;
 
-            .contact-form__input {
-                width: 100%;
-            }
-
-            .star {
-                color: var(--primary-blue);
+            .form-message {
+                text-align: center;
+                text-transform: uppercase;
                 font-weight: 500;
+                display: flex;
+                gap: 0.25rem;
+                justify-content: center;
+                align-items: center;
             }
 
-            .form__textarea {
-                width: 100%;
-                height: 200px;
+            .form-message--error {
+                color: var(--red);
+            }
+
+            .form-message--success {
+                color: var(--green);
             }
         }
 
-        .contact-form__btn {
-            height: 56px;
-            font-size: 1.25rem;
-            align-self: flex-end;
+        .contact-form__footer {
+            display: flex;
+            .contact-form__btn {
+                width: 264px;
+                height: 56px;
+                font-size: 1.25rem;
+                margin-left: auto;
+            }
         }
     }
 }

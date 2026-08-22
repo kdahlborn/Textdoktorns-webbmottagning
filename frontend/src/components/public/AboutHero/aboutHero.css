@@ -100,6 +100,7 @@
 /* 800px */
 @media (max-width: 800px) {
     .about-hero {
+        padding-top: 3rem;
         .about-hero__content {
             .about {
                 grid-column: auto / span 3;

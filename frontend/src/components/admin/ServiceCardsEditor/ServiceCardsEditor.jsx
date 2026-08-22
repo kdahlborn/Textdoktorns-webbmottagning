@@ -1,6 +1,6 @@
 import './serviceCardEditor.css';
-import FormInput from '../FormInput/FormInput';
-import FormTextArea from '../FormTextArea/FormTextArea';
+import FormInput from '../../global/FormInput/FormInput';
+import FormTextArea from '../../global/FormTextArea/FormTextArea';
 import ListEditor from '../ListEditor/ListEditor';
 
 const ServiceCardsEditor = ({ cards, language }) => {

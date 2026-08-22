@@ -1,11 +1,15 @@
 import { useDisclosure } from '@mantine/hooks';
 import './menuDrawer.css';
-import { Drawer } from '@mantine/core';
+import { Accordion, Drawer } from '@mantine/core';
 import HeaderNav from '../HeaderNav/HeaderNav';
 import { useState } from 'react';
-import { NavLink } from 'react-router';
-import LanguageSelector from '../LanguageSelector/LanguageSelector';
+import { NavLink, useParams } from 'react-router';
 import { motion } from 'motion/react';
+import Button from '../../global/Button/Button';
+import { useTranslation } from 'react-i18next';
+import { capitalizeFirstLetter } from '../../../utils/strings';
+import { ChevronDown, Languages } from 'lucide-react';
+import LanguageController from '../LanguageController/LanguageController';
 
 const MenuDrawer = ({ opened, onClose }) => {
     return (
@@ -31,21 +35,25 @@ const MenuDrawer = ({ opened, onClose }) => {
                     content: {
                         height: 'auto',
                         display: 'flex',
+                        transition: 'height 0.3s ease-in-out',
                     },
                     body: {
-                        padding: '2rem 0',
+                        padding: '1rem 0',
                         width: '100%',
                     },
                 }}
             >
                 <motion.div
+                    className="drawer"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ duration: 0.8 }}
-                    className="drawer__nav"
+                    transition={{
+                        duration: 0.5,
+                        ease: 'easeIn',
+                    }}
                 >
                     <HeaderNav onCloseDrawer={onClose} />
-                    <LanguageSelector onCloseDrawer={onClose} />
+                    <LanguageController onCloseDrawer={onClose} />
                 </motion.div>
             </Drawer>
         </>

@@ -9,6 +9,7 @@
 
     "header": {
         "nav": {
+            "home": "Startseite",
             "about": "Über Textdoktorn",
             "contact": "Kontakt"
         },

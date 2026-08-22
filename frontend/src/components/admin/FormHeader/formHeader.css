@@ -25,3 +25,18 @@
         background-color: var(--green);
     }
 }
+
+/* MEDIA QUERIES */
+/* 600px */
+@media (max-width: 600px) {
+    .form__header {
+        height: unset;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        padding-bottom: 0.5rem;
+
+        .save-btn {
+            margin-left: auto;
+        }
+    }
+}

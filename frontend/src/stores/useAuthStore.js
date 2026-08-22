@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { login } from '../services/auth.service';
+import { login, register } from '../services/auth.service';
 
 export const useAuthStore = create(
     persist(
@@ -23,6 +23,27 @@ export const useAuthStore = create(
                     })
                     .catch((err) => {
                         set({ error: err.response?.data?.message });
+
+                        throw err;
+                    })
+                    .finally(() => {
+                        set({ loading: false });
+                    });
+            },
+
+            registerAdmin: (credentials, registrationKey) => {
+                set({ loading: true });
+
+                return register(credentials, registrationKey)
+                    .then((res) => {
+                        set({ error: null });
+
+                        return res.data;
+                    })
+                    .catch((err) => {
+                        set({ error: err.response?.data?.message });
+
+                        throw err;
                     })
                     .finally(() => {
                         set({ loading: false });
@@ -38,6 +59,10 @@ export const useAuthStore = create(
         }),
         {
             name: 'auth-storage',
+
+            partialize: (state) => ({
+                token: state.token,
+            }),
         },
     ),
 );

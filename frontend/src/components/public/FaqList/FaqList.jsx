@@ -1,47 +1,56 @@
-import { useState } from 'react';
+import { Accordion } from '@mantine/core';
+import { motion } from 'framer-motion';
 import './faqList.css';
-import Button from '../../Button/Button';
-import { ChevronDown } from 'lucide-react';
 
 const FaqList = ({ faqs, language }) => {
-    const [openIndex, setOpenIdnex] = useState(false);
-    const toggleAccordion = (index) => {
-        setOpenIdnex(openIndex === index ? null : index);
-    };
-
     return (
-        <ul className="faqs">
-            {faqs.map((faq, index) => {
-                return (
-                    <li
-                        key={faq.faqId}
-                        className={`faqs__item ${openIndex === index ? 'faqs__item--open' : ''}`}
-                    >
-                        <Button
-                            className="faqs__btn"
-                            onClick={() => toggleAccordion(index)}
+        <Accordion
+            variant="separated"
+            radius="10px"
+            chevronIconSize={24}
+            order={3}
+            className="faq"
+            classNames={{
+                chevron: 'faq__chevron',
+            }}
+        >
+            {faqs.map((faq, index) => (
+                <Accordion.Item
+                    key={faq.faqId}
+                    value={String(faq.faqId)}
+                    className="faq__item"
+                >
+                    <Accordion.Control className="faq__control">
+                        <motion.span
+                            className="faq__content"
+                            initial={{
+                                opacity: 0,
+                                y: 20,
+                            }}
+                            whileInView={{
+                                opacity: 1,
+                                y: 0,
+                            }}
+                            viewport={{
+                                once: true,
+                                amount: 0.2,
+                            }}
+                            transition={{
+                                duration: 0.5,
+                                delay: index * 0.1,
+                                ease: [0.22, 1, 0.36, 1],
+                            }}
                         >
-                            <span className="faqs__question">
-                                {faq.question[language]}
-                            </span>
-                            <span className="faqs__chevron">
-                                <ChevronDown
-                                    size={30}
-                                    color="var(--light-blue)"
-                                />
-                            </span>
-                        </Button>
-                        <article className="faqs__content">
-                            <div className="faqs__content-inner">
-                                <p className="faqs__answer">
-                                    {faq.answer[language]}
-                                </p>
-                            </div>
-                        </article>
-                    </li>
-                );
-            })}
-        </ul>
+                            {faq.question[language]}
+                        </motion.span>
+                    </Accordion.Control>
+
+                    <Accordion.Panel className="faq__panel">
+                        {faq.answer[language]}
+                    </Accordion.Panel>
+                </Accordion.Item>
+            ))}
+        </Accordion>
     );
 };
 

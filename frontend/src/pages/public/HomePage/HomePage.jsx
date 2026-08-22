@@ -4,12 +4,13 @@ import './homePage.css';
 import { useParams } from 'react-router';
 import HomeHero from '../../../components/public/HomeHero/HomeHero';
 
-import ContentLoader from '../../../components/ContentLoader/ContentLoader';
+import ContentLoader from '../../../components/global/ContentLoader/ContentLoader';
 import ServicesSection from '../../../components/public/ServicesSection/ServicesSection';
 import TextTypesSection from '../../../components/public/TextTypesSection/TextTypesSection';
 import MedsSection from '../../../components/public/MedsSection/MedsSection';
 import ClientsSection from '../../../components/public/ClientsSection/ClientsSection';
 import FooterSection from '../../../components/public/FooterSection/FooterSection';
+import ErrorPage from '../ErrorPage/ErrorPage';
 
 const HomePage = () => {
     const { language } = useParams();
@@ -25,7 +26,7 @@ const HomePage = () => {
     }
 
     if (!page) {
-        return <p>Sidan kunde inte hittas.</p>;
+        return <ErrorPage />;
     }
 
     return (

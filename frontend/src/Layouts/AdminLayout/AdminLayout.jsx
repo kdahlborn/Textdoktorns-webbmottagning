@@ -5,6 +5,7 @@ import { usePageStore } from '../../stores/usePageStore';
 import { useEffect } from 'react';
 import { useFaqStore } from '../../stores/useFaqStore';
 import { useLanguageLinksStore } from '../../stores/useLanguageLinksStore';
+import MobileHeader from '../../components/admin/MobileHeader/MobileHeader';
 
 const AdminLayout = () => {
     const pages = usePageStore((state) => state.pages);
@@ -33,7 +34,11 @@ const AdminLayout = () => {
 
     return (
         <div className="admin-layout">
-            <Sidebar />
+            <div className="desktop-sidebar">
+                <Sidebar />
+            </div>
+            <MobileHeader />
+
             <Outlet />
         </div>
     );

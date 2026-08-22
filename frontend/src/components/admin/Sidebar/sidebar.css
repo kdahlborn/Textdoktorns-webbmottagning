@@ -79,3 +79,29 @@
         }
     }
 }
+
+/* MEDIA QUERIES */
+/* 800px */
+@media (max-width: 800px) {
+    .sidebar {
+        .sidebar__header {
+            .sidebar__img {
+                width: 140px;
+            }
+        }
+    }
+}
+/* 600px */
+@media (max-width: 600px) {
+    .sidebar {
+        .sidebar__header {
+            .sidebar__img {
+                width: 140px;
+            }
+
+            .sidebar__title {
+                text-align: start;
+            }
+        }
+    }
+}

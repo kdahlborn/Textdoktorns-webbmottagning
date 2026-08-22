@@ -11,5 +11,6 @@
         display: flex;
         flex-direction: column;
         gap: 3.75rem;
+        padding-top: 3rem;
     }
 }

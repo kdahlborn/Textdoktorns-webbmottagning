@@ -4,12 +4,12 @@ import { Link, useParams } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import { Phone } from 'lucide-react';
 import HeaderNav from '../HeaderNav/HeaderNav';
-import LanguageSelector from '../LanguageSelector/LanguageSelector';
 import { useState } from 'react';
 import MenuButton from '../MenuButton/MenuButton';
-import Button from '../../Button/Button';
+import Button from '../../global/Button/Button';
 import { useDisclosure } from '@mantine/hooks';
 import MenuDrawer from '../MenuDrawer/MenuDrawer';
+import LanguageController from '../LanguageController/LanguageController';
 
 const Header = () => {
     const { t } = useTranslation();
@@ -31,23 +31,20 @@ const Header = () => {
                 <Button
                     className={`header__menu-btn ${opened ? 'header__menu-btn--active' : ''}`}
                     onClick={toggle}
-                    aria-label="Toggle menu"
+                    ariaLabel="Toggle menu"
                 >
                     <span></span>
                 </Button>
 
                 <MenuDrawer opened={opened} onClose={close} />
 
-                <div className="header__desktop-nav">
+                <div className="header__desktop-menu">
                     <HeaderNav
                         setDisplayLangSelector={setDisplayLangSelector}
                     />
+                    <span className="header__line"></span>
+                    <LanguageController />
                 </div>
-                {displayLangSelector && (
-                    <LanguageSelector
-                        setDisplayLangSelector={setDisplayLangSelector}
-                    />
-                )}
             </div>
         </header>
     );

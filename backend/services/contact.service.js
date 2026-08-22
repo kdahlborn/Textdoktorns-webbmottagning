@@ -27,10 +27,9 @@ export const sendContactMessage = async ({ name, email, message }) => {
 
         return {
             success: true,
-            message: 'Meddelandet mottogs.',
+            message: 'Message sent!',
         };
     } catch (error) {
-        // console.error('DETTA ÄR FELET:', error);
         return {
             success: false,
             message: error.message,

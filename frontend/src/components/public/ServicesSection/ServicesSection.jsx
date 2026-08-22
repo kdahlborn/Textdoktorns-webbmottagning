@@ -7,6 +7,7 @@ import heartCheck from '../../../assets/images/icons/heart-check.svg';
 import ServiceCard from '../ServiceCard/ServiceCard';
 import { useTranslation } from 'react-i18next';
 import SectionCta from '../SectionCta/SectionCta';
+import { motion } from 'motion/react';
 
 const ServicesSection = ({ content }) => {
     const { t } = useTranslation();
@@ -24,15 +25,27 @@ const ServicesSection = ({ content }) => {
             <section className="service-cards">
                 {cards.map((card, index) => {
                     return (
-                        <ServiceCard
+                        <motion.div
                             key={card.id}
-                            title={card.title[language]}
-                            desc={card.description[language]}
-                            items={card.items.map((item) => item[language])}
-                            note={card.note[language]}
-                            id={card.id}
-                            language={language}
-                        />
+                            className="service-card-wrapper"
+                            initial={{ opacity: 0, x: 40 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true, amount: 0.2 }}
+                            transition={{
+                                duration: 0.5,
+                                delay: index * 0.3,
+                                ease: 'easeOut',
+                            }}
+                        >
+                            <ServiceCard
+                                title={card.title[language]}
+                                desc={card.description[language]}
+                                items={card.items.map((item) => item[language])}
+                                note={card.note[language]}
+                                id={card.id}
+                                language={language}
+                            />
+                        </motion.div>
                     );
                 })}
             </section>

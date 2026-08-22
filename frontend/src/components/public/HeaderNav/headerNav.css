@@ -18,35 +18,31 @@
     .header__link:hover {
         color: var(--light-blue);
     }
+
+    .header__language .mantine-Accordion-control:hover .language-control {
+        color: var(--light-blue);
+    }
+
+    .language-control {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: var(--inter);
+        font-size: 1.25rem;
+        color: var(--primary-blue);
+    }
 }
 
 /* MEDIA QUERIES */
-/* 800px */
-@media (max-width: 800px) {
+/* 900px */
+@media (max-width: 900px) {
     .header__nav {
         .header__link {
             padding: 0.5rem 0.5rem 0 0.5rem;
             flex-direction: column;
             font-weight: 400;
+            font-size: 1rem;
+            text-align: center;
         }
     }
-}
-
-/* 550px */
-@media (max-width: 640px) {
-    /* .header__nav {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-
-        .header__link {
-            border-bottom: 1px solid var(--lighter-blue);
-            border-radius: 0;
-            width: 100%;
-            flex-direction: row;
-            justify-content: flex-start;
-            font-size: 1.25rem;
-            padding: 1rem;
-        }
-    } */
 }

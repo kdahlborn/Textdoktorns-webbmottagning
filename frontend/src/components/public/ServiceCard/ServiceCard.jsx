@@ -1,7 +1,5 @@
 import './serviceCard.css';
-import { useParams } from 'react-router';
-import listIcon from '../../../assets/images/icons/list-check.svg';
-import { Lightbulb, CircleCheck } from 'lucide-react';
+import { Lightbulb } from 'lucide-react';
 
 const ServiceCard = ({ title, desc, items, note, id, language }) => {
     const icons = {

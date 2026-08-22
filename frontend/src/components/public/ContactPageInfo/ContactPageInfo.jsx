@@ -3,6 +3,7 @@ import './contactPageInfo.css';
 import { useTranslation } from 'react-i18next';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import CircleIcon from '../CircleIcon/CircleIcon';
+import { motion } from 'motion/react';
 
 const ContactPageInfo = ({ info }) => {
     const { language } = useParams();
@@ -11,36 +12,63 @@ const ContactPageInfo = ({ info }) => {
 
     return (
         <ul className="contact-page-info">
-            <li className="contact-page-info__item">
-                <CircleIcon icon={<Mail />} color={'blue'} />
-                <h3 className="contact-page-info__title">E-mail</h3>
-                <a href={`mailto:${email}`} className="contact-page-info__link">
-                    {email}
-                </a>
-            </li>
-            <li className="contact-page-info__item">
-                <CircleIcon icon={<Phone />} />
-                <h3 className="contact-page-info__title">
-                    {t('contact.info.phone')}
-                </h3>
-                <a href={`phone:${phone}`} className="contact-page-info__link">
-                    {phone}
-                </a>
-            </li>
-            <li className="contact-page-info__item">
-                <CircleIcon icon={<MapPin />} />
-                <h3 className="contact-page-info__title">
-                    {t('contact.info.address')}
-                </h3>
-                <a
-                    href="https://maps.app.goo.gl/X4VVAq5xC2V5C8os8"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="contact-page-info__link"
+            {[
+                {
+                    icon: <Mail />,
+                    title: 'E-mail',
+                    content: (
+                        <a
+                            href={`mailto:${email}`}
+                            className="contact-page-info__link"
+                        >
+                            {email}
+                        </a>
+                    ),
+                },
+                {
+                    icon: <Phone />,
+                    title: t('contact.info.phone'),
+                    content: (
+                        <a
+                            href={`tel:${phone}`}
+                            className="contact-page-info__link"
+                        >
+                            {phone}
+                        </a>
+                    ),
+                },
+                {
+                    icon: <MapPin />,
+                    title: t('contact.info.address'),
+                    content: (
+                        <a
+                            href="https://maps.app.goo.gl/X4VVAq5xC2V5C8os8"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="contact-page-info__link"
+                        >
+                            {address[language]}
+                        </a>
+                    ),
+                },
+            ].map((item, index) => (
+                <motion.li
+                    key={index}
+                    className="contact-page-info__item"
+                    initial={{ opacity: 0, y: 25 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{
+                        duration: 0.6,
+                        delay: index * 0.12,
+                        ease: [0.22, 1, 0.36, 1],
+                    }}
                 >
-                    {address[language]}
-                </a>
-            </li>
+                    <CircleIcon icon={item.icon} />
+                    <h3 className="contact-page-info__title">{item.title}</h3>
+                    {item.content}
+                </motion.li>
+            ))}
         </ul>
     );
 };

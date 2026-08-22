@@ -1,0 +1,33 @@
+.form-label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-family: var(--inter);
+
+    .form-label-text {
+        color: var(--text-dark);
+        font-weight: 500;
+        display: flex;
+        gap: 0.25rem;
+
+        .star {
+            color: var(--light-blue);
+            font-weight: 700;
+        }
+    }
+}
+
+.form-input {
+    font-family: inherit;
+    font-weight: 500;
+    color: var(--dark-blue);
+    letter-spacing: 1px;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid var(--gray);
+}
+
+.form-input:focus {
+    outline: none;
+    box-shadow: 0 0 4px 1px var(--light-blue);
+}

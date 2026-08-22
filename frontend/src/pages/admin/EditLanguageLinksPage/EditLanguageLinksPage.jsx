@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useLanguageLinksStore } from '../../../stores/useLanguageLinksStore';
 import './editLanguageLinksPage.css';
-import ContentLoader from '../../../components/ContentLoader/ContentLoader';
+import ContentLoader from '../../../components/global/ContentLoader/ContentLoader';
 import LanguageLinksEditor from '../../../components/admin/LanguageLinksEditor/LanguageLinksEditor';
 
 const EditLanguageLinksPage = () => {

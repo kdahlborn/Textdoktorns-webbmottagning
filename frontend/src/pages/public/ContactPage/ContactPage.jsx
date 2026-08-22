@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
-import ContentLoader from '../../../components/ContentLoader/ContentLoader';
+import ContentLoader from '../../../components/global/ContentLoader/ContentLoader';
 import ContactSection from '../../../components/public/ContactSection/ContactSection';
 import FaqSection from '../../../components/public/FaqSection/FaqSection';
 import FooterSection from '../../../components/public/FooterSection/FooterSection';
 import { useFaqStore } from '../../../stores/useFaqStore';
 import { usePageStore } from '../../../stores/usePageStore';
 import './contactPage.css';
+import ErrorPage from '../ErrorPage/ErrorPage';
 
 const ContactPage = () => {
     const page = usePageStore((state) =>
@@ -26,7 +27,7 @@ const ContactPage = () => {
     }
 
     if (!page) {
-        return <p>Sidan kunde inte hittas.</p>;
+        return <ErrorPage />;
     }
 
     return (

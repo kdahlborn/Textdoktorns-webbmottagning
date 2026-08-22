@@ -13,8 +13,15 @@ export const registerAdmin = async (req, res, next) => {
         });
     }
 
+    if (newAdmin.password !== newAdmin.confirmPassword) {
+        return next({
+            status: 400,
+            message: 'Passwords do not match',
+        });
+    }
+
     const result = await authService.registerAdmin({
-        username: newAdmin.username,
+        username: newAdmin.username.trim().toLowerCase(),
         password: await hashPassword(newAdmin.password),
     });
 
@@ -42,7 +49,9 @@ export const loginAdmin = async (req, res, next) => {
         });
     }
 
-    const result = await authService.getAdmin(admin.username);
+    const result = await authService.getAdmin(
+        admin.username.trim().toLowerCase(),
+    );
 
     if (result.success) {
         if (await comparePasswords(admin.password, result.admin.password)) {
@@ -64,7 +73,7 @@ export const loginAdmin = async (req, res, next) => {
     } else {
         next({
             status: 401,
-            message: result.message,
+            message: 'Invalid username or password',
         });
     }
 };
