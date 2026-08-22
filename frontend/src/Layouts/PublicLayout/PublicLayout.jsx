@@ -6,7 +6,6 @@ import { usePageStore } from '../../stores/usePageStore';
 import { useEffect } from 'react';
 import { useLanguageLinksStore } from '../../stores/useLanguageLinksStore';
 import useScrollToTop from '../../hooks/useScrollToTop';
-import { useFaqStore } from '../../stores/useFaqStore';
 
 const PublicLayout = () => {
     const pages = usePageStore((state) => state.pages);
@@ -17,24 +16,13 @@ const PublicLayout = () => {
         (state) => state.fetchLanguageLinks,
     );
 
-    const faqs = useFaqStore((state) => state.faqs);
-    const fetchFaqs = useFaqStore((state) => state.fetchFaqs);
-
     useLanguageSync();
     useScrollToTop();
 
     useEffect(() => {
         if (pages.length === 0) fetchPages();
         if (languageLinks.length === 0) fetchLanguageLinks();
-        if (faqs.length === 0) fetchFaqs();
-    }, [
-        pages.length,
-        languageLinks.length,
-        faqs.length,
-        fetchPages,
-        fetchLanguageLinks,
-        fetchFaqs,
-    ]);
+    }, [pages.length, languageLinks.length, fetchPages, fetchLanguageLinks]);
 
     return (
         <>

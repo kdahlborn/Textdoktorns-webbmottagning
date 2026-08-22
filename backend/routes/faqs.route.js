@@ -4,18 +4,16 @@ import * as faqsController from '../controllers/faqs.controller.js';
 
 const router = Router();
 
-router.use(authorizeAdmin);
-
 // GET FAQ
 router.get('/', faqsController.getFaqs);
 
 // POST FAQ
-router.post('/', faqsController.createFaq);
+router.post('/', authorizeAdmin, faqsController.createFaq);
 
 // PUT FAQ
-router.put('/:faqId', faqsController.updateFaq);
+router.put('/:faqId', authorizeAdmin, faqsController.updateFaq);
 
 // DELETE FAQ
-router.delete('/:faqId', faqsController.removeFaq);
+router.delete('/:faqId', authorizeAdmin, faqsController.removeFaq);
 
 export default router;
