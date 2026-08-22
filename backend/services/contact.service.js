@@ -23,13 +23,19 @@ export const sendContactMessage = async ({ name, email, message }) => {
             text: `Namn: ${name}\nE-post: ${email}\n\nMeddelande:\n${message}`,
         };
 
+        console.log('BEFORE SEND');
+
         await transporter.sendMail(mailOptions);
+
+        console.log('AFTER SEND');
 
         return {
             success: true,
             message: 'Message sent!',
         };
     } catch (error) {
+        console.error('EMAIL ERROR:', error);
+
         return {
             success: false,
             message: error.message,
