@@ -18,17 +18,17 @@ const ContactPage = () => {
 
     const content = page?.content;
 
-    const fetchFaqs = useFaqStore((state) => state.fetchFaqs);
+    // const fetchFaqs = useFaqStore((state) => state.fetchFaqs);
     const faqs = useFaqStore((state) => state.faqs);
     const loadingFaqs = useFaqStore((state) => state.loadingFaqs);
     const faqError = useFaqStore((state) => state.error);
     const faqsFetched = useFaqStore((state) => state.faqsFetched);
 
-    useEffect(() => {
-        if (!faqsFetched) {
-            fetchFaqs();
-        }
-    }, [faqsFetched, fetchFaqs]);
+    // useEffect(() => {
+    //     if (!faqsFetched) {
+    //         fetchFaqs();
+    //     }
+    // }, [faqsFetched, fetchFaqs]);
 
     if (loadingPages || loadingFaqs) {
         return <ContentLoader className="page-loader" />;

@@ -62,7 +62,7 @@
     .contact-form {
         .contact-form__content {
             .contact-form__btn {
-                align-self: stretch;
+                width: 100%;
             }
         }
     }
