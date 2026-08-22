@@ -27,6 +27,8 @@ export const sendContactMessage = async (req, res, next) => {
         message,
     });
 
+    console.log('CONTACT RESULT:', result);
+
     if (result.success) {
         res.json({
             success: true,
