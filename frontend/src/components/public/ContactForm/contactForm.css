@@ -47,14 +47,11 @@
             }
         }
 
-        .contact-form__footer {
-            display: flex;
-            .contact-form__btn {
-                width: 264px;
-                height: 56px;
-                font-size: 1.25rem;
-                margin-left: auto;
-            }
+        .contact-form__btn {
+            width: 264px;
+            height: 56px;
+            font-size: 1.25rem;
+            margin-left: auto;
         }
     }
 }

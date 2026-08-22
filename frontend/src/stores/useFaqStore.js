@@ -6,20 +6,24 @@ export const useFaqStore = create((set) => ({
     loadingFaqs: false,
     savingFaq: false,
     error: null,
+    faqsFetched: false,
 
     fetchFaqs: () => {
         set({ loadingFaqs: true });
 
-        faqsService
+        return faqsService
             .getFaqs()
             .then((res) => {
                 set({
                     faqs: res.data.faqs,
                     error: null,
+                    faqsFetched: true,
                 });
             })
             .catch((err) => {
-                set({ error: true });
+                set({
+                    error: err.response?.data?.message ?? 'Could not get FAQs',
+                });
             })
             .finally(() => {
                 set({ loadingFaqs: false });

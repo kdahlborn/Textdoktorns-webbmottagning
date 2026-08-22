@@ -12,31 +12,38 @@ const ContactPage = () => {
     const page = usePageStore((state) =>
         state.pages.find((p) => p.page === 'contact'),
     );
-    const error = usePageStore((state) => state.error);
-    const loading = usePageStore((state) => state.loadingPages);
+
+    const pageError = usePageStore((state) => state.error);
+    const loadingPages = usePageStore((state) => state.loadingPages);
+
     const content = page?.content;
+
     const fetchFaqs = useFaqStore((state) => state.fetchFaqs);
     const faqs = useFaqStore((state) => state.faqs);
+    const loadingFaqs = useFaqStore((state) => state.loadingFaqs);
+    const faqError = useFaqStore((state) => state.error);
+    const faqsFetched = useFaqStore((state) => state.faqsFetched);
 
     useEffect(() => {
-        if (faqs.length === 0) fetchFaqs();
-    }, [faqs.length, fetchFaqs]);
+        if (!faqsFetched) {
+            fetchFaqs();
+        }
+    }, [faqsFetched, fetchFaqs]);
 
-    if (loading) {
+    if (loadingPages || loadingFaqs) {
         return <ContentLoader className="page-loader" />;
     }
 
-    if (!page) {
+    if (pageError || faqError || !page) {
         return <ErrorPage />;
     }
 
     return (
         <div className="page page--contact">
-            {/* CONTACT-SECTION */}
             <ContactSection content={content} />
-            {/* FAQ-SECTION */}
+
             <FaqSection content={content.faq} faqs={faqs} />
-            {/* FOOTER-SECTION */}
+
             <FooterSection />
         </div>
     );
