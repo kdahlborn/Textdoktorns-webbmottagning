@@ -11,6 +11,11 @@
         gap: 6rem 1rem;
         align-items: stretch;
         margin-top: 2.5rem;
+
+        .service-card-wrapper {
+            height: 100%;
+            /* width: 100%; */
+        }
     }
 }
 
@@ -27,15 +32,13 @@
 }
 
 /* 800px */
-/* @media (max-width: 800px) {
+@media (max-width: 800px) {
     .services-section {
-        .service-cards {
-            grid-template-columns: 1fr;
-        }
+        padding-top: 3rem;
     }
-} */
-/* 640px */
-@media (max-width: 640px) {
+}
+/* 600px */
+@media (max-width: 600px) {
     .services-section {
         .service-cards {
             grid-template-columns: 1fr;

@@ -1,16 +1,19 @@
 import { useLanguage } from '../../../hooks/useLanguage';
-import Button from '../../Button/Button';
+import Button from '../../global/Button/Button';
 import './languageItem.css';
 
-const LanguageItem = ({ item, onCloseDrawer }) => {
+const LanguageItem = ({ item, onCloseDrawer, onCloseAccordion }) => {
     const { changeLanguage } = useLanguage();
     return (
         <li className="language-controller__item">
             <Button
                 className="language-controller__btn"
-                onClick={() => {
+                onClick={(e) => {
+                    e.currentTarget.blur();
+
                     changeLanguage(item.code);
-                    onCloseDrawer();
+                    onCloseAccordion();
+                    onCloseDrawer?.();
                 }}
             >
                 <img

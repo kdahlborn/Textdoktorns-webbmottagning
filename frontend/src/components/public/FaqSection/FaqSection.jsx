@@ -4,7 +4,7 @@ import './faqSection.css';
 import { useFaqStore } from '../../../stores/useFaqStore';
 import FaqList from '../FaqList/FaqList';
 import { useState } from 'react';
-import ContentLoader from '../../ContentLoader/ContentLoader';
+import ContentLoader from '../../global/ContentLoader/ContentLoader';
 
 const FaqSection = ({ content, faqs }) => {
     const { language } = useParams();

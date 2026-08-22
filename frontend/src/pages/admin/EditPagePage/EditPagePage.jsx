@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { usePageStore } from '../../../stores/usePageStore';
 import './editPagePage.css';
 import { useParams } from 'react-router';
@@ -8,7 +7,7 @@ import { capitalizeFirstLetter } from '../../../utils/strings';
 import HomeEditor from '../../../components/admin/HomeEditor/HomeEditor';
 import AboutEditor from '../../../components/admin/AboutEditor/AboutEditor';
 import ContactEditor from '../../../components/admin/ContactEditor/ContactEditor';
-import ContentLoader from '../../../components/ContentLoader/ContentLoader';
+import ContentLoader from '../../../components/global/ContentLoader/ContentLoader';
 
 const EditPagePage = () => {
     const { pageName } = useParams();

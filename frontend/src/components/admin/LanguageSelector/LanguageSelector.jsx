@@ -1,5 +1,5 @@
 import './languageSelector.css';
-import Button from '../../Button/Button';
+import Button from '../../global/Button/Button';
 
 const LanguageSelector = ({ language, setLanguage }) => {
     const languages = ['sv', 'en', 'de', 'es', 'fr', 'ru'];

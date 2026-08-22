@@ -1,9 +1,10 @@
 import './aboutPage.css';
 import { usePageStore } from '../../../stores/usePageStore';
 import AboutSection from '../../../components/public/AboutHero/AboutHero';
-import ContentLoader from '../../../components/ContentLoader/ContentLoader';
+import ContentLoader from '../../../components/global/ContentLoader/ContentLoader';
 import CriteriaSection from '../../../components/public/CriteriaSection/CriteriaSection';
 import FooterSection from '../../../components/public/FooterSection/FooterSection';
+import ErrorPage from '../ErrorPage/ErrorPage';
 
 const AboutPage = () => {
     const page = usePageStore((state) =>
@@ -18,7 +19,7 @@ const AboutPage = () => {
     }
 
     if (!page) {
-        return <p>Sidan kunde inte hittas.</p>;
+        return <ErrorPage />;
     }
 
     return (

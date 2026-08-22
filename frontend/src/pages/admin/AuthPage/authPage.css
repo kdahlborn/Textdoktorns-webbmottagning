@@ -1,5 +1,5 @@
 .auth-page {
-    height: 100vh;
+    min-height: 100vh;
     display: grid;
     place-content: center;
 
@@ -75,13 +75,23 @@
 }
 
 /* MEDIA QUERIES */
+/* 900px */
+@media (max-width: 900px) {
+    .auth-page {
+        padding-block: 2rem;
+        .auth-page__container {
+            /* padding-block: 6rem; */
+            height: 100%;
+        }
+    }
+}
 /* 600px */
 @media (max-width: 600px) {
     .auth-page {
         .auth-page__container {
             width: 100vw;
             box-shadow: none;
-            padding: 0 1rem;
+            /* padding: 0 1rem; */
 
             .auth-form {
                 width: 100%;

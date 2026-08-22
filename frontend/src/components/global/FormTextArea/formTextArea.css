@@ -4,12 +4,27 @@
     gap: 0.5rem;
     font-weight: 500;
     color: var(--text-dark);
+    font-family: var(--inter);
+
+    .form-label-text {
+        color: var(--text-dark);
+        font-weight: 500;
+        display: flex;
+        gap: 0.25rem;
+
+        .star {
+            color: var(--light-blue);
+            font-weight: 700;
+        }
+    }
 
     .form-textarea {
         font-family: inherit;
         font-weight: 400;
         resize: none;
         padding: 0.5rem;
+        color: var(--dark-blue);
+        letter-spacing: 1px;
         border-radius: 0.25rem;
         border: 1px solid var(--gray);
         height: 140px;

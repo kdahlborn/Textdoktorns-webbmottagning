@@ -3,8 +3,9 @@ import './authPage.css';
 import Logo from '../../../assets/images/logotypes/textdoktorn.svg';
 import { useState } from 'react';
 import RegisterForm from '../../../components/admin/RegisterForm/RegisterForm';
-import Button from '../../../components/Button/Button';
+import Button from '../../../components/global/Button/Button';
 import logotype from '../../../assets/images/logotypes/textdoktorn.svg';
+import RegSuccess from '../../../components/admin/RegSuccess/RegSuccess';
 
 const AuthPage = () => {
     const [mode, setMode] = useState('login');
@@ -17,7 +18,11 @@ const AuthPage = () => {
                     alt="Textdoktorn logotype"
                     className="auth-page__logotype"
                 />
-                {mode === 'login' ? <LoginForm /> : <RegisterForm />}
+                {mode === 'login' ? (
+                    <LoginForm />
+                ) : (
+                    <RegisterForm setMode={setMode} />
+                )}
 
                 <div className="auth-toggle">
                     <p className="auth-toggle__text">

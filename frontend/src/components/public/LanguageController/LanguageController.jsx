@@ -10,9 +10,11 @@ import { Accordion } from '@mantine/core';
 import { Languages, ChevronDown } from 'lucide-react';
 import { capitalizeFirstLetter } from '../../../utils/strings';
 import LanguageItem from '../LanguageItem/LanguageItem';
+import { useState } from 'react';
 
 const LanguageController = ({ onCloseDrawer = null }) => {
     const { language } = useParams();
+    const [value, setValue] = useState(null);
     const languageItems = [
         {
             code: 'sv',
@@ -54,6 +56,8 @@ const LanguageController = ({ onCloseDrawer = null }) => {
             }}
             variant="unstyled"
             className="language-controller"
+            value={value}
+            onChange={setValue}
         >
             <Accordion.Item value="language">
                 <Accordion.Control className="language-controller__control">
@@ -70,36 +74,20 @@ const LanguageController = ({ onCloseDrawer = null }) => {
 
                 <Accordion.Panel className="language-controller__panel">
                     <ul className="language-controller__list">
-                        {languageItems.map((item) => {
-                            if (item.code !== language) {
-                                return (
-                                    <LanguageItem
-                                        key={`option-${item.code}`}
-                                        item={item}
-                                        onCloseDrawer={onCloseDrawer}
-                                    />
-                                );
-                            }
-                        })}
+                        {languageItems
+                            .filter((item) => item.code !== language)
+                            .map((item) => (
+                                <LanguageItem
+                                    key={item.code}
+                                    item={item}
+                                    onCloseDrawer={onCloseDrawer}
+                                    onCloseAccordion={() => setValue(null)}
+                                />
+                            ))}
                     </ul>
                 </Accordion.Panel>
             </Accordion.Item>
         </Accordion>
-        // <div className="language-controller">
-        //     <ul className="language-controller__list">
-        //         {languageOptions.map((option) => {
-        //             if (option.code !== language) {
-        //                 return (
-        //                     <LanguageOption
-        //                         key={`option-${option.code}`}
-        //                         option={option}
-        //                         onCloseDrawer={onCloseDrawer}
-        //                     />
-        //                 );
-        //             }
-        //         })}
-        //     </ul>
-        // </div>
     );
 };
 

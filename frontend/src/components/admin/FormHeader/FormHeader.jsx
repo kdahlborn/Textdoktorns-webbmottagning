@@ -1,5 +1,5 @@
 import LanguageSelector from '../LanguageSelector/LanguageSelector';
-import Button from '../../Button/Button';
+import Button from '../../global/Button/Button';
 import { Loader } from '@mantine/core';
 import { Check, Save } from 'lucide-react';
 import './formHeader.css';

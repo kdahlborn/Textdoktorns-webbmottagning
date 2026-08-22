@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 import { useFaqStore } from '../../../stores/useFaqStore';
 import './editFaqPage.css';
 import FaqList from '../../../components/admin/FaqList/FaqList';
-import Button from '../../../components/Button/Button';
+import Button from '../../../components/global/Button/Button';
 import { Plus } from 'lucide-react';
 import FaqEditor from '../../../components/admin/FaqEditor/FaqEditor';
-import ContentLoader from '../../../components/ContentLoader/ContentLoader';
+import ContentLoader from '../../../components/global/ContentLoader/ContentLoader';
 
 const EditFaqPage = () => {
     const { faqs, fetchFaqs, loadingFaqs } = useFaqStore();

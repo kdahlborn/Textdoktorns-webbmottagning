@@ -6,7 +6,7 @@ import { Phone } from 'lucide-react';
 import HeaderNav from '../HeaderNav/HeaderNav';
 import { useState } from 'react';
 import MenuButton from '../MenuButton/MenuButton';
-import Button from '../../Button/Button';
+import Button from '../../global/Button/Button';
 import { useDisclosure } from '@mantine/hooks';
 import MenuDrawer from '../MenuDrawer/MenuDrawer';
 import LanguageController from '../LanguageController/LanguageController';
@@ -31,7 +31,7 @@ const Header = () => {
                 <Button
                     className={`header__menu-btn ${opened ? 'header__menu-btn--active' : ''}`}
                     onClick={toggle}
-                    aria-label="Toggle menu"
+                    ariaLabel="Toggle menu"
                 >
                     <span></span>
                 </Button>

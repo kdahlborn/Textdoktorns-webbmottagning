@@ -57,12 +57,14 @@
             position: relative;
 
             .meds__item {
-                display: flex;
+                display: grid;
+                grid-template-columns: 3rem 1fr;
                 gap: 1rem;
                 align-items: center;
                 font-size: 1.5rem;
                 font-weight: 500;
-                color: var(--text-dark);
+                letter-spacing: 1px;
+                color: var(--dark-blue);
 
                 .circle-icon {
                     width: 3rem;
@@ -74,8 +76,8 @@
         .meds__list::before {
             content: '';
             position: absolute;
-            height: 100%;
-            top: 0;
+            height: 90%;
+            top: 0.75rem;
             left: calc(1.5rem - 0.5px);
             border-left: 1px solid var(--light-blue);
             z-index: 0;
@@ -93,9 +95,22 @@
             top: 60%;
         }
     }
+    /* .meds-section {
+        flex-direction: column;
+        gap: 120px;
+
+        .meds-section__img {
+            top: 40%;
+            left: 80%;
+        }
+
+        .translation {
+            max-width: 450px;
+        }
+    } */
 }
-/* 800px */
-@media (max-width: 800px) {
+/* 900px */
+@media (max-width: 900px) {
     .meds-section {
         flex-direction: column;
         gap: 120px;
@@ -115,7 +130,8 @@
     .meds-section {
         .meds-section__img {
             top: 42%;
-            left: 75%;
+            left: 78%;
+            width: 600px;
         }
 
         .translation {
@@ -123,6 +139,7 @@
 
             .translation__desc {
                 /* font-size: 1rem; */
+                margin-bottom: 0.25rem;
             }
         }
 

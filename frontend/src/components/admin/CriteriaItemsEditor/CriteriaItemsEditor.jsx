@@ -1,6 +1,6 @@
-import FormInput from '../FormInput/FormInput';
-import React from 'react';
-import FormTextArea from '../FormTextArea/FormTextArea';
+import './criteriaItemsEditor.css';
+import FormInput from '../../global/FormInput/FormInput';
+import FormTextArea from '../../global/FormTextArea/FormTextArea';
 
 const CriteriaItemsEditor = ({ items, language }) => {
     return items?.map((_, index) => {

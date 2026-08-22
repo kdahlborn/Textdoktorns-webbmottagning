@@ -4,9 +4,9 @@ import './languageLinksEditor.css';
 import FormHeader from '../FormHeader/FormHeader';
 import SaveButton from '../SaveButton/SaveButton';
 import FormSection from '../FormSection/FormSection';
-import FormInput from '../FormInput/FormInput';
+import FormInput from '../../global/FormInput/FormInput';
 import { X, Plus } from 'lucide-react';
-import Button from '../../Button/Button';
+import Button from '../../global/Button/Button';
 
 const LanguageLinksEditor = ({ languageLinks }) => {
     const { methods, control, isDirty, saving, saved, onSubmit } =

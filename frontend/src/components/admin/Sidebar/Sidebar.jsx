@@ -11,7 +11,7 @@ import {
     Monitor,
 } from 'lucide-react';
 import { useAuthStore } from '../../../stores/useAuthStore';
-import Button from '../../Button/Button';
+import Button from '../../global/Button/Button';
 
 const Sidebar = ({ onCloseDrawer = null }) => {
     const logout = useAuthStore((state) => state.logout);

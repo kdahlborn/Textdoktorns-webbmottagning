@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import CircleIcon from '../CircleIcon/CircleIcon';
 import pillsImg from '../../../assets/images/pills.png';
+import { motion } from 'motion/react';
 
 const MedsSection = ({ translation, prescriptions }) => {
     const { language } = useParams();
@@ -44,7 +45,16 @@ const MedsSection = ({ translation, prescriptions }) => {
                 aria-hidden="true"
                 className="meds-section__img"
             />
-            <article className="translation">
+            <motion.article
+                className="translation"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{
+                    duration: 0.5,
+                    ease: 'easeOut',
+                }}
+            >
                 <SectionHeading title={translation.heading[language]} />
                 <h3 className="translation__title">
                     {translation.title[language]}
@@ -52,21 +62,32 @@ const MedsSection = ({ translation, prescriptions }) => {
                 <p className="translation__desc">
                     {translation.text[language]}
                 </p>
-            </article>
+            </motion.article>
 
             <article className="meds">
                 <SectionHeading title={prescriptions.heading[language]} />
 
                 <ul className="meds__list">
-                    {prescriptions.items.map((item) => {
+                    {prescriptions.items.map((item, index) => {
                         return (
-                            <li key={item.id} className="meds__item">
+                            <motion.li
+                                key={item.id}
+                                className="meds__item"
+                                initial={{ opacity: 0, y: 40 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, amount: 0.2 }}
+                                transition={{
+                                    duration: 0.5,
+                                    delay: index * 0.1,
+                                    ease: 'easeOut',
+                                }}
+                            >
                                 <CircleIcon
                                     icon={icons[item.id].icon}
                                     color={icons[item.id].color}
                                 />
                                 {item[language]}
-                            </li>
+                            </motion.li>
                         );
                     })}
                 </ul>

@@ -1,5 +1,5 @@
 import './textCategoriesEditor.css';
-import FormInput from '../FormInput/FormInput';
+import FormInput from '../../global/FormInput/FormInput';
 import ListEditor from '../ListEditor/ListEditor';
 
 const TextCategoriesEditor = ({ categories, language }) => {

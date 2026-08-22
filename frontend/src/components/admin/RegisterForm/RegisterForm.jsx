@@ -1,12 +1,13 @@
 import { FormProvider, useForm } from 'react-hook-form';
 import './registerForm.css';
 import { useAuthStore } from '../../../stores/useAuthStore';
-import FormInput from '../FormInput/FormInput';
-import Button from '../../Button/Button';
+import FormInput from '../../global/FormInput/FormInput';
+import Button from '../../global/Button/Button';
 import { Loader } from '@mantine/core';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import RegSuccess from '../RegSuccess/RegSuccess';
 
-const RegisterForm = () => {
+const RegisterForm = ({ setMode }) => {
     const registerAdmin = useAuthStore((state) => state.registerAdmin);
     const loading = useAuthStore((state) => state.loading);
     const error = useAuthStore((state) => state.error);
@@ -21,12 +22,30 @@ const RegisterForm = () => {
         },
     });
 
-    const onSubmit = ({ username, password, registrationKey }) => {
-        registerAdmin({ username, password }, registrationKey).then((res) => {
+    const onSubmit = ({
+        username,
+        password,
+        confirmPassword,
+        registrationKey,
+    }) => {
+        registerAdmin(
+            { username, password, confirmPassword },
+            registrationKey,
+        ).then((res) => {
             if (res.success) setRegisterSuccess(true);
             console.log(res);
         });
     };
+
+    useEffect(() => {
+        if (registerSuccess) {
+            setTimeout(() => {
+                setMode('login');
+            }, 2000);
+        }
+    }, [registerSuccess]);
+
+    if (registerSuccess) return <RegSuccess />;
 
     return (
         <FormProvider {...methods}>

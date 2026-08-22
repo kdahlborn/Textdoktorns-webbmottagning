@@ -5,6 +5,7 @@ import { useLanguageSync } from '../../hooks/useLanguageSync';
 import { usePageStore } from '../../stores/usePageStore';
 import { useEffect } from 'react';
 import { useLanguageLinksStore } from '../../stores/useLanguageLinksStore';
+import useScrollToTop from '../../hooks/useScrollToTop';
 
 const PublicLayout = () => {
     const pages = usePageStore((state) => state.pages);
@@ -16,6 +17,7 @@ const PublicLayout = () => {
     );
 
     useLanguageSync();
+    useScrollToTop();
 
     useEffect(() => {
         if (pages.length === 0) fetchPages();

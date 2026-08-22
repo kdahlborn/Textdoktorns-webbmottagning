@@ -34,14 +34,15 @@
 }
 
 /* MEDIA QUERIES */
-/* 800px */
-@media (max-width: 800px) {
+/* 900px */
+@media (max-width: 900px) {
     .header__nav {
         .header__link {
             padding: 0.5rem 0.5rem 0 0.5rem;
             flex-direction: column;
             font-weight: 400;
             font-size: 1rem;
+            text-align: center;
         }
     }
 }

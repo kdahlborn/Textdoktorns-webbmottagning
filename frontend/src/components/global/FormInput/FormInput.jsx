@@ -1,7 +1,13 @@
 import { useFormContext } from 'react-hook-form';
 import './formInput.css';
 
-const FormInput = ({ label, path, type = 'text', required = false }) => {
+const FormInput = ({
+    label,
+    path,
+    type = 'text',
+    required = false,
+    rules = {},
+}) => {
     const { register } = useFormContext();
     return (
         <label className="form-label">
@@ -15,6 +21,7 @@ const FormInput = ({ label, path, type = 'text', required = false }) => {
                 className="form-input"
                 {...register(path, {
                     required: required ? `${label} is required` : false,
+                    ...rules,
                 })}
             />
         </label>

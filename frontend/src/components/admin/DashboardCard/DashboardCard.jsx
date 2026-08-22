@@ -1,6 +1,6 @@
 import './dashboardCard.css';
 
-import ContentLoader from '../../ContentLoader/ContentLoader';
+import ContentLoader from '../../global/ContentLoader/ContentLoader';
 
 const DashboardCard = ({ title, count, icon, color, desc, loading }) => {
     return (

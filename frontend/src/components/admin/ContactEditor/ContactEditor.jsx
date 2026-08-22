@@ -2,7 +2,7 @@ import { FormProvider } from 'react-hook-form';
 import { usePageEditor } from '../../../hooks/usePageEditor';
 import './contactEditor.css';
 import FormSection from '../FormSection/FormSection';
-import FormInput from '../FormInput/FormInput';
+import FormInput from '../../global/FormInput/FormInput';
 import FormHeader from '../FormHeader/FormHeader';
 import SaveButton from '../SaveButton/SaveButton';
 import LanguageSelector from '../LanguageSelector/LanguageSelector';

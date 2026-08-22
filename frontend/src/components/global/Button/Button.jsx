@@ -9,6 +9,7 @@ const Button = ({
     type = 'button',
     title,
     disabled = false,
+    ariaLabel = null,
 }) => {
     return (
         <button
@@ -17,6 +18,7 @@ const Button = ({
             type={type}
             title={title}
             disabled={disabled}
+            aria-label={ariaLabel}
         >
             {children}
             {icon}

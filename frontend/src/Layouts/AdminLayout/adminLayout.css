@@ -3,6 +3,10 @@
     display: grid;
     grid-template-columns: 300px 1fr;
 
+    .mobile-header {
+        display: none;
+    }
+
     .admin-main {
         background-color: var(--white);
         min-height: 0;
@@ -31,8 +35,23 @@
     .admin-layout {
         grid-template-columns: 1fr;
 
+        .mobile-header {
+            display: flex;
+        }
+
         .desktop-sidebar {
             display: none;
+        }
+
+        .form-input {
+            font-size: 1rem;
+            letter-spacing: 0;
+            font-weight: 400;
+        }
+
+        .form-textarea {
+            font-size: 1rem;
+            letter-spacing: 0;
         }
     }
 }

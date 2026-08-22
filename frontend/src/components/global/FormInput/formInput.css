@@ -19,7 +19,9 @@
 
 .form-input {
     font-family: inherit;
-    font-weight: 400;
+    font-weight: 500;
+    color: var(--dark-blue);
+    letter-spacing: 1px;
     padding: 0.5rem;
     border-radius: 0.25rem;
     border: 1px solid var(--gray);

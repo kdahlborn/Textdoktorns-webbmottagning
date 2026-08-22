@@ -1,12 +1,10 @@
-import Button from '../../Button/Button';
+import Button from '../../global/Button/Button';
 import './loginForm.css';
-import Logo from '../../../assets/images/logotypes/textdoktorn.svg';
-import { useState } from 'react';
 import { useAuthStore } from '../../../stores/useAuthStore';
 import { useNavigate } from 'react-router';
 import { Loader } from '@mantine/core';
 import { FormProvider, useForm } from 'react-hook-form';
-import FormInput from '../FormInput/FormInput';
+import FormInput from '../../global/FormInput/FormInput';
 
 const LoginForm = () => {
     const navigate = useNavigate();

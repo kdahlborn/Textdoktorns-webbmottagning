@@ -1,8 +1,8 @@
 import './homeEditor.css';
 import { FormProvider } from 'react-hook-form';
-import FormInput from '../FormInput/FormInput';
+import FormInput from '../../global/FormInput/FormInput';
 import ListEditor from '../ListEditor/ListEditor';
-import FormTextArea from '../FormTextArea/FormTextArea';
+import FormTextArea from '../../global/FormTextArea/FormTextArea';
 import FormSection from '../FormSection/FormSection';
 import ServiceCardsEditor from '../ServiceCardsEditor/ServiceCardsEditor';
 import TextCategoriesEditor from '../TextCategoriesEditor/TextCategoriesEditor';

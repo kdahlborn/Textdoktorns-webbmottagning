@@ -1,5 +1,5 @@
 import './saveButton.css';
-import Button from '../../Button/Button';
+import Button from '../../global/Button/Button';
 import { Loader } from '@mantine/core';
 import { Check, Save } from 'lucide-react';
 

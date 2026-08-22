@@ -1,15 +1,20 @@
 import './formTextArea.css';
 import { useFormContext } from 'react-hook-form';
 
-const FormTextArea = ({ label, path }) => {
+const FormTextArea = ({ label, path, required = false }) => {
     const { register } = useFormContext();
     return (
         <label className="form-label">
-            {label}
+            <p className="form-label-text">
+                {label}
+                {required && <span className="star">*</span>}
+            </p>
             <textarea
                 className="form-textarea"
                 spellCheck="false"
-                {...register(path)}
+                {...register(path, {
+                    required: required ? `${label} is required` : false,
+                })}
             ></textarea>
         </label>
     );

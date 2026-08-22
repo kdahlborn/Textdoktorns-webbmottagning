@@ -1,7 +1,7 @@
 import { useDisclosure } from '@mantine/hooks';
 import './mobileHeader.css';
 import { Menu } from 'lucide-react';
-import Button from '../../Button/Button';
+import Button from '../../global/Button/Button';
 import { Drawer } from '@mantine/core';
 import Sidebar from '../Sidebar/Sidebar';
 

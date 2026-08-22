@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { NavLink, useParams } from 'react-router';
 import { Phone, Info, House } from 'lucide-react';
 import './headerNav.css';
-import Button from '../../Button/Button';
+import Button from '../../global/Button/Button';
 import { capitalizeFirstLetter } from '../../../utils/strings';
 import { Accordion } from '@mantine/core';
 

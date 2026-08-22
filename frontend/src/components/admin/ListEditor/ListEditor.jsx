@@ -1,6 +1,6 @@
-import FormInput from '../FormInput/FormInput';
+import FormInput from '../../global/FormInput/FormInput';
 import './listEditor.css';
-import Button from '../../Button/Button';
+import Button from '../../global/Button/Button';
 import { Plus, X } from 'lucide-react';
 import { useFieldArray, useFormContext } from 'react-hook-form';
 
