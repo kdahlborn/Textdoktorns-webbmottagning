@@ -47,6 +47,7 @@ html {
 body {
     font-family: var(--inter);
     color: var(--text-darker);
+    overflow-x: hidden;
 }
 
 a {

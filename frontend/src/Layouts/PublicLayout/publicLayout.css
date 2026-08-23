@@ -1,5 +1,6 @@
 .page {
     background-color: var(--white);
+    overflow-x: hidden;
 }
 
 .page-loader {
