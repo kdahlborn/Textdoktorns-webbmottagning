@@ -7,7 +7,7 @@ const CriteriaItemsEditor = ({ items, language }) => {
         return (
             <section
                 key={`criteria-item-${index}`}
-                className="form__page-subsection"
+                className="form__subsection"
             >
                 <h3 className="form__subtitle">{`Kriterium ${index + 1}`}</h3>
 
