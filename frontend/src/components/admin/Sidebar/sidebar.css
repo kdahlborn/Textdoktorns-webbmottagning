@@ -94,6 +94,8 @@
 /* 600px */
 @media (max-width: 600px) {
     .sidebar {
+        max-height: 100vh;
+        padding-bottom: 3rem;
         .sidebar__header {
             .sidebar__img {
                 width: 140px;

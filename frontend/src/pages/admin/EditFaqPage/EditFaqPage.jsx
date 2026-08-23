@@ -6,6 +6,7 @@ import Button from '../../../components/global/Button/Button';
 import { Plus } from 'lucide-react';
 import FaqEditor from '../../../components/admin/FaqEditor/FaqEditor';
 import ContentLoader from '../../../components/global/ContentLoader/ContentLoader';
+import { AnimatePresence, motion } from 'motion/react';
 
 const EditFaqPage = () => {
     const { faqs, fetchFaqs, loadingFaqs } = useFaqStore();
@@ -64,14 +65,22 @@ const EditFaqPage = () => {
                                 setEditFaq={setEditFaq}
                             />
                         </section>
-                        {editFaq && (
-                            <section className="editor-wrapper">
-                                <FaqEditor
-                                    faq={editFaq}
-                                    setEditFaq={setEditFaq}
-                                />
-                            </section>
-                        )}
+                        <AnimatePresence mode="wait">
+                            {editFaq && (
+                                <motion.section
+                                    className="editor-wrapper"
+                                    initial={{ opacity: 0, x: 100 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    exit={{ opacity: 0, x: 100 }}
+                                    transition={{ duration: 0.25 }}
+                                >
+                                    <FaqEditor
+                                        faq={editFaq}
+                                        setEditFaq={setEditFaq}
+                                    />
+                                </motion.section>
+                            )}
+                        </AnimatePresence>
                     </>
                 )}
             </section>

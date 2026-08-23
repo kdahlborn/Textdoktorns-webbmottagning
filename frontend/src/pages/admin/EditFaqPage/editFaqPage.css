@@ -48,3 +48,24 @@
         }
     }
 }
+
+/* MEDIA QUERIES */
+/* 800px */
+@media (max-width: 800px) {
+    .edit-faq-page {
+        .edit-faq-page__content {
+            display: block;
+            padding-bottom: 4rem;
+        }
+
+        .edit-faq-page__content:has(.editor-wrapper) {
+            .list-wrapper {
+                display: none;
+            }
+
+            .editor-wrapper {
+                display: block;
+            }
+        }
+    }
+}

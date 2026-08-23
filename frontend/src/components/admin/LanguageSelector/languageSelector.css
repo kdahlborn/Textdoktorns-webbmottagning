@@ -23,3 +23,13 @@
         font-weight: 600;
     }
 }
+
+/* MEDIA QUERIES */
+/* 600px */
+@media (max-width: 600px) {
+    .lang-selector {
+        .lang-btn {
+            padding: 1rem 0.75rem 0.25rem 0.75rem;
+        }
+    }
+}

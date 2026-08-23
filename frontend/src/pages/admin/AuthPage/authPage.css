@@ -10,7 +10,7 @@
         box-shadow: var(--blue-shade);
         display: flex;
         flex-direction: column;
-        gap: 3rem;
+        gap: 4rem;
 
         .auth-page__logotype {
             width: 260px;
@@ -27,7 +27,7 @@
                 color: var(--red);
                 font-weight: 500;
                 position: absolute;
-                top: -2rem;
+                top: -3rem;
             }
 
             .form-input {
@@ -91,7 +91,12 @@
         .auth-page__container {
             width: 100vw;
             box-shadow: none;
-            /* padding: 0 1rem; */
+            padding-bottom: 3rem;
+
+            .auth-page__logotype {
+                align-self: center;
+                width: 160px;
+            }
 
             .auth-form {
                 width: 100%;

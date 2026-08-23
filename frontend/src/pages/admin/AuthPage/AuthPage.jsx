@@ -1,14 +1,19 @@
 import LoginForm from '../../../components/admin/LoginForm/LoginForm';
 import './authPage.css';
-import Logo from '../../../assets/images/logotypes/textdoktorn.svg';
 import { useState } from 'react';
 import RegisterForm from '../../../components/admin/RegisterForm/RegisterForm';
 import Button from '../../../components/global/Button/Button';
 import logotype from '../../../assets/images/logotypes/textdoktorn.svg';
-import RegSuccess from '../../../components/admin/RegSuccess/RegSuccess';
+import { useAuthStore } from '../../../stores/useAuthStore';
 
 const AuthPage = () => {
     const [mode, setMode] = useState('login');
+    const clearError = useAuthStore((state) => state.clearError);
+
+    const changeMode = (newMode) => {
+        clearError();
+        setMode(newMode);
+    };
 
     return (
         <main className="auth-page page">
@@ -33,21 +38,20 @@ const AuthPage = () => {
                     {mode === 'login' ? (
                         <Button
                             className="auth-toggle__btn"
-                            onClick={() => setMode('register')}
+                            onClick={() => changeMode('register')}
                         >
                             Registrera admin
                         </Button>
                     ) : (
                         <Button
                             className="auth-toggle__btn"
-                            onClick={() => setMode('login')}
+                            onClick={() => changeMode('login')}
                         >
                             Logga in
                         </Button>
                     )}
                 </div>
             </section>
-            {/* <AuthForm /> */}
         </main>
     );
 };

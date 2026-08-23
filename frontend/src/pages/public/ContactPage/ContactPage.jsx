@@ -12,10 +12,8 @@ const ContactPage = () => {
     const page = usePageStore((state) =>
         state.pages.find((p) => p.page === 'contact'),
     );
-
     const pageError = usePageStore((state) => state.error);
     const loadingPages = usePageStore((state) => state.loadingPages);
-
     const content = page?.content;
 
     const fetchFaqs = useFaqStore((state) => state.fetchFaqs);

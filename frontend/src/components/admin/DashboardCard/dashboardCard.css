@@ -57,3 +57,25 @@
     cursor: pointer;
     box-shadow: 0 0 8px 2px var(--light-blue);
 }
+
+/* MEDIA QUERIES */
+/* 600px */
+@media (max-width: 600px) {
+    .dashboard-card {
+        padding: 0.5rem 1rem;
+        .dashboard-card__info {
+            gap: 0.25rem;
+
+            .dashboard-card__title {
+                font-size: 1rem;
+                font-weight: 500;
+            }
+
+            .dashboard-card__count {
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: var(--text-darker);
+            }
+        }
+    }
+}

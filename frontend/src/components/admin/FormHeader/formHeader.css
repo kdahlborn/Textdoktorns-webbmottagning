@@ -1,12 +1,12 @@
 .form__header {
-    height: 50px;
+    height: 52px;
     display: flex;
     justify-content: space-between;
     position: sticky;
     top: 0;
     background-color: var(--white);
     z-index: 1;
-    border-bottom: 1px solid whitesmoke;
+    border-bottom: 1px solid var(--gray);
     padding: 0 1rem;
 
     .save-btn {
@@ -30,13 +30,14 @@
 /* 600px */
 @media (max-width: 600px) {
     .form__header {
-        height: unset;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        padding-bottom: 0.5rem;
+        align-items: center;
+        gap: 0.25rem;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
 
-        .save-btn {
-            margin-left: auto;
-        }
+    .form__header .save-btn {
+        margin-left: auto;
     }
 }

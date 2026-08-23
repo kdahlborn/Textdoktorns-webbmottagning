@@ -4,16 +4,18 @@
     gap: 2rem;
 
     .form__header {
+        flex-direction: row;
         justify-content: flex-end;
-        align-items: center;
         gap: 1rem;
+        padding: 0.5rem 1rem;
 
-        /* .btn {
+        .btn {
             height: 35px;
             font-size: 0.75rem;
             padding: 0.5rem;
             gap: 0.5rem;
-        } */
+            margin: 0;
+        }
     }
 
     .form__section {

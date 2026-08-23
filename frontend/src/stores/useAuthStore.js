@@ -56,6 +56,12 @@ export const useAuthStore = create(
                     error: null,
                 });
             },
+
+            clearError: () => {
+                set({
+                    error: null,
+                });
+            },
         }),
         {
             name: 'auth-storage',

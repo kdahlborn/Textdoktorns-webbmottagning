@@ -2,7 +2,7 @@ import { useParams } from 'react-router';
 import SectionHeading from '../SectionHeading/SectionHeading';
 import logoEuCom from '../../../assets/images/logotypes/eu-com.svg';
 import logoSemcon from '../../../assets/images/logotypes/semcon.svg';
-import logoCyient from '../../../assets/images/logotypes/cyient-3.svg';
+import logoCyient from '../../../assets/images/logotypes/cyient.svg';
 import logoWikipedia from '../../../assets/images/logotypes/wikipedia.svg';
 import logoRws from '../../../assets/images/logotypes/rws.svg';
 import logoBjerkenHynell from '../../../assets/images/logotypes/b-hynell.svg';

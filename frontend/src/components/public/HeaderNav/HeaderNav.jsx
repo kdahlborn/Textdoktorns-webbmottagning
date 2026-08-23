@@ -16,14 +16,14 @@ const HeaderNav = ({ onCloseDrawer = null }) => {
             icon: <House size={20} />,
         },
         {
-            path: `/${language}/contact`,
-            label: 'contact',
-            icon: <Phone size={20} />,
-        },
-        {
             path: `/${language}/about`,
             label: 'about',
             icon: <Info size={20} />,
+        },
+        {
+            path: `/${language}/contact`,
+            label: 'contact',
+            icon: <Phone size={20} />,
         },
     ];
 

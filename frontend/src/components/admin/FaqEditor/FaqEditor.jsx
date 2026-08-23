@@ -12,10 +12,6 @@ import { Check, Save } from 'lucide-react';
 import SaveButton from '../SaveButton/SaveButton';
 
 const FaqEditor = ({ faq, setEditFaq }) => {
-    useEffect(() => {
-        console.log(faq);
-    }, [faq]);
-
     const {
         methods,
         language,
@@ -38,18 +34,19 @@ const FaqEditor = ({ faq, setEditFaq }) => {
                     language={language}
                     setLanguage={setLanguage}
                 />
+                <section className="form__content">
+                    <FormInput
+                        key={`faq-question-${language}`}
+                        label="Fråga"
+                        path={`question.${language}`}
+                    />
 
-                <FormInput
-                    key={`faq-question-${language}`}
-                    label="Fråga"
-                    path={`question.${language}`}
-                />
-
-                <FormTextArea
-                    key={`faq-answer-${language}`}
-                    label="Svar"
-                    path={`answer.${language}`}
-                />
+                    <FormTextArea
+                        key={`faq-answer-${language}`}
+                        label="Svar"
+                        path={`answer.${language}`}
+                    />
+                </section>
 
                 {/* FORM FOOTER */}
                 <footer className="form__footer">

@@ -43,7 +43,7 @@ const DashboardPage = () => {
         {
             title: 'Språklänkar',
             path: '/admin/language-links',
-            count: pages.length,
+            count: languageLinks.length,
             desc: 'Hantera språklänkar',
             icon: <Globe size={40} />,
             color: 'purple',
@@ -58,35 +58,9 @@ const DashboardPage = () => {
             </header>
 
             <section className="dashboard__content">
-                {/* <Link to="/admin/pages">
-                    <DashboardCard
-                        label="Sidor"
-                        count={pages.length}
-                        icon={<File size={40} />}
-                        loading={loadingPages}
-                    />
-                </Link>
-
-                <Link to="/admin/faqs">
-                    <DashboardCard
-                        label="FAQ"
-                        count={faqs.length}
-                        icon={<CircleQuestionMark size={40} />}
-                        loading={loadingFaqs}
-                    />
-                </Link>
-
-                <Link to="/admin/language-links">
-                    <DashboardCard
-                        label="Språklänkar"
-                        count={languageLinks.length}
-                        icon={<Globe size={40} />}
-                        loading={loadingLanguageLinks}
-                    />
-                </Link> */}
-                {cards.map((card, index) => {
+                {cards.map((card) => {
                     return (
-                        <Link to={card.path}>
+                        <Link to={card.path} key={card.title}>
                             <DashboardCard
                                 title={card.title}
                                 count={card.count}

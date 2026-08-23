@@ -14,3 +14,14 @@
         padding: 2rem 1rem;
     }
 }
+
+/* MEDIA QUERIES */
+/* 600px */
+@media (max-width: 600px) {
+    .dashboard {
+        .dashboard__content {
+            padding-bottom: 4rem;
+            gap: 1rem;
+        }
+    }
+}

@@ -33,7 +33,9 @@
 /* 600px */
 @media (max-width: 600px) {
     .admin-layout {
-        grid-template-columns: 1fr;
+        /* grid-template-columns: 1fr; */
+        display: flex;
+        flex-direction: column;
 
         .mobile-header {
             display: flex;

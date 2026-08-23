@@ -30,10 +30,10 @@ const LanguageLinksEditor = ({ languageLinks }) => {
                 onSubmit={methods.handleSubmit(onSubmit)}
             >
                 <FormHeader>
-                    {/* <Button onClick={addNewLink}>
+                    <Button className="add-btn" onClick={addNewLink}>
                         <Plus size={16} strokeWidth={3} />
                         Lägg till språklänk
-                    </Button> */}
+                    </Button>
                     <SaveButton
                         loading={saving}
                         saved={saved}
@@ -42,10 +42,6 @@ const LanguageLinksEditor = ({ languageLinks }) => {
                 </FormHeader>
 
                 <FormSection title="Språklänkar">
-                    <Button onClick={addNewLink}>
-                        <Plus size={16} strokeWidth={3} />
-                        Lägg till språklänk
-                    </Button>
                     <ul className="links-form__list">
                         {fields.map((field, index) => {
                             return (
@@ -70,12 +66,6 @@ const LanguageLinksEditor = ({ languageLinks }) => {
                             );
                         })}
                     </ul>
-                    {/* <footer className="form__footer links-form__footer">
-                        <Button onClick={addNewLink}>
-                            <Plus />
-                            Lägg till språklänk
-                        </Button>
-                    </footer> */}
                 </FormSection>
             </form>
         </FormProvider>

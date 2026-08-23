@@ -54,3 +54,11 @@
         }
     }
 }
+/* 600px */
+@media (max-width: 600px) {
+    .edit-page-page {
+        .edit-page-page__form {
+            padding-bottom: 4rem;
+        }
+    }
+}
