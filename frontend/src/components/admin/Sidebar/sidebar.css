@@ -1,5 +1,4 @@
 .sidebar {
-    position: sticky;
     background-color: var(--bg-dark);
     color: var(--white);
     height: 100vh;
@@ -94,8 +93,10 @@
 /* 600px */
 @media (max-width: 600px) {
     .sidebar {
-        max-height: 100vh;
+        height: 100dvh;
+        max-height: 100dvh;
         padding-bottom: 3rem;
+
         .sidebar__header {
             .sidebar__img {
                 width: 140px;

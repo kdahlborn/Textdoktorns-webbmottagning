@@ -16,7 +16,13 @@ const MobileHeader = () => {
                 withCloseButton={false}
                 size="75%"
                 styles={{
-                    body: { padding: 0 },
+                    content: {
+                        overflow: 'hidden',
+                    },
+                    body: {
+                        padding: 0,
+                        overflow: 'hidden',
+                    },
                 }}
             >
                 <Sidebar onCloseDrawer={close} />
