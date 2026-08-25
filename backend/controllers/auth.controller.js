@@ -16,7 +16,7 @@ export const registerAdmin = async (req, res, next) => {
     if (newAdmin.password !== newAdmin.confirmPassword) {
         return next({
             status: 400,
-            message: 'Passwords do not match',
+            message: 'Lösenorden matchar inte',
         });
     }
 
@@ -67,13 +67,13 @@ export const loginAdmin = async (req, res, next) => {
         } else {
             next({
                 status: 401,
-                message: 'Invalid username or password',
+                message: 'Ogiltigt användarnamn eller lösenord',
             });
         }
     } else {
         next({
             status: 401,
-            message: 'Invalid username or password',
+            message: 'Ogiltigt användarnamn eller lösenord',
         });
     }
 };

@@ -23,7 +23,7 @@ const LanguageController = ({ onCloseDrawer = null }) => {
         },
         {
             code: 'en',
-            label: 'In english, please!',
+            label: 'In English, please!',
             img: enFlag,
         },
         {

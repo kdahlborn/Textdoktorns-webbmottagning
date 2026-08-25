@@ -30,7 +30,7 @@ export const authenticateRegistrationKey = (req, res, next) => {
     if (!key || key !== process.env.ADMIN_REGISTRATION_KEY) {
         return next({
             status: 403,
-            message: 'Invalid registration key',
+            message: 'Ogiltig registreringsnyckel',
         });
     }
 
