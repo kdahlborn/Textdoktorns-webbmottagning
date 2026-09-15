@@ -38,13 +38,13 @@
 
     .service-card__title {
         font-size: 1.5rem;
-        font-weight: 700;
+        font-weight: 600;
         color: var(--dark-blue);
     }
 
     .service-card__desc {
-        font-weight: 600;
-        max-width: 260px;
+        font-weight: 500;
+        /* max-width: 260px; */
         text-align: center;
         color: var(--text-dark);
     }

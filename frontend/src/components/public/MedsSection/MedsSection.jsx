@@ -45,7 +45,7 @@ const MedsSection = ({ translation, prescriptions }) => {
                 aria-hidden="true"
                 className="meds-section__img"
             />
-            <motion.article
+            {/* <motion.article
                 className="translation"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -59,6 +59,26 @@ const MedsSection = ({ translation, prescriptions }) => {
                 <h3 className="translation__title">
                     {translation.title[language]}
                 </h3>
+                <p className="translation__desc">
+                    {translation.text[language]}
+                </p>
+            </motion.article> */}
+            <motion.article
+                className="translation"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{
+                    duration: 0.6,
+                    ease: 'easeOut',
+                }}
+            >
+                <SectionHeading title={translation.heading[language]} />
+
+                <h3 className="translation__title">
+                    {translation.title[language]}
+                </h3>
+
                 <p className="translation__desc">
                     {translation.text[language]}
                 </p>
@@ -77,7 +97,7 @@ const MedsSection = ({ translation, prescriptions }) => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, amount: 0.2 }}
                                 transition={{
-                                    duration: 0.5,
+                                    duration: 0.6,
                                     delay: index * 0.1,
                                     ease: 'easeOut',
                                 }}
