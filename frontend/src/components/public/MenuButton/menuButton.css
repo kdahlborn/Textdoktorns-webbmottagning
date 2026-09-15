@@ -1,0 +1,55 @@
+@media (max-width: 570px) {
+    .header {
+        .header__content {
+            .header__menu-btn-container {
+                .header__label {
+                    width: 1.5rem;
+                    aspect-ratio: 1;
+                    position: absolute;
+                    top: 0;
+                    right: 1rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 999;
+                    border-radius: 50%;
+                    padding: 2rem;
+                    cursor: pointer;
+                }
+
+                .header__label > span,
+                .header__label > span::before,
+                .header__label > span::after {
+                    width: 1.5rem;
+                    height: 2px;
+                    position: absolute;
+                    background-color: var(--primary-blue);
+                    transition: all 0.3s ease;
+                }
+
+                .header__label > span::before {
+                    content: '';
+                    top: -8px;
+                }
+                .header__label > span::after {
+                    content: '';
+                    top: 8px;
+                }
+
+                .header__menu-btn:checked ~ .header__label > span {
+                    transform: rotate(45deg);
+                }
+
+                .header__menu-btn:checked ~ .header__label > span::before {
+                    transform: rotate(0deg);
+                    top: 0;
+                }
+
+                .header__menu-btn:checked ~ .header__label > span::after {
+                    transform: rotate(90deg);
+                    top: 0;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+.footer-contact {
+    grid-column: 2 / span 1;
+    align-items: flex-end;
+    align-self: flex-end;
+
+    .footer-contact__item {
+        gap: 1rem;
+    }
+}

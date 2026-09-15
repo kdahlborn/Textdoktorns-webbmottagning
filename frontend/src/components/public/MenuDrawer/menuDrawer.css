@@ -1,0 +1,106 @@
+/* .drawer__nav {
+    position: relative;
+
+    .header__nav {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+
+        .header__link {
+            border-bottom: 1px solid var(--lighter-blue);
+            border-radius: 0;
+            width: 100%;
+            flex-direction: row;
+            justify-content: flex-start;
+            font-size: 1.25rem;
+            padding: 1rem;
+        }
+    }
+    .language-control {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: var(--inter);
+        font-size: 1.25rem;
+        color: var(--primary-blue);
+    }
+
+    .language-selector {
+        position: unset;
+        top: 0;
+        right: 0;
+        width: 100%;
+        padding: 0;
+        border-radius: 0;
+        box-shadow: none;
+
+        .language-selector__item {
+            padding: 1rem 0.5rem;
+            width: 100%;
+
+            .language-selector__btn {
+                padding: 0;
+                font-size: 1rem;
+                font-weight: 400;
+                gap: 6px;
+
+                .flag-img {
+                    width: 1.5rem;
+                }
+            }
+        }
+
+        .close-btn {
+            display: none;
+        }
+    }
+} */
+.drawer {
+    .header__nav {
+        flex-direction: column;
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+
+        .header__link {
+            border-bottom: 1px solid var(--lighter-blue);
+            border-radius: 0;
+            width: 100%;
+            flex-direction: row;
+            justify-content: flex-start;
+            font-size: 1.25rem;
+            padding: 1rem;
+        }
+    }
+
+    .language-controller {
+        padding: 1rem;
+
+        .language-controller__list {
+            .language-controller__item {
+                .language-controller__btn {
+                    .flag-img {
+                        width: 1.75rem;
+                        border: 1px solid var(--light-gray);
+                    }
+                }
+            }
+        }
+    }
+
+    .language-controller .mantine-Accordion-item {
+        width: 100%;
+        border: none;
+    }
+
+    .language-controller .mantine-Accordion-control {
+        width: 100%;
+        padding: 0;
+    }
+
+    .language-controller .mantine-Accordion-label {
+        width: 100%;
+        padding: 0;
+    }
+}

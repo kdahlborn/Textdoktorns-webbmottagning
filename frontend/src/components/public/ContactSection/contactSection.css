@@ -1,0 +1,16 @@
+.contact-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-block: 100px;
+}
+
+/* MEDIA QUERIES */
+/* 800px */
+@media (max-width: 800px) {
+    .contact-section {
+        display: flex;
+        flex-direction: column;
+        gap: 3.75rem;
+        padding-top: 3rem;
+    }
+}

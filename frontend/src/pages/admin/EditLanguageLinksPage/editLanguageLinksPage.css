@@ -1,0 +1,8 @@
+.links-page {
+    position: relative;
+    padding-bottom: 4rem;
+
+    .links-page__header {
+        padding: 1rem;
+    }
+}

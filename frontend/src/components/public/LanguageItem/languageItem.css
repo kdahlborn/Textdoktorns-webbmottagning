@@ -1,0 +1,26 @@
+.language-controller__item {
+    list-style: none;
+    border-bottom: 1px solid #0f35cc22;
+
+    .language-controller__btn {
+        background-color: transparent;
+        padding: 0.75rem 0;
+        color: var(--primary-blue);
+        font-weight: 300;
+        display: flex;
+        gap: 1rem;
+        opacity: 1;
+
+        .flag-img {
+            width: 40px;
+        }
+    }
+
+    .language-controller__btn:hover {
+        color: var(--light-blue);
+    }
+}
+
+.language-controller__item:last-of-type {
+    border-bottom: none;
+}

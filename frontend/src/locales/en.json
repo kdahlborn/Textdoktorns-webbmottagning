@@ -1,0 +1,79 @@
+{
+    "global": {
+        "buttons": {
+            "readMore": "Learn more about Textdoktorn",
+            "contact": "Contact Textdoktorn",
+            "send": "Send message"
+        }
+    },
+
+    "header": {
+        "nav": {
+            "home": "Home",
+            "about": "About Textdoktorn",
+            "contact": "Contact"
+        },
+        "languageSelector": {
+            "current": "English"
+        }
+    },
+
+    "footer": {
+        "copyright": "© Textdoktorn. All rights reserved.",
+        "privacy": "Privacy Policy",
+        "headings": {
+            "links": "Language links",
+            "contact": "Contact"
+        }
+    },
+
+    "home": {
+        "seo": {
+            "title": "Textdoktorn | Proofreading, Editing and Translation",
+            "description": "Textdoktorn helps businesses and individuals with proofreading, editing, text revision and translation. Give your texts a professional and credible finish."
+        },
+
+        "cta": {
+            "services": {
+                "heading": "Not sure what you need?",
+                "description": "Describe your text or your challenge, and I'll help you find the right service.",
+                "button": "Find the right service"
+            },
+            "textTypes": {
+                "heading": "I work with both Swedish and English texts. I can also create clear, engaging, and well-written content from scratch."
+            }
+        }
+    },
+
+    "about": {
+        "seo": {
+            "title": "About Textdoktorn",
+            "description": "Learn more about Textdoktorn and how experience, linguistic expertise, and attention to detail help businesses and individuals create clear, polished, and effective texts."
+        }
+    },
+
+    "contact": {
+        "seo": {
+            "title": "Contact | Textdoktorn",
+            "description": "Get in touch with Textdoktorn for questions, quotations, or assistance with proofreading, editing, text revision, or translation. I'd be happy to help."
+        },
+        "info": {
+            "phone": "Phone",
+            "address": "Address"
+        },
+
+        "form": {
+            "name": "Name",
+            "email": "Email",
+            "message": "Message",
+            "submit": "Send message"
+        }
+    },
+
+    "errors": {
+        "404": {
+            "title": "Page not found",
+            "button": "Back to home"
+        }
+    }
+}

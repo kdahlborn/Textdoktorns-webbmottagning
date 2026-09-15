@@ -1,0 +1,78 @@
+{
+    "global": {
+        "buttons": {
+            "readMore": "En savoir plus sur Textdoktorn",
+            "contact": "Contacter Textdoktorn",
+            "send": "Envoyer un message"
+        }
+    },
+
+    "header": {
+        "nav": {
+            "home": "Accueil",
+            "about": "À propos de Textdoktorn",
+            "contact": "Contact"
+        },
+        "languageSelector": {
+            "current": "Français"
+        }
+    },
+
+    "footer": {
+        "copyright": "© Textdoktorn. Tous droits réservés.",
+        "privacy": "Politique de confidentialité",
+        "headings": {
+            "links": "Langues",
+            "contact": "Contact"
+        }
+    },
+
+    "home": {
+        "seo": {
+            "title": "Textdoktorn | Relecture, correction et traduction",
+            "description": "Textdoktorn accompagne les entreprises et les particuliers dans la relecture, la correction, la révision et la traduction de leurs textes. Donnez à vos écrits une qualité professionnelle et une image de confiance."
+        },
+
+        "cta": {
+            "services": {
+                "heading": "Vous ne savez pas de quel service vous avez besoin ?",
+                "description": "Décrivez votre texte ou votre besoin, et je vous aiderai à trouver la prestation la plus adaptée.",
+                "button": "Trouver le bon service"
+            },
+            "textTypes": {
+                "heading": "Je travaille avec des textes en suédois et en anglais. Je peux également rédiger des textes originaux, clairs et de grande qualité."
+            }
+        }
+    },
+
+    "about": {
+        "seo": {
+            "title": "À propos de Textdoktorn",
+            "description": "Découvrez Textdoktorn et la manière dont l'expérience, la maîtrise de la langue et le souci du détail permettent de créer des textes clairs, soignés et professionnels."
+        }
+    },
+
+    "contact": {
+        "seo": {
+            "title": "Contact | Textdoktorn",
+            "description": "Contactez Textdoktorn pour toute question, demande de devis ou besoin d'aide en relecture, correction, révision ou traduction de textes. Je serai ravi de vous accompagner."
+        },
+        "info": {
+            "phone": "Téléphone",
+            "address": "Adresse"
+        },
+        "form": {
+            "name": "Nom",
+            "email": "E-mail",
+            "message": "Message",
+            "submit": "Envoyer un message"
+        }
+    },
+
+    "errors": {
+        "404": {
+            "title": "Page introuvable",
+            "button": "Retour à l'accueil"
+        }
+    }
+}

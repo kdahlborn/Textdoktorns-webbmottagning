@@ -1,0 +1,23 @@
+.save-btn {
+    font-size: 0.75rem;
+    padding: 0.5rem;
+    height: 35px;
+    width: 80px;
+}
+
+.save-btn--saved {
+    background-color: var(--green);
+}
+
+.save-btn--faded {
+    opacity: 0.3;
+}
+
+.save-btn--faded:hover {
+    cursor: default;
+    opacity: 0.3;
+}
+
+.save-btn--saved:hover {
+    background-color: var(--green);
+}

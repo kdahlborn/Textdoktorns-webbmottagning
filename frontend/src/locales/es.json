@@ -1,0 +1,78 @@
+{
+    "global": {
+        "buttons": {
+            "readMore": "Más información sobre Textdoktorn",
+            "contact": "Contactar con Textdoktorn",
+            "send": "Enviar mensaje"
+        }
+    },
+
+    "header": {
+        "nav": {
+            "home": "Inicio",
+            "about": "Sobre Textdoktorn",
+            "contact": "Contacto"
+        },
+        "languageSelector": {
+            "current": "Español"
+        }
+    },
+
+    "footer": {
+        "copyright": "© Textdoktorn. Todos los derechos reservados.",
+        "privacy": "Política de privacidad",
+        "headings": {
+            "links": "Idiomas",
+            "contact": "Contacto"
+        }
+    },
+
+    "home": {
+        "seo": {
+            "title": "Textdoktorn | Corrección, revisión y traducción de textos",
+            "description": "Textdoktorn ayuda a empresas y particulares con la corrección, revisión, edición y traducción de textos. Consiga un resultado profesional y de confianza para sus textos."
+        },
+
+        "cta": {
+            "services": {
+                "heading": "¿No está seguro de lo que necesita?",
+                "description": "Describa su texto o su necesidad y le ayudaré a encontrar el servicio adecuado.",
+                "button": "Encontrar el servicio adecuado"
+            },
+            "textTypes": {
+                "heading": "Trabajo con textos en sueco e inglés. Por supuesto, también puedo crear textos nuevos, claros y de alta calidad."
+            }
+        }
+    },
+
+    "about": {
+        "seo": {
+            "title": "Acerca de Textdoktorn",
+            "description": "Descubra más sobre Textdoktorn y cómo la experiencia, el dominio del idioma y la atención al detalle ayudan a empresas y particulares a crear textos claros, profesionales y bien redactados."
+        }
+    },
+
+    "contact": {
+        "seo": {
+            "title": "Contacto | Textdoktorn",
+            "description": "Póngase en contacto con Textdoktorn para consultas, presupuestos o ayuda con la corrección, revisión, edición o traducción de textos. Estaré encantado de ayudarle."
+        },
+        "info": {
+            "phone": "Teléfono",
+            "address": "Dirección"
+        },
+        "form": {
+            "name": "Nombre",
+            "email": "Correo electrónico",
+            "message": "Mensaje",
+            "submit": "Enviar mensaje"
+        }
+    },
+
+    "errors": {
+        "404": {
+            "title": "Página no encontrada",
+            "button": "Volver al inicio"
+        }
+    }
+}

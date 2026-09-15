@@ -1,0 +1,33 @@
+.circle-icon {
+    background-color: var(--light-gray);
+    width: 80px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+}
+
+.circle-icon--red {
+    color: var(--red);
+    box-shadow: var(--inset-red);
+}
+.circle-icon--blue {
+    color: var(--primary-blue);
+    box-shadow: var(--inset-blue);
+}
+.circle-icon--light-blue {
+    color: var(--light-blue);
+    box-shadow: var(--inset-light-blue);
+}
+.circle-icon--purple {
+    color: var(--purple);
+    box-shadow: var(--inset-purple);
+}
+.circle-icon--yellow {
+    color: var(--yellow);
+    box-shadow: var(--inset-yellow);
+}
+.circle-icon--green {
+    color: var(--green);
+    box-shadow: var(--inset-green);
+}

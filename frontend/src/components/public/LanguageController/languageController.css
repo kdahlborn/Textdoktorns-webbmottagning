@@ -1,0 +1,38 @@
+.language-controller__chevron {
+    transition: transform 0.2s ease;
+}
+
+[data-active] .language-controller__chevron {
+    transform: rotate(180deg);
+}
+
+.language-controller__control {
+    width: 100%;
+    padding: 0;
+
+    .language-controller__content {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: var(--inter);
+        font-size: 1.25rem;
+        color: var(--primary-blue);
+    }
+
+    &:hover {
+        .language-controller__content {
+            color: var(--light-blue);
+        }
+    }
+}
+
+.language-controller__list {
+    .language-controller__item {
+        .language-controller__btn {
+            width: 100%;
+            justify-content: flex-start;
+            gap: 0.5rem;
+            font-weight: 400;
+        }
+    }
+}

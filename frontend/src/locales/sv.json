@@ -1,0 +1,78 @@
+{
+    "global": {
+        "buttons": {
+            "readMore": "Läs mer om textdoktorn",
+            "contact": "Kontakta textdoktorn",
+            "send": "Skicka meddelande"
+        }
+    },
+
+    "header": {
+        "nav": {
+            "home": "Hem",
+            "about": "Om textdoktorn",
+            "contact": "Kontakt"
+        },
+        "languageSelector": {
+            "current": "Svenska"
+        }
+    },
+
+    "footer": {
+        "copyright": "© Textdoktorn. Alla rättigheter förbehållna.",
+        "privacy": "Integritetspolicy",
+        "headings": {
+            "links": "Språklänkar",
+            "contact": "Kontakt"
+        }
+    },
+
+    "home": {
+        "seo": {
+            "title": "Textdoktorn | Språkgranskning, korrekturläsning och översättning",
+            "description": "Textdoktorn hjälper företag och privatpersoner med språkgranskning, korrekturläsning, textbearbetning och översättning. Ge dina texter ett professionellt och trovärdigt intryck."
+        },
+
+        "cta": {
+            "services": {
+                "heading": "Osäker på vad du behöver?",
+                "description": "Beskriv din text eller utmaning så hjälper jag dig hitta rätt insats.",
+                "button": "Sök textvård"
+            },
+            "textTypes": {
+                "heading": "Jag tar emot svensk- och engelskspråkiga patienter. Givetvis kan jag även producera nya friska texter."
+            }
+        }
+    },
+
+    "about": {
+        "seo": {
+            "title": "Om Textdoktorn",
+            "description": "Läs mer om Textdoktorn och hur erfarenhet, språkkänsla och noggrannhet används för att hjälpa företag och privatpersoner att skapa tydliga och välformulerade texter."
+        }
+    },
+
+    "contact": {
+        "seo": {
+            "title": "Kontakt | Textdoktorn",
+            "description": "Kontakta Textdoktorn för frågor, offert eller hjälp med språkgranskning, korrekturläsning, textbearbetning eller översättning. Du är välkommen att höra av dig."
+        },
+        "info": {
+            "phone": "Telefon",
+            "address": "Adress"
+        },
+        "form": {
+            "name": "Namn",
+            "email": "E-post",
+            "message": "Meddelande",
+            "submit": "Skicka meddelande"
+        }
+    },
+
+    "errors": {
+        "404": {
+            "title": "Sidan kunde inte hittas",
+            "button": "Till startsidan"
+        }
+    }
+}

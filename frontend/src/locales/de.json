@@ -1,0 +1,78 @@
+{
+    "global": {
+        "buttons": {
+            "readMore": "Mehr über Textdoktorn erfahren",
+            "contact": "Textdoktorn kontaktieren",
+            "send": "Nachricht senden"
+        }
+    },
+
+    "header": {
+        "nav": {
+            "home": "Startseite",
+            "about": "Über Textdoktorn",
+            "contact": "Kontakt"
+        },
+        "languageSelector": {
+            "current": "Deutsch"
+        }
+    },
+
+    "footer": {
+        "copyright": "© Textdoktorn. Alle Rechte vorbehalten.",
+        "privacy": "Datenschutzerklärung",
+        "headings": {
+            "links": "Sprachversionen",
+            "contact": "Kontakt"
+        }
+    },
+
+    "home": {
+        "seo": {
+            "title": "Textdoktorn | Korrekturlesen, Lektorat und Übersetzung",
+            "description": "Textdoktorn unterstützt Unternehmen und Privatpersonen mit Korrekturlesen, Lektorat, Textüberarbeitung und Übersetzungen. Verleihen Sie Ihren Texten einen professionellen und überzeugenden Eindruck."
+        },
+
+        "cta": {
+            "services": {
+                "heading": "Sie sind sich nicht sicher, was Sie benötigen?",
+                "description": "Beschreiben Sie Ihren Text oder Ihr Anliegen, und ich helfe Ihnen, die passende Dienstleistung zu finden.",
+                "button": "Passende Textdienstleistung finden"
+            },
+            "textTypes": {
+                "heading": "Ich arbeite mit schwedischen und englischen Texten. Selbstverständlich verfasse ich auch neue, hochwertige Texte."
+            }
+        }
+    },
+
+    "about": {
+        "seo": {
+            "title": "Über Textdoktorn",
+            "description": "Erfahren Sie mehr über Textdoktorn und wie Erfahrung, Sprachgefühl und Sorgfalt Unternehmen und Privatpersonen dabei helfen, klare und professionelle Texte zu erstellen."
+        }
+    },
+
+    "contact": {
+        "seo": {
+            "title": "Kontakt | Textdoktorn",
+            "description": "Kontaktieren Sie Textdoktorn für Fragen, ein Angebot oder Unterstützung beim Korrekturlesen, Lektorat, der Textüberarbeitung oder Übersetzung. Ich freue mich auf Ihre Nachricht."
+        },
+        "info": {
+            "phone": "Telefon",
+            "address": "Adresse"
+        },
+        "form": {
+            "name": "Name",
+            "email": "E-Mail",
+            "message": "Nachricht",
+            "submit": "Nachricht senden"
+        }
+    },
+
+    "errors": {
+        "404": {
+            "title": "Seite nicht gefunden",
+            "button": "Zur Startseite"
+        }
+    }
+}

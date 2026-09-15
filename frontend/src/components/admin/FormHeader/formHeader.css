@@ -1,0 +1,43 @@
+.form__header {
+    height: 52px;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background-color: var(--white);
+    z-index: 1;
+    border-bottom: 1px solid var(--gray);
+    padding: 0 1rem;
+
+    .save-btn {
+        align-self: center;
+        font-size: 0.75rem;
+        padding: 0.5rem;
+        height: 35px;
+        width: 80px;
+    }
+
+    .save-btn--saved {
+        background-color: var(--green);
+    }
+
+    .save-btn--saved:hover {
+        background-color: var(--green);
+    }
+}
+
+/* MEDIA QUERIES */
+/* 600px */
+@media (max-width: 600px) {
+    .form__header {
+        align-items: center;
+        gap: 0.25rem;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+    .form__header .save-btn {
+        margin-left: auto;
+    }
+}
